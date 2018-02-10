@@ -1,0 +1,70 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>div</text>
+        </div>
+        <div class="item-content">
+            <text>flex-direction: row</text>
+            <text>横向布局</text>
+            <div class="item-row">
+                <text class="color1"></text>
+                <text class="color2"></text>
+                <text class="color3"></text>
+            </div>
+            <text>flex-direction: column</text>
+            <text>纵向布局</text>
+            <div class="item-column">
+                <text class="color3"></text>
+                <text class="color2"></text>
+                <text class="color1"></text>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .item-row {
+        margin: 60px 0px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .item-row text {
+        width: 150px;
+        height: 250px;
+    }
+
+    .item-column {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-column text {
+        width: 250px;
+        height: 130px;
+    }
+
+    .color1 {
+        background-color: #339900;
+    }
+
+    .color2 {
+        background-color: #33ccff;
+    }
+
+    .color3 {
+        background-color: #929292;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Div'
+            })
+        }
+    }
+</script>

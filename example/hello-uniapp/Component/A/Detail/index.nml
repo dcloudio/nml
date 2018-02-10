@@ -1,0 +1,25 @@
+<template>
+    <div class="container">
+        <div class="item-content">
+            <text>我是上个页面传过来的参数，id={{id}}</text>
+        </div>
+    </div>
+</template>
+
+<style>
+	@import '../../../Common/css/common.nss';
+	.item-content text{
+		padding: 30px;
+	}
+</style>
+
+<script>
+    module.exports = {
+        props: ['id'],
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Detail'
+            })
+        }
+    }
+</script>

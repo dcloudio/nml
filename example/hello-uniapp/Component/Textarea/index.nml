@@ -1,0 +1,33 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>textarea</text>
+        </div>
+        <div class="item-content">
+            <textarea class="textarea" placeholder="请输入..."></textarea>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .textarea {
+        height: 300px;
+        color: #888888;
+        font-size: 32px;
+        border-color: #CCCCCC;
+        border-width: 1px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Textarea'
+            })
+        }
+    }
+</script>

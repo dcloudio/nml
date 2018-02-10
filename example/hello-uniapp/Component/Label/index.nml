@@ -1,0 +1,59 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>label</text>
+        </div>
+        <div class="item-content">
+            <div class="item-input-group">
+                <label target="username">text：</label>
+                <input type="text" name="username" id="username" placeholder="请输入..." />
+            </div>
+            <div class="item-input-group">
+                <label target="radio">radio：</label>
+                <input type="radio" id="radio" />
+            </div>
+            <div class="item-input-group">
+                <label target="textarea" id="checkbox">checkbox：</label>
+                <input class="flex-1" type="checkbox" id="checkbox">
+            </div>
+            <div class="item-input-group">
+                <label target="textarea">textarea：</label>
+                <textarea placeholder="请输入..." id="textarea" class="textarea"></textarea>
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .item-content {
+        background-color: #ffffff;
+    }
+
+    .item-input-group {
+        margin-left: 30px;
+        height: 90px;
+    }
+
+    .item-input-group label {
+        width: 200px;
+        color: #888888;
+    }
+
+    .textarea {
+        margin-top: 15px;
+        color: #888888;
+        padding: 10px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Label'
+            })
+        }
+    }
+</script>

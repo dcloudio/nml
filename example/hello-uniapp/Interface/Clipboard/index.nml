@@ -1,0 +1,72 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>clipboard</text>
+        </div>
+        <div class="item-content">
+            <div class="item-group">
+                <div class="item-group-content">
+                    <label>剪切板内容：</label>
+                    <input type="text" name="title" value="{{content}}" onchange="getClipboardCnt" placeholder="剪切板内容..." />
+                </div>
+                <input type="button" name="setclipboard" class="item-group-button" value="设置剪切板内容" onclick="setClipboard" />
+                <input type="button" name="getclipboard" class="item-group-button" value="读取剪贴板内容" onclick="getClipboard" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+
+    .item-group-content {
+        padding: 30px 10px;
+    }
+
+    .item-group-content label {
+        width: 300px;
+        text-align: center;
+        color: #888888;
+    }
+
+    .item-group-content input {
+        color: #888888;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            content: ''
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Clipboard'
+            })
+        },
+        setClipboard: function () {
+            var that = this;
+            that.content = that.content && that.content || '今天天气不错';
+            uni.clipboard.set({
+                text: that.content,
+                success: function () {
+                    uni.prompt.showToast({
+                        message: '设置成功'
+                    })
+                }
+            })
+        },
+        getClipboard: function () {
+            uni.clipboard.get({
+                success: function (data) {
+                    uni.prompt.showToast({
+                        message: data.text
+                    })
+                }
+            })
+        },
+        getClipboardCnt: function (e) {
+            this.content = e.text;
+        }
+    }
+</script>

@@ -1,0 +1,62 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>geolocation</text>
+        </div>
+        <div class="item-content">
+            <div class="item-group">
+                <text class="item-group-text">longitude：{{longitude}}</text>
+                <text class="item-group-text">latitude：{{latitude}}</text>
+                <input type="button" name="gettype" class="item-group-button" value="获取地理位置" onclick="getLocation" />
+            </div>
+            <div class="item-group">
+                <text class="item-group-text">longitude：{{sub_longitude}}</text>
+                <text class="item-group-text">latitude：{{sub_latitude}}</text>
+                <input type="button" name="subscribe" class="item-group-button" value="监听地理位置" onclick="subscribe" />
+                <input type="button" name="unsubscribe" class="item-group-button" value="取消监听地理位置" onclick="unsubscribe" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            longitude: '',
+            latitude: '',
+            sub_longitude: '',
+            sub_latitude: ''
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Geolocation'
+            })
+        },
+        getLocation: function () {
+            var that = this;
+            uni.geolocation.getLocation({
+                timeout: 3000,
+                success: function (data) {
+                    that.longitude = data.longitude;
+                    that.latitude = data.latitude;
+                }
+            })
+        },
+        subscribe: function () {
+            var that = this;
+            uni.geolocation.subscribe({
+                callback: function (data) {
+                    that.sub_longitude = data.longitude;
+                    that.sub_latitude = data.latitude;
+                }
+            })
+        },
+        unsubscribe: function () {
+            uni.geolocation.unsubscribe();
+        }
+    }
+</script>

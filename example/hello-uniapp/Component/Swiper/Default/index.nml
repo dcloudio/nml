@@ -1,0 +1,57 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>swiper</text>
+        </div>
+        <div class="item-content">
+            <swiper class="swiper" autoplay="{{autoPlay}}" interval="{{sliderValue}}" indicator="{{indicator}}">
+                <image src="/Common/img/cbd.jpg"></image>
+                <image src="/Common/img/muwu.jpg"></image>
+                <image src="/Common/img/shuijiao.jpg"></image>
+                <image src="/Common/img/yuantiao.jpg"></image>
+            </swiper>
+            <div class="swiper-contral">
+                <text>定时轮播</text>
+                <switch onchange="changeAutoplay" checked="true"></switch>
+            </div>
+            <div class="swiper-contral">
+                <text>指示器</text>
+                <switch onchange="changeIndicator" checked="true"></switch>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../../Common/css/common.nss';
+    .swiper {
+        height: 400px;
+        margin-bottom: 50px;
+    }
+
+    .swiper-contral {
+        justify-content: space-between;
+        padding: 10px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            autoPlay: true,
+            indicator: true,
+            sliderValue: 2000
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Swiper'
+            })
+        },
+        changeAutoplay: function () {
+            this.autoPlay = !this.autoPlay;
+        },
+        changeIndicator: function () {
+            this.indicator = !this.indicator;
+        }
+    }
+</script>

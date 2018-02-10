@@ -1,0 +1,66 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>radio</text>
+        </div>
+        <div class="item-content">
+            <list class="list">
+                <list-item type="radio" class="line">
+                    <input type="radio" id="radio1" name="radio" value="radio1" onchange="checkRadio"></input>
+                    <label target="radio1">HBuilder</label>
+                </list-item>
+                <list-item type="radio" class="line">
+                    <input type="radio" id="radio2" name="radio" value="radio2" onchange="checkRadio"></input>
+                    <label target="radio2">5+客户端</label>
+                </list-item>
+                <list-item type="radio" class="line">
+                    <input type="radio" id="radio3" name="radio" value="radio3" onchange="checkRadio"></input>
+                    <label target="radio3">wap2app</label>
+                </list-item>
+                <list-item type="radio">
+                    <input type="radio" id="radio4" name="radio" value="radio4" onchange="checkRadio"></input>
+                    <label target="radio4">mui</label>
+                </list-item>
+            </list>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .list {
+        border-color: #D8D8D8;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        background-color: #ffffff;
+    }
+
+    label {
+        color: #888888;
+    }
+
+    .list list-item {
+        flex-direction: row;
+        height: 90px;
+        padding-right: 40px;
+        margin-left: 40px;
+    }
+
+    .line {
+        border-color: #D8D8D8;
+        border-bottom-width: 1px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Radio'
+            })
+        },
+		checkRadio:function () {
+			
+		}
+    }
+</script>

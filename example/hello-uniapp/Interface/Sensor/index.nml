@@ -1,0 +1,81 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>sensor</text>
+        </div>
+        <div class="item-content">
+            <div class="item-group">
+                <text class="item-group-text" for="accelerometerInfos">{{$item}}</text>
+                <input type="button" class="item-group-button" name="accelerometer" value="监听重力感应数据" onclick="subscribeAccelerometer" />
+                <input type="button" class="item-group-button" name="unaccelerometer" value="取消监听重力感应数据" onclick="unsubscribeAccelerometer"/>
+            </div>
+            <div class="item-group">
+                <text class="item-group-text">{{direction}}</text>
+                <input type="button" class="item-group-button" name="compass" value="监听罗盘数据" onclick="subscribeCompass" />
+                <input type="button" class="item-group-button" name="uncompass" value="取消监听罗盘数据" onclick="unsubscribeCompass" />
+            </div>
+            <div class="item-group">
+                <text class="item-group-text">{{distance}}</text>
+                <input type="button" class="item-group-button" name="proximity" value="监听距离感应数据" onclick="subscribeProximity" />
+                <input type="button" class="item-group-button" name="unproximity" value="取消监听距离感应数据" onclick="unsubscribeProximity" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            accelerometerInfos: [],
+            direction: '',
+            distance: ''
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Sensor'
+            })
+        },
+        subscribeAccelerometer: function () {
+            var that = this;
+            uni.sensor.subscribeAccelerometer({
+                callback: function (data) {
+                    var arr = [];
+                    arr.push("X：" + data.x);
+                    arr.push("Y：" + data.x);
+                    arr.push("Z：" + data.x);
+                    that.accelerometerInfos = arr;
+                }
+            })
+        },
+        unsubscribeAccelerometer: function () {
+            uni.sensor.unsubscribeAccelerometer();
+        },
+        subscribeCompass: function () {
+            var that = this;
+            uni.sensor.subscribeCompass({
+                callback: function (data) {
+                    that.direction = "direction：" + data.direction;
+                }
+            })
+        },
+        unsubscribeCompass: function () {
+            uni.sensor.unsubscribeCompass();
+        },
+        subscribeProximity: function () {
+            var that = this;
+            uni.sensor.subscribeProximity({
+                callback: function (data) {
+                    that.show = true;
+                    that.distance = "distance：" + data.distance;
+                }
+            })
+        },
+        unsubscribeProximity: function () {
+            uni.sensor.unsubscribeProximity();
+        }
+    }
+</script>

@@ -1,0 +1,147 @@
+<template>
+    <div class="container">
+        <div class="item-content">
+            <div class="swiper-title">
+                <text>定时轮播</text>
+                <switch onchange="change()" checked="true"></switch>
+            </div>
+            <div class="item-swiper">
+                <stack class="item-stack">
+                    <swiper class="swiper" autoplay="{{autoPlay}}" onchange="getCurrentIndex" interval="{{sliderValue}}" indicator="false">
+                        <stack class="swiper-item">
+                            <image src="/Common/img/cbd.jpg"></image>
+                            <text class="swiper-item-content">Color of SIP CBD</text>
+                        </stack>
+                        <stack class="swiper-item">
+                            <image src="/Common/img/muwu.jpg"></image>
+                            <text class="swiper-item-content">想要一间这样的木屋，静静的喝咖啡</text>
+                        </stack>
+                        <stack class="swiper-item">
+                            <image src="/Common/img/shuijiao.jpg"></image>
+                            <text class="swiper-item-content">幸福就是可以一起睡觉</text>
+                        </stack>
+                        <stack class="swiper-item">
+                            <image src="/Common/img/yuantiao.jpg"></image>
+                            <text class="swiper-item-content">静静看这世界</text>
+                        </stack>
+                    </swiper>
+                    <div style="margin-top:460px;width: 220px;height: 20px;margin-left: 530px; justify-content:center;">
+                        <div for="actives" class="circle {{$item}}"></div>
+                    </div>
+                </stack>
+            </div>
+        </div>
+    </div>
+</template>
+<style>
+    .container {
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .item-content {
+        margin-bottom: 50px;
+        margin-right: 0px;
+        margin-left: 0px;
+        flex-direction: column;
+    }
+
+    .item-stack {
+        width: 750px;
+        height: 500px;
+    }
+
+    .item-title {
+        padding: 20px;
+    }
+
+    .item-swiper {
+        flex-direction: column;
+    }
+
+    .swiper {
+        flex-direction: column;
+        height: 500px;
+        width: 750px;
+        indicator-color: #a4aca5;
+        indicator-selected-color: #ffffff;
+        indicator-size: 12px;
+    }
+
+    .swiper-title {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .swiper-item {
+        width: 750px;
+        height: 500px;
+    }
+
+    .swiper-item image {
+        width: 750px;
+        height: 500px;
+    }
+
+    .swiper-item-content {
+        width: 750px;
+        height: 60px;
+        background-color: #000000;
+        color: #ffffff;
+        opacity: 0.5;
+        margin-top: 440px;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        margin-left: 16px;
+        background-color: #a4aca5;
+    }
+
+    .active {
+        background-color: #ffffff;
+    }
+
+    .normal {
+        background-color: #a4aca5;
+    }
+</style>
+<script>
+    module.exports = {
+        data: {
+            autoPlay: true,
+            sliderValue: 2000,
+            actives: ['active', 'normal', 'normal', 'normal']
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: '下方悬浮标题'
+            })
+        },
+        change: function () {
+            if (this.autoPlay) {
+                this.autoPlay = false;
+            } else {
+                this.autoPlay = true;
+            }
+        },
+        getCurrentIndex: function (e) {
+            for (var i = 0; i < 4; i++) {
+                if (e.index == 0) {
+                    this.actives = ['active', 'normal', 'normal', 'normal'];
+                } else if (e.index == 1) {
+                    this.actives = ['normal', 'active', 'normal', 'normal'];
+                } else if (e.index == 2) {
+                    this.actives = ['normal', 'normal', 'active', 'normal'];
+                } else if (e.index == 3) {
+                    this.actives = ['normal', 'normal', 'normal', 'active'];
+                }
+            }
+        }
+    }
+</script>

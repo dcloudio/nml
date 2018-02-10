@@ -1,0 +1,47 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>router</text>
+        </div>
+        <div class="item-content">
+            <input type="button" class="item-group-button" name="home" value="跳转到首页" onclick="routerTest('/Home')" />
+            <input type="button" class="item-group-button" name="back" value="返回" onclick="routerTest('back')" />
+            <input type="button" class="item-group-button" name="dcloud" value="DCloud官方网页" onclick="routerTest('http://m.dcloud.io/index.html')" />
+            <input type="button" class="item-group-button" name="tel" value="打电话" onclick="routerTest('tel:10086')" />
+            <input type="button" class="item-group-button" name="params" value="跨页面传参数" onclick="routerDetail('/Interface/Router/Detail')"/>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Router'
+            })
+        },
+        routerTest: function (uri) {
+            if (uri == 'back') {
+                uni.router.back();
+            } else {
+                uni.router.push({
+                    uri: uri
+                })
+            }
+        },
+        routerDetail: function (uri) {
+            uni.router.push({
+                uri: uri,
+                params: {
+                    datas: {
+                        id: "123456"
+                    }
+                }
+            })
+        }
+    }
+</script>

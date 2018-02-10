@@ -1,0 +1,51 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>shortcut</text>
+        </div>
+        <div class="item-content">
+            <input type="button" name="shortcut_hasInstalled" class="item-group-button" value="桌面图标是否创建" onclick="hasInstalledShortcut"
+            />
+            <input type="button" name="shortcut_install" class="item-group-button" value="创建桌面图标" onclick="installShortcut" />
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Shortcut'
+            })
+        },
+        hasInstalledShortcut: function () {
+            uni.shortcut.hasInstalled({
+                success: function (data) {
+                    uni.prompt.showToast({
+                        message: data ? '已创建' : '未创建'
+                    })
+                }
+            })
+        },
+        installShortcut: function () {
+            uni.shortcut.install({
+                success: function () {
+                    uni.prompt.showToast({
+                        message: '创建成功'
+                    })
+                },
+                fail: function (code) {
+                    if (code == 201) {
+                        uni.prompt.showToast({
+                            message: '获取创建桌面图标权限失败'
+                        })
+                    }
+                }
+            })
+        }
+    }
+</script>

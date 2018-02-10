@@ -1,0 +1,102 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>storage</text>
+        </div>
+        <div class="item-content">
+            <div class="item-group">
+                <div class="input-group line">
+                    <label>key：</label>
+                    <input type="text" name="key" value="{{key}}" onchange="getNewKey" placeholder="key..." />
+                </div>
+                <div class="input-group" style="margin-bottom: 30px;">
+                    <label>value：</label>
+                    <input type="text" name="value" value="{{value}}" onchange="getNewValue" placeholder="value..." />
+                </div>
+                <input type="button" class="item-group-button" name="set" value="设置存储内容" onclick="setStorage" />
+                <input type="button" class="item-group-button" name="get" value="读取存储内容" onclick="getStorage" />
+                <input type="button" class="item-group-button" name="clear" value="清空存储内容" onclick="clearStorage" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .input-group {
+        padding: 30px 60px;
+        background-color: #ffffff;
+    }
+
+    .input-group label {
+        width: 150px;
+    }
+
+    .line {
+        border-bottom-color: #888888;
+        border-bottom-width: 1px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            key: '',
+            value: ''
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Storage'
+            })
+        },
+        setStorage: function () {
+            var that = this;
+            uni.storage.set({
+                key: that.key,
+                value: that.value,
+                success: function (data) {
+                    uni.prompt.showToast({
+                        message: '存储成功'
+                    })
+                },
+                fail: function (data, code) {
+                    console.log('...fail...')
+                }
+            })
+        },
+        getStorage: function () {
+            var that = this;
+            uni.storage.get({
+                key: that.key,
+                success: function (value) {
+                    uni.prompt.showToast({
+                        message: 'key:' + that.key + '，value:' + value
+                    })
+                },
+                fail: function (data, code) {
+                    console.log('...fail...')
+                }
+            })
+        },
+        clearStorage: function () {
+            this.key = '';
+            this.value = '';
+            uni.storage.clear({
+                success: function (data) {
+                    uni.prompt.showToast({
+                        message: '清除成功'
+                    })
+                },
+                fail: function (data, code) {
+                    console.log('...fail...')
+                }
+            })
+        },
+        getNewKey: function (e) {
+            this.key = e.text;
+        },
+        getNewValue: function (e) {
+            this.value = e.text;
+        }
+    }
+</script>

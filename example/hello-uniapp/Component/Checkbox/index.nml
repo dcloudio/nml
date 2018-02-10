@@ -1,0 +1,63 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>checkbox</text>
+        </div>
+        <div class="item-content">
+            <list class="list">
+                <list-item type="checkbox" class="line">
+                    <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1" />
+                    <label target="checkbox1">HBuilder</label>
+                </list-item>
+                <list-item type="checkbox" class="line">
+                    <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2" />
+                    <label target="checkbox2">5+客户端</label>
+                </list-item>
+                <list-item type="checkbox" class="line">
+                    <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3" />
+                    <label target="checkbox3">wap2app</label>
+                </list-item>
+                <list-item type="checkbox">
+                    <input type="checkbox" id="checkbox4" name="checkbox" value="checkbox4" />
+                    <label target="checkbox4">mui</label>
+                </list-item>
+            </list>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .list {
+        border-color: #D8D8D8;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        background-color: #ffffff;
+    }
+
+    label {
+        color: #888888;
+    }
+
+    .list list-item {
+        flex-direction: row;
+        height: 90px;
+        padding-right: 40px;
+        margin-left: 40px;
+    }
+
+    .line {
+        border-color: #D8D8D8;
+        border-bottom-width: 1px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Checkbox'
+            })
+        }
+    }
+</script>

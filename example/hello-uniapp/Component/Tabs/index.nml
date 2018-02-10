@@ -1,0 +1,272 @@
+<template>
+    <div class="container">
+        <tabs onchange="changeTabbarDrag">
+            <tab-content class="tab-content">
+                <div class="tab-group-content">
+                    <list class="list">
+                        <list-item type="media" class="list-item list-item-top-line">
+                            <div class="media-list middleline">
+                                <image src="/Common/img/shuijiao.jpg"></image>
+                                <div class="media-body">
+                                    <text class="media-title">幸福</text>
+                                    <text class="media-content">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</text>
+                                </div>
+                            </div>
+                        </list-item>
+                        <list-item type="media" class="list-item list-item-bottom-line">
+                            <div class="media-list">
+                                <image src="/Common/img/yuantiao.jpg"></image>
+                                <div class="media-body">
+                                    <text class="media-title">远眺</text>
+                                    <text class="media-content">静静的看这个世界，最后终于疯了.</text>
+                                </div>
+                            </div>
+                        </list-item>
+                    </list>
+                </div>
+                <div class="tab-group-content">
+                    <list class="list list-card">
+                        <list-item type="media" class="list-item list-item-top-line list-card-top-radius">
+                            <div class="media-list middleline">
+                                <div class="media-body">
+                                    <text class="media-title">幸福</text>
+                                    <text class="media-content" style="width: 570px;">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</text>
+                                </div>
+                                <image src="/Common/img/shuijiao.jpg"></image>
+                            </div>
+                        </list-item>
+                        <list-item type="media" class="list-item list-item-bottom-line list-card-bottom-radius">
+                            <div class="media-list">
+                                <div class="media-body">
+                                    <text class="media-title">远眺</text>
+                                    <text class="media-content" style="width: 570px;">静静的看这个世界，最后终于疯了.</text>
+                                </div>
+                                <image src="/Common/img/yuantiao.jpg"></image>
+                            </div>
+                        </list-item>
+                    </list>
+                </div>
+                <div class="tab-group-content">
+                    <div class="mine-list">
+                        <div onclick="showDetail('Templates/Setting')" class="mine-item-list line">
+                            <text>Item1</text>
+                            <image src="/Common/img/arrow_right.png"></image>
+                        </div>
+                        <div onclick="showDetail('Templates/About')" class="mine-item-list">
+                            <text>Item2</text>
+                            <image src="/Common/img/arrow_right.png"></image>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-group-content">
+                    <div class="mine-list">
+                        <div onclick="showDetail('Templates/Setting')" class="mine-item-list line">
+                            <text>设置</text>
+                            <image src="/Common/img/arrow_right.png"></image>
+                        </div>
+                        <div onclick="showDetail('Templates/About')" class="mine-item-list">
+                            <text>关于</text>
+                            <image src="/Common/img/arrow_right.png"></image>
+                        </div>
+                    </div>
+                    <div class="mine-login" onclick="showDetail('Templates/Login')">
+                        <text>登录</text>
+                    </div>
+                </div>
+            </tab-content>
+            <tab-bar class="tab-bar">
+                <div class="footer-item" for="lists" tid="id">
+                    <image src="{{$item}}"></image>
+                </div>
+            </tab-bar>
+        </tabs>
+    </div>
+</template>
+<style>
+    @import '../../Common/css/common.nss';
+    .tab-bar {
+        height: 100px;
+        border-top-width: 1px;
+        border-color: #bbbbbb;
+        background-color: #ffffff;
+    }
+
+    .tab-content {
+        background-color: #F1EBEB;
+    }
+
+    .tab-group-content {
+        flex-direction: column;
+    }
+
+    .list {
+        margin-top: 20px;
+    }
+
+    .list-card {
+        width: 710px;
+        margin-left: 20px;
+    }
+
+    .list-title {
+        padding: 20px;
+    }
+
+    .list-card-top-radius {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .list-card-bottom-radius {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .list-item {
+        background-color: #FFFFFF;
+    }
+
+    .list-item-top-line {
+        border-top-width: 1px;
+        border-top-color: #c8c7cc;
+    }
+
+    .list-item-bottom-line {
+        border-bottom-width: 1px;
+        border-bottom-color: #c8c7cc;
+    }
+
+    .middleline {
+        border-bottom-width: 1px;
+        border-bottom-color: #c8c7cc;
+    }
+
+    .media-list {
+        margin-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        width: 730px;
+    }
+
+    .media-body {
+        flex-direction: column;
+    }
+
+    .media-list image {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    }
+
+    .media-title {
+        width: 600px;
+        color: #000000;
+        font-size: 32px;
+    }
+
+    .media-content {
+        width: 600px;
+        color: #BBBBBB;
+        font-size: 25px;
+        lines: 1;
+        text-overflow: ellipsis;
+        margin-top: 5px;
+    }
+
+    .mine-list {
+        width: 750px;
+        height: 180px;
+        background-color: #ffffff;
+        margin-top: 25px;
+        border-color: #C8C8CB;
+        border-bottom-width: 1px;
+        border-top-width: 1px;
+        flex-direction: column;
+    }
+
+    .mine-item-list {
+        width: 730px;
+        height: 90px;
+        margin-left: 20px;
+        flex-direction: row;
+    }
+
+    .mine-item-list text {
+        width: 200px;
+        height: 90px;
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    .mine-item-list image {
+        width: 20px;
+        height: 20px;
+        margin-left: 479px;
+        margin-top: 35px;
+    }
+
+    .mine-login {
+        width: 750px;
+        height: 90px;
+        background-color: #ffffff;
+        border-color: #C8C8CB;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .line {
+        border-bottom-width: 1px;
+        border-bottom-color: #C8C8CB;
+    }
+
+    .footer-item {
+        width: 250px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-item image {
+        width: 130px;
+    }
+</style>
+<script>
+    module.exports = {
+        data: {
+            active: 0,
+            lists: ['/Common/img/ag1-.png', '/Common/img/ag2.png', '/Common/img/ag3.png', '/Common/img/ag4.png']
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: '底部选项卡'
+            })
+        },
+        changeTabbarDrag: function (e) {
+            var index = e.index;
+            if (index == this.active) {
+                return;
+            }
+            if (index == 0) {
+                this.lists = ['/Common/img/ag1-.png', '/Common/img/ag2.png', '/Common/img/ag3.png',
+                    '/Common/img/ag4.png'
+                ];
+            } else if (index == 1) {
+                this.lists = ['/Common/img/ag1.png', '/Common/img/ag2-.png', '/Common/img/ag3.png',
+                    '/Common/img/ag4.png'
+                ];
+            } else if (index == 2) {
+                this.lists = ['/Common/img/ag1.png', '/Common/img/ag2.png', '/Common/img/ag3-.png',
+                    '/Common/img/ag4.png'
+                ];
+            } else if (index == 3) {
+                this.lists = ['/Common/img/ag1.png', '/Common/img/ag2.png', '/Common/img/ag3.png',
+                    '/Common/img/ag4-.png'
+                ];
+            }
+            this.active = index;
+        }
+    }
+</script>

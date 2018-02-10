@@ -1,0 +1,122 @@
+<template>
+    <div class="container">
+        <div class="item-list-group">
+            <text class="list-title">100条数据，测试滑动流畅度</text>
+            <list class="list">
+                <list-item type="media" for="list" class="list-item list-item-top-line">
+                    <div class="media-list middleline">
+                        <image src="/Common/img/shuijiao.jpg"></image>
+                        <div class="media-body">
+                            <text class="media-title">{{$item.name}}</text>
+                            <text class="media-content">{{$item.content}}</text>
+                        </div>
+                    </div>
+                </list-item>
+            </list>
+        </div>
+        
+    </div>
+</template>
+<style>
+    .container {
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .list-card {
+        width: 710px;
+        margin-left: 20px;
+    }
+
+    .item-list-group {
+        width: 750px;
+        flex-direction: column;
+    }
+
+    .list-title {
+		text-align: center;
+        padding: 20px;
+    }
+
+    .list-card-top-radius {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .list-card-bottom-radius {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .list-item {
+        background-color: #FFFFFF;
+    }
+
+    .list-item-top-line {
+        border-top-width: 1px;
+        border-top-color: #c8c7cc;
+    }
+
+    .list-item-bottom-line {
+        border-bottom-width: 1px;
+        border-bottom-color: #c8c7cc;
+    }
+
+    .middleline {
+        border-bottom-width: 1px;
+        border-bottom-color: #c8c7cc;
+    }
+
+    .media-list {
+        margin-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        width: 730px;
+    }
+
+    .media-body {
+        flex-direction: column;
+    }
+
+    .media-list image {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    }
+
+    .media-title {
+        width: 600px;
+        color: #000000;
+        font-size: 32px;
+    }
+
+    .media-content {
+        width: 600px;
+        color: #BBBBBB;
+        font-size: 25px;
+        lines: 1;
+        text-overflow: ellipsis;
+        margin-top: 5px;
+    }
+</style>
+<script>
+    module.exports = {
+		data:{
+			list:[]
+		},
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: '图文列表'
+            })
+			var arr = [];
+			for (var i = 1; i < 101; i++) {
+				arr.push({
+					name:'木屋' + i,
+					content:'想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.'
+				})
+			}
+			this.list = arr;
+        }
+    }
+</script>

@@ -1,0 +1,55 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>network</text>
+        </div>
+        <div class="item-content">
+            <div class="item-group">
+                <text class="item-group-text">网络类型：{{type}}</text>
+                <input type="button" name="gettype" class="item-group-button" value="获取网络类型" onclick="getType" />
+            </div>
+            <div class="item-group">
+                <text class="item-group-text">监听网络连接类型：{{sub_type}}</text>
+                <input type="button" name="subscribe" class="item-group-button" value="监听网络" onclick="subscribe" />
+                <input type="button" name="unsubscribe" class="item-group-button" value="取消监听网络" onclick="unsubscribe" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            type: '',
+            sub_type: ''
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Network'
+            })
+        },
+        getType: function () {
+            var that = this;
+            uni.network.getType({
+                success: function (data) {
+                    that.type = data.type;
+                }
+            })
+        },
+        subscribe: function () {
+            var that = this;
+            uni.network.subscribe({
+                callback: function (data) {
+                    that.sub_type = data.type;
+                }
+            })
+        },
+        unsubscribe: function () {
+            uni.network.unsubscribe();
+        }
+    }
+</script>

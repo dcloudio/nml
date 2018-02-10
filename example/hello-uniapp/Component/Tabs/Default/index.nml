@@ -1,0 +1,91 @@
+<template>
+    <div class="container">
+        <!--<div class="item-title">
+            <text>tabs</text>
+        </div>-->
+        <tabs>
+            <tab-bar class="tab-bar">
+                <text for="titles" tid="id" class="item-tabbar-text">{{$item}}</text>
+            </tab-bar>
+            <tab-content class="tab-content">
+                <div class="tab-group-content">
+                    <list class="item-list">
+                        <list-item type="item" for="list1" class="item-list-item">
+                            <text class="item-list-item-text">{{$item}}</text>
+                        </list-item>
+                    </list>
+                </div>
+                <div class="tab-group-content">
+                    <list class="item-list">
+                        <list-item type="item" for="list2" class="item-list-item">
+                            <text class="item-list-item-text">{{$item}}</text>
+                        </list-item>
+                    </list>
+                </div>
+                <div class="tab-group-content">
+                    <list class="item-list">
+                        <list-item type="item" for="list3" class="item-list-item">
+                            <text class="item-list-item-text">{{$item}}</text>
+                        </list-item>
+                    </list>
+                </div>
+            </tab-content>
+        </tabs>
+    </div>
+</template>
+
+<style>
+    @import '../../../Common/css/common.nss';
+    .tab-bar {
+        height: 100px;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-color: #0FAEFF;
+    }
+
+    .tab-content {
+        flex: 1;
+        background-color: #ffffff;
+    }
+
+    .tab-group-content {
+        margin-top: 30px;
+    }
+
+    .item-list-item {
+        padding: 30px;
+        border-bottom-width: 1px;
+        border-color: #BBBBBB;
+    }
+
+    .item-list-item-text {
+        font-size: 32px;
+        color: #908C8C;
+    }
+
+    .item-tabbar-text {
+        text-align: center;
+        color: #0FAEFF;
+    }
+
+    .item-tabbar-text:active {
+        background-color: #0FAEFF;
+        color: #ffffff;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            titles: ['item1', 'item3', 'item3'],
+            list1: ['第一个选项卡子项-1', '第一个选项卡子项-2', '第一个选项卡子项-3'],
+            list2: ['第二个选项卡子项-1', '第二个选项卡子项-2', '第二个选项卡子项-3'],
+            list3: ['第三个选项卡子项-1', '第三个选项卡子项-2', '第三个选项卡子项-3']
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: '顶部选项卡'
+            })
+        }
+    }
+</script>

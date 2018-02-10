@@ -1,0 +1,178 @@
+<template>
+    <div class="container">
+        <swiper>
+            <div class="item-grid">
+                <div class="item ">
+                    <image src="/Common/img/c1.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item">
+                    <image src="/Common/img/c2.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c3.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c4.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item">
+                    <image src="/Common/img/c5.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c6.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c7.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c8.png"></image>
+                    <text>grid</text>
+                </div>
+            </div>
+            <div class="item-grid">
+                <div class="item ">
+                    <image src="/Common/img/c1.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item">
+                    <image src="/Common/img/c2.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c3.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c4.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item">
+                    <image src="/Common/img/c5.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c6.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c7.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c8.png"></image>
+                    <text>grid</text>
+                </div>
+            </div>
+            <div class="item-grid">
+                <div class="item ">
+                    <image src="/Common/img/c1.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item">
+                    <image src="/Common/img/c2.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c3.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c4.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item">
+                    <image src="/Common/img/c5.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c6.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c7.png"></image>
+                    <text>grid</text>
+                </div>
+                <div class="item ">
+                    <image src="/Common/img/c8.png"></image>
+                    <text>grid</text>
+                </div>
+            </div>
+        </swiper>
+    </div>
+</template>
+<style>
+    .container {
+        flex: 1;
+    }
+
+    swiper {
+        width: 750px;
+        height: 375px;
+        background-color: #FBF9FE;
+    }
+
+    .item-grid {
+        width: 750px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        width: 187.5px;
+        height: 187.5px;
+        flex-direction: column;
+        align-items: center;
+        border-color: #DDDDDD;
+    }
+
+    .item-border-nobottom {
+        border-width: 1px;
+        border-bottom-width: 0px;
+    }
+
+    .item-border {
+        border-width: 1px;
+    }
+
+    .item-border-top-bottom {
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+    }
+
+    .item-border-bottom {
+        border-bottom-width: 1px;
+    }
+
+    .item image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .item text {
+        width: 187.5px;
+        height: 50px;
+        text-align: center;
+        font-size: 23px;
+    }
+</style>
+<script>
+    
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: '可左右拖动的9宫导航'
+            })
+        },
+        onMenuPress: function () {
+            uni.router.push({
+                uri: 'Examples/About'
+            })
+        }
+    }
+</script>

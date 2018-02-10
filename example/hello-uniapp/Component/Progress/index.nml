@@ -1,0 +1,69 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>progress</text>
+        </div>
+        <div class="item-content">
+            <div class="item-progerss-group">
+                <text>type: horizontal</text>
+                <progress class="progerss-default" percent="20" style="color: #929292;"></progress>
+                <progress class="progerss-default" percent="40"></progress>
+                <progress class="progerss-default" percent="60"></progress>
+                <progress class="progerss-default" percent="80" style="color: #1AAD19;"></progress>
+            </div>
+            <div class="item-progerss-group">
+                <text>type: circular</text>
+                <progress class="progerss-circular progerss-s" type="circular"></progress>
+                <progress class="progerss-circular progerss-m" type="circular"></progress>
+                <progress class="progerss-circular progerss-l" type="circular"></progress>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .item-progerss-group {
+        flex-direction: column;
+    }
+
+    .item-progerss-group text {
+        padding: 10px 0px;
+    }
+
+    .progerss-default {
+        padding: 20px;
+        stroke-width: 10px;
+        margin: 20px 0px;
+    }
+
+    .progerss-circular {
+        margin: 20px 0px;
+        color: #33CCFF;
+    }
+
+    .progerss-s {
+        width: 50px;
+        height: 50px;
+    }
+
+    .progerss-m {
+        width: 70px;
+        height: 70px;
+    }
+
+    .progerss-l {
+        width: 90px;
+        height: 90px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Progress'
+            })
+        }
+    }
+</script>

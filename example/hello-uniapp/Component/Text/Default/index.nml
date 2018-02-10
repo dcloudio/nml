@@ -1,0 +1,71 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text>text</text>
+        </div>
+        <div class="item-content">
+            <text>子节点为文本</text>
+            <text class="item-group item-text1">
+                text组件，子组件仅支持span和a
+            </text>
+
+            <text>子节点为span</text>
+            <text class="item-group">
+                <span class="item-text2">变大且带下划线的span,</span>
+                <span class="item-text3">带中划线的span</span>
+            </text>
+
+            <text>子组件为a</text>
+            <text class="item-group">
+                <a href="http://www.dcloud.io/" class="item-text4">变大且带下划线的a,</a>
+                <a href="http://www.dcloud.io/" class="item-text5">带中划线的a</a>
+            </text>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../../Common/css/common.nss';
+    .item-group {
+        padding: 0px 20px;
+        height: 80px;
+        margin-bottom: 30px;
+    }
+
+    .item-text1 {
+        color: #F0AD4E;
+        text-decoration: underline;
+    }
+
+    .item-text2 {
+        color: #007AFF;
+        text-decoration: underline;
+        font-size: 35px;
+    }
+
+    .item-text3 {
+        color: #007AFF;
+        text-decoration: line-through;
+    }
+
+    .item-text4 {
+        color: #4CD964;
+        text-decoration: underline;
+        font-size: 35px;
+    }
+
+    .item-text5 {
+        color: #4CD964;
+        text-decoration: line-through;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Text'
+            })
+        }
+    }
+</script>

@@ -1,0 +1,108 @@
+<template>
+    <div class="container">
+        <text class="item-title">有底色</text>
+        <div class="badge-content">
+            <text class="badge">1</text>
+            <text class="badge badge-primary">12</text>
+            <text class="badge badge-success">123</text>
+            <text class="badge badge-warning">3</text>
+            <text class="badge badge-danger">45</text>
+            <text class="badge badge-purple">456</text>
+        </div>
+        <text class="item-title">无底色</text>
+        <div class="badge-content">
+            <text class="badge badge-inverted">1</text>
+            <text class="badge badge-primary-inverted badge-inverted">2</text>
+            <text class="badge badge-success-inverted badge-inverted">3</text>
+            <text class="badge badge-warning-inverted badge-inverted">4</text>
+            <text class="badge badge-danger-inverted badge-inverted">5</text>
+            <text class="badge badge-purple-inverted badge-inverted">6</text>
+        </div>
+    </div>
+</template>
+<style>
+    @import '../../Common/css/common.nss';
+    .badge-content {
+        flex-direction: row;
+    }
+
+    .badge-content text {
+        margin-left: 30px;
+    }
+
+    .item-title {
+        padding: 10px 20px;
+        font-size: 30px;
+        margin-top: 50px;
+    }
+
+    .badge {
+        font-size: 22px;
+        padding: 3px 6px;
+        border-radius: 100px;
+        background-color: rgba(0, 0, 0, .15);
+        color: #333333;
+    }
+
+    .badge {
+        color: #929292;
+    }
+
+    .badge-primary {
+        color: #ffffff;
+        background-color: #007aff;
+    }
+
+    .badge-success {
+        color: #ffffff;
+        background-color: #4cd964;
+    }
+
+    .badge-warning {
+        color: #ffffff;
+        background-color: #f0ad4e;
+    }
+
+    .badge-danger {
+        color: #ffffff;
+        background-color: #dd524d;
+    }
+
+    .badge-purple {
+        color: #ffffff;
+        background-color: #8a6de9;
+    }
+
+    .badge-inverted {
+        background-color: transparent;
+    }
+
+    .badge-primary-inverted {
+        color: #007aff;
+    }
+
+    .badge-success-inverted {
+        color: #4cd964;
+    }
+
+    .badge-warning-inverted {
+        color: #f0ad4e;
+    }
+
+    .badge-danger-inverted {
+        color: #dd524d;
+    }
+
+    .badge-purple-inverted {
+        color: #8a6de9;
+    }
+</style>
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: '数字角标'
+            })
+        }
+    }
+</script>
