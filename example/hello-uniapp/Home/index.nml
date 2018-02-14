@@ -5,7 +5,7 @@
                 <div class="item-group">
                     <div class="item-desc">
                         <text class="item-desc-detail">
-                            以下将展示快应用组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见快应用开发文档
+                            以下将展示uniapp组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见uniapp开发文档
                         </text>
                     </div>
                     <div class="item-content">
@@ -174,7 +174,7 @@
                 <div class="item-group">
                     <div class="item-desc">
                         <text class="item-desc-detail">
-                            以下将展示快应用接口能力，具体属性参数详见快应用开发文档
+                            以下将展示uniapp接口能力，具体属性参数详见uniapp开发文档
                         </text>
                     </div>
                     <div class="item-content">
@@ -571,7 +571,7 @@
             }
         },
         changeActive: function (e) {
-            var title = e.index == 0 ? '快应用组件展示' : (e.index == 1 ? '快应用接口能力展示' : '快应用模板展示');
+            var title = e.index == 0 ? 'uniapp组件展示' : (e.index == 1 ? 'uniapp接口能力展示' : 'uniapp模板展示');
             this.$page.setTitleBar({
                 text: title
             });

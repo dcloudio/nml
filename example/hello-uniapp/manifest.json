@@ -1,6 +1,6 @@
 {
-    "package": "com.fastapp.demo.sample",
-    "name": "快应用示例",
+    "package": "com.uniapp.demo.sample",
+    "name": "uniapp示例",
     "versionName": "1.0.0",
     "versionCode": 100,
     "icon": "/Common/logo.png",
@@ -221,7 +221,7 @@
         "titleBarTextColor": "#ffffff",
         "pages": {
             "Home": {
-                "titleBarText": "快应用组件展示"
+                "titleBarText": "uniapp组件展示"
             }
         }
     }
