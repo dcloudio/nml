@@ -260,7 +260,6 @@ src 属性指定组件 nml 文件位置，可以省略 .nml 后缀。
 |#id|#firstname|选择拥有 id="firstname" 的组件。|
 |tag|div|选择所有 div 组件。|
 |,|.a, .b|选择所有class=".a" 以及class=".b"的组件。|
-|#id .class tag|.page .body text|支持id，class，tag的后代选择器，也可以使用">"表示直接后代。|
 
 ```html
 <style>
@@ -272,19 +271,8 @@ text {
 #idAbc {
 }
 
-// 后代选择
-.doc-page #testTag div text {
-}
-.doc-page #test-class .class1 {
-}
-.doc-page #testId #testIdId1 {
-}
-// 直接后代选择
-.doc-page #testTag .flex-column > text {
-}
-
 // 同一样式适应多个选择器
-.font-text, .font-comma {
+.font-text,.font-comma {
 }
 </style>
 ```
@@ -299,15 +287,15 @@ text {
 </template>
 
 <style>
-  .doc-body .row-desc1 {
+  .row-desc1 {
     color: #ff0000;
   }
   
-  .doc-body .row-desc2 {
+  .row-desc2 {
     color: #0000ff;
   }
   
-  .doc-body2 .row-desc1 {
+  .row-desc1 {
     color: #00ff00;
   }
 </style>
@@ -330,15 +318,7 @@ text {
 
 当前样式的选择器的优先级计算保持与浏览器一致，是浏览器 CSS 渲染的一个子集（仅支持：inline，id，class，tag，后代，直接后代）
 
-选择器优先级规则如下（假设多条 CSS 声明匹配到同一个元素 div），应用在该元素上的 CSS 声明总体优先级是：``inline > #id > .class > tag``，这四大类匹配到该元素的多个 CSS 声明，如：``#page .class-div`` 和 ``.page .class-div``，其优先级按照各选择器的分数高低之和来比较。
-
-ID 选择器的权值为10000 ，Class 类选择器的权值为100 ，Tag 标签选择器的权值为1，那么以下CSS声明计算分数为
-- ``#page``的分数为：10000
-- ``#page .class-div``的分数为：10100
-- ``#page .class-div text``的分数为10101
-- ``#page #body .container div text``的分数为：20102
-
-因此 ``#page .class-div`` 和 ``.page .class-div`` 比较，分数不一致，分数高优先级高；如果分数相同，则按照声明顺序，后者覆盖前者。
+选择器优先级规则如下（假设多条 CSS 声明匹配到同一个元素 div），应用在该元素上的 CSS 声明总体优先级是：``inline > #id > .class > tag``，这四大类匹配到该元素的多个 CSS 声明。
 
 **样式预编译**
 
@@ -353,7 +333,7 @@ ID 选择器的权值为10000 ，Class 类选择器的权值为100 ，Tag 标签
 
 .page-less {
 #testTag {
-.less-font-text, .less-font-comma {
+.less-font-text,.less-font-comma {
 font-size: 60px;
 }
 }
@@ -437,7 +417,7 @@ import utils from '../Common/utils.njs'
 |action|String|获取打开当前页面的action。仅在当前页面是通过filter匹配的方式打开时有效，否则为undefined。参见"manifest文件"。|
 |uri|String|获取打开当前页面的uri。仅在当前页面是通过filter匹配的方式打开时有效，否则为undefined。参见"manifest文件"。|
 
-#### 方法 {#方法-1}
+#### 方法
 
 **数据方法**
 
