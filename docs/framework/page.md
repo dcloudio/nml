@@ -7,7 +7,7 @@
 **数据绑定**
 ```html
 <template>
-  <text>{{message}}</text>
+  <text>{\{message}}</text>
 </template>
 
 <script>
@@ -48,9 +48,9 @@
 ```html
 <template>
   <div class="list-container">
-    <text for="{{list}}" tid="id">
-      <text>{{$idx}}<text>
-      <text>{{$item.id}}<text>
+    <text for="{\{list}}" tid="id">
+      <text>{\{$idx}}<text>
+      <text>{\{$item.id}}<text>
     </text>
   </div>
 </template>
@@ -89,8 +89,8 @@ for 循环支持的写法（其中花括号可以省略）：
 ```html
 <template>
   <div>
-    <text if="{{show}}"> Hello-1 </text>
-    <text elif="{{display}}"> Hello-2 </text>
+    <text if="{\{show}}"> Hello-1 </text>
+    <text elif="{\{display}}"> Hello-2 </text>
     <text else> Hello-3 </text>
   </div>
 </template>
@@ -107,7 +107,7 @@ for 循环支持的写法（其中花括号可以省略）：
 show 等同于 ``display=none``，目前只用于系统原生组件，对自定义组件不生效。自定义组件可以通过 props 传入参数，在自己内部使用 show 来控制是否可见。
 ```html
 <template>
-  <text show="{{visible}}"> Hello </text>
+  <text show="{\{visible}}"> Hello </text>
 </template>
 
 <script>
@@ -127,11 +127,11 @@ show 等同于 ``display=none``，目前只用于系统原生组件，对自定�
   <list>
     <block for="cities">
       <list-item type="city">
-        <text>{{$item.name}}</text>
+        <text>{\{$item.name}}</text>
       </list-item>
       <block for="$item.spots" if="false">
         <list-item type="spot">
-          <text>{{$item.address}}</text>
+          <text>{\{$item.address}}</text>
         </list-item>
       </block>
     </block>
@@ -235,7 +235,7 @@ src 属性指定组件 nml 文件位置，可以省略 .nml 后缀。
 <!-- 合并外部文件 -->
 <style>
 @import './style.css';
-.a{
+a{
 }
 </style>
 ```
@@ -281,8 +281,8 @@ text {
 
 ```html
 <template>
-  <div class="{{docBody}}">
-    <text class="{{rowDesc}}" value="描述内容"></text>
+  <div class="{\{docBody}}">
+    <text class="{\{rowDesc}}" value="描述内容"></text>
   </div>
 </template>
 
@@ -332,11 +332,12 @@ text {
 @import './lessFile.less';
 
 .page-less {
-#testTag {
-.less-font-text,.less-font-comma {
-font-size: 60px;
-}
-}
+  #testTag {
+    .less-font-text,
+    .less-font-comma {
+      font-size: 60px;
+    }
+  }
 }
 </style>
 ```
@@ -349,17 +350,17 @@ font-size: 60px;
 伪类写法举例：
 ```html
 <template>
-<input type="button" class="btn"
-disabled="{{btndisabled}}">Click</input>
+  <input type="button" class="btn" disabled="{\{btndisabled}}">Click</input>
 </template>
 <style>
-btn {
-width: 360px;
-height: 180px;
-background-color: red;
+.btn {
+  width: 360px;
+  height: 180px;
+  background-color: red;
 }
-btn:disabled {
-background-color: green;
+
+.btn:disabled {
+  background-color: green;
 }
 </style>
 ```

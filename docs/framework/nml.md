@@ -3,7 +3,7 @@ APP，页面和自定义组件均通过 nml 文件编写，nml 文件由 templat
 ```html
 <template>
   <div class="container" onclick="press">
-    <text class="{{title}}" style="font-size:14px;">Hello {{title}}</text>
+    <text class="{\{title}}" style="font-size:14px;">Hello {\{title}}</text>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ APP，页面和自定义组件均通过 nml 文件编写，nml 文件由 templat
 </script>
 ```
 
-### 1.3.1 app.njs
+### app.njs
 
 当前 app.njs 编译后会包含 manifest 配置信息（可以在npm run build之后查看文件内容），所以请不要删除``/**manifest**/``的注释内容标识。
 

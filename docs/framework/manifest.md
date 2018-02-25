@@ -10,10 +10,10 @@ manifest.json 文件中包含了应用描述、接口声明、页面路由信息
 |versionCode|Integer|-|是|应用版本号，从1自增，推荐每次重新上传包时 versionCode+1。|
 |minPlatformVersion|Integer|1000|否|支持的最小平台版本号，原理同 Android API Level，兼容性检查，避免上线后在低版本平台运行并导致不兼容。|
 |features|Array|-|否|接口列表，绝大部分接口都需要在这里声明，否则不能调用，详见每个接口的文档说明。|
-|config|Object|-|是|系统配置信息，详见"1.2.1 config"。|
-|router|Object|-|是|路由信息，详见"1.2.2 router"。|
-|display|Object|-|否|UI显示相关配置，详见"1.2.3 display"。|
-### 1.2.1 config
+|config|Object|-|是|系统配置信息，详见"config"。|
+|router|Object|-|是|路由信息，详见"router"。|
+|display|Object|-|否|UI显示相关配置，详见"display"。|
+### config
 用于定义系统配置和全局数据。
 
 |属性|类型|默认值|描述|
@@ -21,7 +21,7 @@ manifest.json 文件中包含了应用描述、接口声明、页面路由信息
 |logLevel|String|log|打印日志等级，分为 off、error、warn、info、log、debug。|
 |designWidth|Integer|750|页面设计基准宽度，根据实际设备宽度来缩放元素大小。|
 |data|Object|-|全局数据对象，属性名不能以$或_开头，在页面中可通过 this 进行访问；如果全局数据属性与页面中 data 属性重名，则页面初始化时，全局数据会覆盖页面中对应的属性值。|
-### 1.2.2 router
+### router
 
 用于定义页面的组成和相关配置信息，如果页面没有配置路由信息，则在编译打包时跳过。
 |属性|类型|默认值|描述|
@@ -63,7 +63,7 @@ manifest.json 文件中包含了应用描述、接口声明、页面路由信息
 }
 ```
 
-### 1.2.3 display
+### display
 
 用于定义与 UI 显示相关的配置。
 
