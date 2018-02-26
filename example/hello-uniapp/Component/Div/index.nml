@@ -1,22 +1,22 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>div</text>
+            <text class="item-title-text">div</text>
         </div>
         <div class="item-content">
             <text>flex-direction: row</text>
             <text>横向布局</text>
             <div class="item-row">
-                <text class="color1"></text>
-                <text class="color2"></text>
-                <text class="color3"></text>
+                <text class="item-row-text color1"></text>
+                <text class="item-row-text color2"></text>
+                <text class="item-row-text color3"></text>
             </div>
             <text>flex-direction: column</text>
             <text>纵向布局</text>
             <div class="item-column">
-                <text class="color3"></text>
-                <text class="color2"></text>
-                <text class="color1"></text>
+                <text class="item-column-text color3"></text>
+                <text class="item-column-text color2"></text>
+                <text class="item-column-text color1"></text>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
         justify-content: center;
     }
 
-    .item-row text {
+    .item-row-text {
         width: 150px;
         height: 250px;
     }
@@ -41,7 +41,7 @@
         align-items: center;
     }
 
-    .item-column text {
+    .item-column-text {
         width: 250px;
         height: 130px;
     }

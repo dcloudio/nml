@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>text</text>
+            <text class="item-title-text">text</text>
         </div>
         <div class="item-content">
             <text>子节点为文本</text>

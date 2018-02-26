@@ -1,35 +1,35 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>image</text>
+            <text class="item-title-text">image</text>
         </div>
         <div class="item-content">
             <div class="item-image-group">
-                <text>本地图片</text>
+                <text class="item-image-text">本地图片</text>
                 <image src="Common/img/mi_logo.png"></image>
             </div>
             <div class="item-image-group">
-                <text>网络图片</text>
+                <text class="item-image-text">网络图片</text>
                 <image src="//img-cdn-qiniu.dcloud.net.cn/icon3.png" style="width: 150px;"></image>
             </div>
             <div class="item-image-group">
-                <text>resize-mode:cover</text>
+                <text class="item-image-text">resize-mode:cover</text>
                 <image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: cover;"></image>
             </div>
             <div class="item-image-group">
-                <text>resize-mode:contain </text>
+                <text class="item-image-text">resize-mode:contain </text>
                 <image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: contain;"></image>
             </div>
             <div class="item-image-group">
-                <text>resize-mode:stretch</text>
+                <text class="item-image-text">resize-mode:stretch</text>
                 <image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: stretch;"></image>
             </div>
             <div class="item-image-group">
-                <text>resize-mode:center</text>
+                <text class="item-image-text">resize-mode:center</text>
                 <image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: center;"></image>
             </div>
             <div class="item-image-group">
-                <text>圆形图</text>
+                <text class="item-image-text">圆形图</text>
                 <image src="Common/img/mi_logo.png" class="item-content-image-circle"></image>
             </div>
         </div>
@@ -44,7 +44,7 @@
         align-items: center;
     }
 
-    .item-image-group text {
+    .item-image-text {
         padding-bottom: 10px;
     }
 

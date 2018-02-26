@@ -1,18 +1,18 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>a</text>
+            <text class="item-title-text">a</text>
         </div>
         <div class="item-content">
-            <a href="http://www.dcloud.io/streamapp.html">Dcloud官方网页</a>
-            <a href="/Component/A/Detail?id=123456">页面间传参数</a>
+            <a class="item-content-a" href="http://www.dcloud.io/streamapp.html">Dcloud官方网页</a>
+            <a class="item-content-a" href="/Component/A/Detail?id=123456">页面间传参数</a>
         </div>
     </div>
 </template>
 
 <style>
     @import '../../Common/css/common.nss';
-    .item-content a {
+    .item-content-a {
         margin: 50px;
         height: 100px;
         flex: 1;

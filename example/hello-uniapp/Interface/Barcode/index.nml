@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>barcode</text>
+            <text class="item-title-text">barcode</text>
         </div>
         <div class="item-content">
             <input type="button" class="item-group-button" name="barcode" value="扫描二维码" onclick="startBarcode" />

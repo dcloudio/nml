@@ -1,23 +1,23 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>label</text>
+            <text class="item-title-text">label</text>
         </div>
         <div class="item-content">
             <div class="item-input-group">
-                <label target="username">text：</label>
+                <label target="username" class="input-label">text：</label>
                 <input type="text" name="username" id="username" placeholder="请输入..." />
             </div>
             <div class="item-input-group">
-                <label target="radio">radio：</label>
+                <label target="radio" class="input-label">radio：</label>
                 <input type="radio" id="radio" />
             </div>
             <div class="item-input-group">
-                <label target="textarea" id="checkbox">checkbox：</label>
+                <label target="textarea" id="checkbox" class="input-label">checkbox：</label>
                 <input class="flex-1" type="checkbox" id="checkbox">
             </div>
             <div class="item-input-group">
-                <label target="textarea">textarea：</label>
+                <label target="textarea" class="input-label">textarea：</label>
                 <textarea placeholder="请输入..." id="textarea" class="textarea"></textarea>
             </div>
         </div>
@@ -36,7 +36,7 @@
         height: 90px;
     }
 
-    .item-input-group label {
+    .input-label {
         width: 200px;
         color: #888888;
     }

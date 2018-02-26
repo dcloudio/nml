@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>webview</text>
+            <text class="item-title-text">webview</text>
         </div>
         <div class="item-content">
             <input type="button" name="webview" class="item-group-button" value="打开DCloud官网" onclick="openWebview" />

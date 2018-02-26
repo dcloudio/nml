@@ -9,19 +9,19 @@
                 <stack class="item-stack">
                     <swiper class="swiper" autoplay="{{autoPlay}}" onchange="getCurrentIndex" interval="{{sliderValue}}" indicator="false">
                         <stack class="swiper-item">
-                            <image src="/Common/img/cbd.jpg"></image>
+                            <image src="/Common/img/cbd.jpg" class="swiper-image"></image>
                             <text class="swiper-item-content">Color of SIP CBD</text>
                         </stack>
                         <stack class="swiper-item">
-                            <image src="/Common/img/muwu.jpg"></image>
+                            <image src="/Common/img/muwu.jpg" class="swiper-image"></image>
                             <text class="swiper-item-content">想要一间这样的木屋，静静的喝咖啡</text>
                         </stack>
                         <stack class="swiper-item">
-                            <image src="/Common/img/shuijiao.jpg"></image>
+                            <image src="/Common/img/shuijiao.jpg" class="swiper-image"></image>
                             <text class="swiper-item-content">幸福就是可以一起睡觉</text>
                         </stack>
                         <stack class="swiper-item">
-                            <image src="/Common/img/yuantiao.jpg"></image>
+                            <image src="/Common/img/yuantiao.jpg" class="swiper-image"></image>
                             <text class="swiper-item-content">静静看这世界</text>
                         </stack>
                     </swiper>
@@ -79,7 +79,7 @@
         height: 500px;
     }
 
-    .swiper-item image {
+    .swiper-image {
         width: 750px;
         height: 500px;
     }

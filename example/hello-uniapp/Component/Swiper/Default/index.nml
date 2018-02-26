@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>swiper</text>
+            <text class="item-title-text">swiper</text>
         </div>
         <div class="item-content">
             <swiper class="swiper" autoplay="{{autoPlay}}" interval="{{sliderValue}}" indicator="{{indicator}}">

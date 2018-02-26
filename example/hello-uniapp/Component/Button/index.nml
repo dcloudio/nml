@@ -1,30 +1,30 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>button</text>
+            <text class="item-title-text">button</text>
         </div>
         <div class="item-content">
             <div class="item-btn-group">
                 <text class="btn-text">有底色按钮：</text>
                 <div class="btn-content">
-                    <input type="button" value="默认" class="btn-default" />
-                    <input type="button" value="蓝色" class="btn-primary" />
-                    <input type="button" value="绿色" class="btn-success" />
-                    <input type="button" value="黄色" class="btn-warning" />
-                    <input type="button" value="红色" class="btn-danger" />
-                    <input type="button" value="紫色" class="btn-royal" />
+                    <input type="button" value="默认" class="btn btn-default" />
+                    <input type="button" value="蓝色" class="btn btn-primary" />
+                    <input type="button" value="绿色" class="btn btn-success" />
+                    <input type="button" value="黄色" class="btn btn-warning" />
+                    <input type="button" value="红色" class="btn btn-danger" />
+                    <input type="button" value="紫色" class="btn btn-royal" />
                 </div>
             </div>
 
             <div class="item-btn-group">
                 <text class="btn-text">无底色按钮（使用父元素的背景色）：</text>
                 <div class="btn-content">
-                    <input type="button" value="默认" class="btn-default-outline" />
-                    <input type="button" value="操作" class="btn-primary-outline" />
-                    <input type="button" value="成功" class="btn-success-outline" />
-                    <input type="button" value="警告" class="btn-warning-outline" />
-                    <input type="button" value="危险" class="btn-danger-outline" />
-                    <input type="button" value="高贵" class="btn-royal-outline" />
+                    <input type="button" value="默认" class="btn btn-default-outline" />
+                    <input type="button" value="操作" class="btn btn-primary-outline" />
+                    <input type="button" value="成功" class="btn btn-success-outline" />
+                    <input type="button" value="警告" class="btn btn-warning-outline" />
+                    <input type="button" value="危险" class="btn btn-danger-outline" />
+                    <input type="button" value="高贵" class="btn btn-royal-outline" />
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
         flex-wrap: wrap;
     }
 
-    .item-btn-group input {
+    .btn {
         width: 110px;
         height: 65px;
         margin-right: 20px;

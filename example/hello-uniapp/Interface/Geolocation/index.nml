@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>geolocation</text>
+            <text class="item-title-text">geolocation</text>
         </div>
         <div class="item-content">
             <div class="item-group">

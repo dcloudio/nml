@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>richtext</text>
+            <text class="item-title-text">richtext</text>
         </div>
         <div class="item-content">
             <richtext type="html">{{type_html}}</richtext>

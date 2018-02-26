@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>prompt</text>
+            <text class="item-title-text">prompt</text>
         </div>
         <div class="item-content">
             <input type="button" class="item-group-button" name="toast" value="toast" onclick="showToast" />

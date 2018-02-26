@@ -1,16 +1,16 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>storage</text>
+            <text class="item-title-text">storage</text>
         </div>
         <div class="item-content">
             <div class="item-group">
                 <div class="input-group line">
-                    <label>key：</label>
+                    <label class="input-input-label">key：</label>
                     <input type="text" name="key" value="{{key}}" onchange="getNewKey" placeholder="key..." />
                 </div>
                 <div class="input-group" style="margin-bottom: 30px;">
-                    <label>value：</label>
+                    <label class="input-input-label">value：</label>
                     <input type="text" name="value" value="{{value}}" onchange="getNewValue" placeholder="value..." />
                 </div>
                 <input type="button" class="item-group-button" name="set" value="设置存储内容" onclick="setStorage" />
@@ -28,7 +28,7 @@
         background-color: #ffffff;
     }
 
-    .input-group label {
+    .input-input-label {
         width: 150px;
     }
 

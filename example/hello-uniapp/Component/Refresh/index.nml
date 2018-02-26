@@ -2,15 +2,15 @@
     <div class="container">
         <refresh class="refresh" onrefresh="refresh" refreshing="{{isRefreshing}}">
             <div class="item-title">
-                <text>refresh</text>
+                <text class="item-title-text">refresh</text>
             </div>
             <list onscrollbottom="scrollbottom" id="list" class="list">
                 <list-item type="refresh" for="{{lists}}" class="list-item">
-                    <text>{{$item}}</text>
+                    <text class="list-item-text">{{$item}}</text>
                     <image src="/Common/img/arrow_right.png" class="rightarrow" />
                 </list-item>
                 <list-item if="{{more}}" type="moremsg" class="moremsg">
-                    <text style="font-size: 25px;">{{moremsg}}</text>
+                    <text class="list-item-text" style="font-size: 25px;">{{moremsg}}</text>
                 </list-item>
             </list>
         </refresh>
@@ -37,7 +37,7 @@
         flex-direction: row;
     }
 
-    list-item text {
+    .list-item-text {
         padding-left: 30px;
         width: 220px;
         height: 100px;

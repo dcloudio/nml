@@ -3,17 +3,17 @@
         <div class="setting-content">
             <div class="mine-header mine-common">
                 <image class="mine-header-logo" src="/Common/img/mi_logo.png"></image>
-                <text>请登录</text>
+                <text class="mine-header-text">请登录</text>
                 <image class="mine-header-arrow" src="/Common/img/arrow_right.png"></image>
             </div>
             <div class="mine-safe mine-common">
-                <text>账号与安全</text>
-                <image src="/Common/img/arrow_right.png"></image>
+                <text class="mine-safe-text">账号与安全</text>
+                <image class="mine-safe-image" src="/Common/img/arrow_right.png"></image>
             </div>
             <list class="mine-list">
                 <list-item type="mine" for="list" class="mine-item-list line">
-                    <text>{{$item}}</text>
-                    <image src="/Common/img/arrow_right.png"></image>
+                    <text class="mine-item-list-text">{{$item}}</text>
+                    <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                 </list-item>
             </list>
         </div>
@@ -21,10 +21,6 @@
 </template>
 <style>
     @import '../../Common/css/common.nss';
-    .doc-page {
-        background-color: #EFEFF4;
-    }
-
     .setting-content {
         flex-direction: column;
     }
@@ -39,7 +35,7 @@
         width: 90px;
     }
 
-    .mine-header text {
+    .mine-header-text {
         padding-left: 20px;
     }
 
@@ -86,26 +82,26 @@
         flex-direction: row;
     }
 
-    .mine-safe text,
-    .mine-item-list text {
+    .mine-safe-text,
+    .mine-item-list-text {
         width: 200px;
         height: 90px;
         text-align: left;
     }
 
-    .mine-safe image,
-    .mine-item-list image {
+    .mine-safe-image,
+    .mine-item-list-image {
         width: 20px;
         height: 20px;
         margin-left: 479px;
         margin-top: 35px;
     }
 
-    .mine-safe image {
+    .mine-safe-image {
         margin-left: 509px;
     }
 
-    .mine-safe text {
+    .mine-safe-text {
         padding-left: 30px;
     }
 </style>

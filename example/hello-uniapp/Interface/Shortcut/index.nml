@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>shortcut</text>
+            <text class="item-title-text">shortcut</text>
         </div>
         <div class="item-content">
             <input type="button" name="shortcut_hasInstalled" class="item-group-button" value="桌面图标是否创建" onclick="hasInstalledShortcut"

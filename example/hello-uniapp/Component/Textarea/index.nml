@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>textarea</text>
+            <text class="item-title-text">textarea</text>
         </div>
         <div class="item-content">
             <textarea class="textarea" placeholder="请输入..."></textarea>

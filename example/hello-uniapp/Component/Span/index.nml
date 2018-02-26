@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>span</text>
+            <text class="item-title-text">span</text>
         </div>
         <div class="item-content">
             <text>span文本</text>

@@ -1,18 +1,18 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>progress</text>
+            <text class="item-title-text">progress</text>
         </div>
         <div class="item-content">
             <div class="item-progerss-group">
-                <text>type: horizontal</text>
+                <text class="item-progerss-text">type: horizontal</text>
                 <progress class="progerss-default" percent="20" style="color: #929292;"></progress>
                 <progress class="progerss-default" percent="40"></progress>
                 <progress class="progerss-default" percent="60"></progress>
                 <progress class="progerss-default" percent="80" style="color: #1AAD19;"></progress>
             </div>
             <div class="item-progerss-group">
-                <text>type: circular</text>
+                <text class="item-progerss-text">type: circular</text>
                 <progress class="progerss-circular progerss-s" type="circular"></progress>
                 <progress class="progerss-circular progerss-m" type="circular"></progress>
                 <progress class="progerss-circular progerss-l" type="circular"></progress>
@@ -27,7 +27,7 @@
         flex-direction: column;
     }
 
-    .item-progerss-group text {
+    .item-progerss-text {
         padding: 10px 0px;
     }
 

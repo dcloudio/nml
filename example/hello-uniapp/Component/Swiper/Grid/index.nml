@@ -3,104 +3,104 @@
         <swiper>
             <div class="item-grid">
                 <div class="item ">
-                    <image src="/Common/img/c1.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c1.png"></image>
+                    <text class="item-text" class="item-text">grid</text>
                 </div>
                 <div class="item">
-                    <image src="/Common/img/c2.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c2.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c3.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c3.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c4.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c4.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item">
-                    <image src="/Common/img/c5.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c5.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c6.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c6.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c7.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c7.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c8.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c8.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
             </div>
             <div class="item-grid">
                 <div class="item ">
-                    <image src="/Common/img/c1.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c1.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item">
-                    <image src="/Common/img/c2.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c2.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c3.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c3.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c4.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c4.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item">
-                    <image src="/Common/img/c5.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c5.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c6.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c6.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c7.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c7.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c8.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c8.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
             </div>
             <div class="item-grid">
                 <div class="item ">
-                    <image src="/Common/img/c1.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c1.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item">
-                    <image src="/Common/img/c2.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c2.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c3.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c3.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c4.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c4.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item">
-                    <image src="/Common/img/c5.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c5.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c6.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c6.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c7.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c7.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
                 <div class="item ">
-                    <image src="/Common/img/c8.png"></image>
-                    <text>grid</text>
+                    <image class="item-image" src="/Common/img/c8.png"></image>
+                    <text class="item-text">grid</text>
                 </div>
             </div>
         </swiper>
@@ -149,12 +149,12 @@
         border-bottom-width: 1px;
     }
 
-    .item image {
+    .item-image {
         width: 100px;
         height: 100px;
     }
 
-    .item text {
+    .item-text {
         width: 187.5px;
         height: 50px;
         text-align: center;

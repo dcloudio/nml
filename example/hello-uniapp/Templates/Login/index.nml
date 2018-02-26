@@ -2,16 +2,16 @@
     <div class="container">
         <div class="item-login">
             <div class="item-input-group line">
-                <text>账号</text>
-                <input type="text" name="username" placeholder="请输入账号" />
+                <text class="item-input-text">账号</text>
+                <input class="item-input" type="text" name="username" placeholder="请输入账号" />
             </div>
             <div class="item-input-group">
-                <text>密码</text>
-                <input type="password" name="password" placeholder="请输入密码" />
+                <text class="item-input-text">密码</text>
+                <input class="item-input" type="password" name="password" placeholder="请输入密码" />
             </div>
         </div>
         <div class="login-auto">
-            <text>自动登录</text>
+            <text class="login-auto-text">自动登录</text>
             <switch></switch>
         </div>
         <input type="button" name="login" class="login-text" value="登录" onclick="s" />
@@ -42,12 +42,12 @@
         height: 90px;
     }
 
-    .item-input-group text {
+    .item-input-text {
         height: 90px;
         padding-right: 100px;
     }
 
-    .item-input-group input {
+    .item-input{
         width: 550px;
         height: 90px;
     }
@@ -64,7 +64,7 @@
         border-bottom-width: 1px;
     }
 
-    .login-auto text {
+    .login-auto-text {
         padding-left: 30px;
     }
 

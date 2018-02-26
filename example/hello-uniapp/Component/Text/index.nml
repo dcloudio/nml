@@ -26,10 +26,6 @@
         flex-direction: row;
     }
 
-    .badge-content text {
-        margin-left: 30px;
-    }
-
     .item-title {
         padding: 10px 20px;
         font-size: 30px;
@@ -42,6 +38,7 @@
         border-radius: 100px;
         background-color: rgba(0, 0, 0, .15);
         color: #333333;
+		margin-left: 30px;
     }
 
     .badge {

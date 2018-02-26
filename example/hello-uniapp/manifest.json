@@ -221,7 +221,8 @@
         "titleBarTextColor": "#ffffff",
         "pages": {
             "Home": {
-                "titleBarText": "uniapp组件展示"
+                "titleBarText": "uniapp组件展示",
+				"menu":true
             }
         }
     }

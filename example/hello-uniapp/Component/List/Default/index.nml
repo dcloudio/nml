@@ -1,16 +1,16 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>list</text>
+            <text class="item-title-text">list</text>
         </div>
         <div class="item-control">
-            <div class="item-control-text">
-                <text>输入列数：</text>
+            <div class="item-control-div">
+                <text class="item-control-text">输入列数：</text>
                 <input type="text" name="num" value="{{newcolumns}}" onchange="newColumns" />
             </div>
             <div class="item-control-button">
-                <input type="button" name="colunm" value="改变列数" onclick="changeColumn">
-                <input type="button" name="scrollmode" value="切换滚动模式" onclick="changeScrollMode">
+                <input type="button" class="item-button" name="colunm" value="改变列数" onclick="changeColumn">
+                <input type="button" class="item-button" name="scrollmode" value="切换滚动模式" onclick="changeScrollMode">
             </div>
         </div>
         <div class="item-content">
@@ -30,14 +30,14 @@
         flex-direction: column;
     }
 
-    .item-control-text {
+    .item-control-div {
         font-size: 25px;
         color: #000000;
         height: 70px;
         padding-left: 50px;
     }
 
-    .item-control-text text {
+    .item-control-text {
         width: 190px;
         text-align: center;
     }
@@ -46,7 +46,7 @@
         flex-direction: row;
     }
 
-    .item-control-button input {
+    .item-button{
         text-align: center;
         border-radius: 3px;
         background-color: #0faeff;

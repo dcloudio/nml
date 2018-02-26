@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-        <!--<div class="item-title">
-            <text>tabs</text>
-        </div>-->
         <tabs>
             <tab-bar class="tab-bar">
                 <text for="titles" tid="id" class="item-tabbar-text">{{$item}}</text>

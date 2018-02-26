@@ -5,7 +5,7 @@
             <list class="list">
                 <list-item type="media" for="list" class="list-item list-item-top-line">
                     <div class="media-list middleline">
-                        <image src="/Common/img/shuijiao.jpg"></image>
+                        <image class="media-list-image" src="/Common/img/shuijiao.jpg"></image>
                         <div class="media-body">
                             <text class="media-title">{{$item.name}}</text>
                             <text class="media-content">{{$item.content}}</text>
@@ -79,7 +79,7 @@
         flex-direction: column;
     }
 
-    .media-list image {
+    .media-list-image {
         width: 80px;
         height: 80px;
         margin-right: 20px;

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>fetch</text>
+            <text class="item-title-text">fetch</text>
         </div>
         <div class="item-content">
             <div class="item-group">

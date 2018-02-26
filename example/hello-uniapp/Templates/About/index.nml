@@ -3,8 +3,8 @@
         <div class="list-content">
             <list class="mine-list">
                 <list-item type="mine" for="list" class="mine-item-list line">
-                    <text>{{$item}}</text>
-                    <image src="/Common/img/arrow_right.png"></image>
+                    <text class="mine-item-list-text">{{$item}}</text>
+                    <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                 </list-item>
             </list>
         </div>
@@ -41,13 +41,13 @@
         flex-direction: row;
     }
 
-    .mine-item-list text {
+    .mine-item-list-text {
         width: 200px;
         height: 90px;
         text-align: left;
     }
 
-    .mine-item-list image {
+    .mine-item-list-image {
         width: 20px;
         height: 20px;
         margin-left: 479px;

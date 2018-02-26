@@ -1,15 +1,15 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>switch</text>
+            <text class="item-title-text">switch</text>
         </div>
         <div class="item-content">
             <list class="list">
-                <list-item type="switch" class="line">
+                <list-item type="switch" class="list-item line">
                     <text>开启</text>
                     <switch checked="true"></switch>
                 </list-item>
-                <list-item type="switch">
+                <list-item type="switch" class="list-item">
                     <text>关闭</text>
                     <switch></switch>
                 </list-item>
@@ -28,7 +28,7 @@
         background-color: #ffffff;
     }
 
-    .list list-item {
+    .list-item {
         flex-direction: row;
         height: 90px;
         padding-right: 40px;

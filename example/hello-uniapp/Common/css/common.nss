@@ -13,7 +13,7 @@ text {
     justify-content: center;
 }
 
-.item-title text {
+.item-title-text {
     padding: 10px 30px;
     border-bottom-color: #D8D8D8;
     border-bottom-width: 1px;

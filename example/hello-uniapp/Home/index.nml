@@ -2,7 +2,7 @@
     <div class="container">
         <tabs onchange="changeActive">
             <tab-content class="item-tabcnt">
-                <div class="item-group">
+                <div class="item-group" onswipe= "swipeShowMenu()">
                     <div class="item-desc">
                         <text class="item-desc-detail">
                             以下将展示uniapp组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见uniapp开发文档
@@ -10,163 +10,163 @@
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('view')">
-                            <text class="{{active==='view'?'show-txt':''}}">容器组件</text>
+                            <text class="{{active==='view'?'show-txt-outer':''}}">容器组件</text>
                         </div>
                         <div class="item-list {{active==='view'?'show':''}}">
                             <div class="item-list-li" onclick="showDetail('Component/Div')">
-                                <text>div</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">div</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showChildren('list')">
-                                <text class="{{childActive==='list'?'show-txt':''}}">list</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text {{childActive==='list'?'show-txt-inner':''}}">list</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='list'?'show':''}}" style="padding-right: 0px;">
                                 <div class="item-list-li" onclick="showDetail('Component/List/Default')">
-                                    <text>基本功能</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">基本功能</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                                 <div class="item-list-li item-list-li-last" onclick="showDetail('Component/List')">
-                                    <text>图文列表</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">图文列表</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Refresh')">
-                                <text>refresh</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">refresh</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Richtext')">
-                                <text>richtext</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">richtext</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Stack')">
-                                <text>stack</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">stack</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showChildren('swiper')">
-                                <text class="{{childActive==='swiper'?'show-txt':''}}">swiper</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="{{childActive==='swiper'?'show-txt-inner':''}} item-list-li-text">swiper</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='swiper'?'show':''}}" style="padding-right: 0px;">
                                 <div class="item-list-li" onclick="showDetail('Component/Swiper/Default')">
-                                    <text>图片轮播</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">图片轮播</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                                 <div class="item-list-li" onclick="showDetail('Component/Swiper')">
-                                    <text>下方悬浮标题</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">下方悬浮标题</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                                 <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Swiper/Grid')">
-                                    <text>可左右拖动的9宫导航</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">可左右拖动的9宫导航</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showChildren('tabs')">
-                                <text class="{{childActive==='tabs'?'show-txt':''}}">tabs</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="{{childActive==='tabs'?'show-txt-inner':''}} item-list-li-text">tabs</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='tabs'?'show':''}}" style="padding-right: 0px;">
                                 <div class="item-list-li" onclick="showDetail('Component/Tabs/Default')">
-                                    <text>顶部选项卡</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">顶部选项卡</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                                 <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Tabs')">
-                                    <text>底部选项卡</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">底部选项卡</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('basic')">
-                            <text class="{{active==='basic'?'show-txt':''}}">基础组件</text>
+                            <text class="{{active==='basic'?'show-txt-outer':''}} ">基础组件</text>
                         </div>
                         <div class="item-list {{active==='basic'?'show':''}}">
                             <div class="item-list-li" onclick="showDetail('Component/A')">
-                                <text>a</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">a</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Image')">
-                                <text>image</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">image</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Progress')">
-                                <text>progress</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">progress</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Span')">
-                                <text>span</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">span</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showChildren('text')">
-                                <text class="{{childActive==='text'?'show-txt':''}}">text</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="{{childActive==='text'?'show-txt-inner':''}} item-list-li-text">text</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='text'?'show':''}}" style="padding-right: 0px;">
                                 <div class="item-list-li" onclick="showDetail('Component/Text/Default')">
-                                    <text>基本功能</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">基本功能</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                                 <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Text')">
-                                    <text>数字角标</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">数字角标</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('form')">
-                            <text class="{{active==='form'?'show-txt':''}}">表单组件</text>
+                            <text class="{{active==='form'?'show-txt-outer':''}}">表单组件</text>
                         </div>
                         <div class="item-list {{active==='form'?'show':''}}">
                             <div class="item-list-li " onclick="showChildren('input')">
-                                <text class="{{childActive==='input'?'show-txt':''}}">input</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="{{childActive==='input'?'show-txt-inner':''}} item-list-li-text">input</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='input'?'show':''}}" style="padding-right: 0px;">
                                 <div class="item-list-li" onclick="showDetail('Component/Input/Default')">
-                                    <text>基本功能</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">基本功能</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                                 <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Input')">
-                                    <text>数字输入框</text>
-                                    <image src="/Common/img/arrow_right.png"></image>
+                                    <text class="item-list-li-text">数字输入框</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Button')">
-                                <text>button</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">button</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Radio')">
-                                <text>radio</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">radio</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Checkbox')">
-                                <text>checkbox</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">checkbox</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Label')">
-                                <text>label</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">label</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Component/Switch')">
-                                <text>switch</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">switch</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Textarea')">
-                                <text>textarea</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">textarea</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('multimedia')">
-                            <text class="{{active==='multimedia'?'show-txt':''}}">多媒体</text>
+                            <text class="{{active==='multimedia'?'show-txt-outer':''}}">多媒体</text>
                         </div>
                         <div class="item-list {{active==='multimedia'?'show':''}}">
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Video')">
-                                <text>video</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">video</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>
@@ -179,100 +179,100 @@
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('interBasic')">
-                            <text class="{{active==='interBasic'?'show-txt':''}}">基本功能</text>
+                            <text class="{{active==='interBasic'?'show-txt-outer':''}}">基本功能</text>
                         </div>
                         <div class="item-list {{active==='interBasic'?'show':''}}">
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Router')">
-                                <text>页面路由</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">页面路由</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('interAction')">
-                            <text class="{{active==='interAction'?'show-txt':''}}">界面交互</text>
+                            <text class="{{active==='interAction'?'show-txt-outer':''}}">界面交互</text>
                         </div>
                         <div class="item-list {{active==='interAction'?'show':''}}">
                             <div class="item-list-li" onclick="showDetail('Interface/Share')">
-                                <text>分享</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">分享</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Interface/Prompt')">
-                                <text>弹窗</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">弹窗</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Interface/Webview')">
-                                <text>打开网页</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">打开网页</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Notification')">
-                                <text>通知消息</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">通知消息</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('network')">
-                            <text class="{{active==='network'?'show-txt':''}}">网络访问</text>
+                            <text class="{{active==='network'?'show-txt-outer':''}}">网络访问</text>
                         </div>
                         <div class="item-list {{active==='network'?'show':''}}">
                             <div class="item-list-li" onclick="showDetail('Interface/Request')">
-                                <text>下载文件</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">下载文件</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Fetch')">
-                                <text>数据请求</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">数据请求</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('file')">
-                            <text class="{{active==='file'?'show-txt':''}}">文件数据</text>
+                            <text class="{{active==='file'?'show-txt-outer':''}}">文件数据</text>
                         </div>
                         <div class="item-list {{active==='file'?'show':''}}">
                             <div class="item-list-li" onclick="showDetail('Interface/Storage')">
-                                <text>数据储存</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">数据储存</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/File')">
-                                <text>文件储存</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">文件储存</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>
                     <div class="item-content">
                         <div class="item-title" onclick="showChild('system')">
-                            <text class="{{active==='system'?'show-txt':''}}">系统能力</text>
+                            <text class="{{active==='system'?'show-txt-outer':''}}">系统能力</text>
                         </div>
                         <div class="item-list {{active==='system'?'show':''}}">
                             <div class="item-list-li" onclick="showDetail('Interface/Sensor')">
-                                <text>传感器</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">传感器</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Interface/Geolocation')">
-                                <text>地理位置</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">地理位置</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Interface/Barcode')">
-                                <text>二维码</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">二维码</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Interface/Clipboard')">
-                                <text>剪切板</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">剪切板</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Interface/Device')">
-                                <text>设备信息</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">设备信息</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showDetail('Interface/Network')">
-                                <text>网络状态</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">网络状态</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Shortcut')">
-                                <text>桌面图标</text>
-                                <image src="/Common/img/arrow_right.png"></image>
+                                <text class="item-list-li-text">桌面图标</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>
@@ -280,12 +280,12 @@
                 <div class="item-group">
                     <div class="mine-list">
                         <div onclick="showDetail('Templates/Setting')" class="mine-item-list line">
-                            <text>设置</text>
-                            <image src="/Common/img/arrow_right.png"></image>
+                            <text class="mine-item-list-text">设置</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
                         <div onclick="showDetail('Templates/About')" class="mine-item-list">
-                            <text>关于</text>
-                            <image src="/Common/img/arrow_right.png"></image>
+                            <text class="mine-item-list-text">关于</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
                     </div>
                     <div class="mine-login" onclick="showDetail('Templates/Login')">
@@ -299,38 +299,22 @@
                 <text class="item-tabbar-text">模板</text>
             </tab-bar>
         </tabs>
-        <div class="slide-menu-container {{slideMenu}}">
-            <div class="overlay" onclick="hideMenu">
+        <stack class="slide-menu-container">
+            <div class="overlay" onclick="hideMenu" if="showCover">
             </div>
-            <div class="slide-menu" >
+            <div class="slide-menu {{slideAnimation}}" onswipe= "swipeCloseMenu()">
                 <text class="slide-menu-text">侧滑导航</text>
                 <text class="slide-menu-desc">这是可拖动式侧滑菜单示例，你可以在这里放置任何内容</text>
-                <input type="button" name="closeMask" class="slide-menu-close" value="关闭侧滑菜单" onclick="closeMask" />
+                <input type="button" name="hideMenu" class="slide-menu-close" value="关闭侧滑菜单" onclick="hideMenu" />
                 <text class="slide-menu-text slide-menu-title">侧滑列表示例</text>
                 <list class="slide-menu-li">
-                    <list-item type="menu">
-                        <text>item1</text>
-                        <image src="Common/img/youjiantou.png"></image>
-                    </list-item>
-                    <list-item type="menu">
-                        <text>item2</text>
-                        <image src="Common/img/youjiantou.png"></image>
-                    </list-item>
-                    <list-item type="menu">
-                        <text>item3</text>
-                        <image src="Common/img/youjiantou.png"></image>
-                    </list-item>
-                    <list-item type="menu">
-                        <text>item4</text>
-                        <image src="Common/img/youjiantou.png"></image>
-                    </list-item>
-                    <list-item type="menu">
-                        <text>item5</text>
-                        <image src="Common/img/youjiantou.png"></image>
+					<list-item class="slide-menu-listitem" type="menu" for="{{menuList}}">
+                        <text class="slide-menu-listitem-text">item{{$item}}</text>
+                        <image class="slide-menu-listitem-image" src="Common/img/youjiantou.png"></image>
                     </list-item>
                 </list>
             </div>
-        </div>
+        </stack>
     </div>
 </template>
 
@@ -340,28 +324,36 @@
         height: 100%;
         position: fixed;
     }
-	.slide-menu-none{
-		display: none;
-	}
-	.slide-menu-flex{
-		display: flex;
-	}
+	
     .overlay {
         width: 100%;
         height: 100%;
         opacity: 0.5;
         background-color: #000000;
     }
+	
     .slide-menu {
-		position: fixed;
-        left: 0;
         width: 525px;
+		transform: translateX(-525px);
+		opacity:0;
         height: 100%;
         padding: 50px 20px;
         flex-direction: column;
         background-color: #000000;
     }
-
+	
+	.slide-in{
+		opacity:1;
+		transform: translateX(0px);
+		animation-duration:200ms;
+	}
+	
+	.slide-out{
+		opacity:0;
+		transform: translateX(-525px);
+		animation-duration:200ms;
+	}
+	
     .slide-menu-text {
         width: 100%;
         height: 80px;
@@ -387,17 +379,17 @@
         margin-top: 50px;
     }
 
-    .slide-menu-li list-item {
+    .slide-menu-listitem {
         height: 70px;
         flex-direction: row;
         align-items: center;
     }
 
-    .slide-menu-li list-item text {
+    .slide-menu-listitem-text {
         color: #ffffff;
     }
 
-    .slide-menu-li list-item image {
+    .slide-menu-listitem-image {
         margin-left: 360px;
         margin-top: 5px;
     }
@@ -418,11 +410,6 @@
         margin: 70px 0;
         flex-direction: column;
         align-items: center;
-    }
-
-    .item-desc image {
-        width: 95px;
-        margin-bottom: 30px;
     }
 
     .item-desc-detail {
@@ -459,13 +446,13 @@
         border-bottom-width: 0px;
     }
 
-    .item-list-li text {
+    .item-list-li-text {
         padding: 25px 0px;
         color: #000000;
         width: 700px;
     }
 
-    .item-list-li image {
+    .item-list-li-image {
         height: 39px;
         width: 20px;
         margin-right: 28px;
@@ -506,14 +493,14 @@
         flex-direction: row;
     }
 
-    .mine-item-list text {
+    .mine-item-list-text {
         width: 200px;
         height: 90px;
         text-align: left;
         padding-left: 15px;
     }
 
-    .mine-item-list image {
+    .mine-item-list-image {
         width: 20px;
         height: 20px;
         margin-left: 479px;
@@ -541,8 +528,8 @@
         display: flex;
     }
 
-    .item-content .item-title .show-txt,
-    .item-list .item-list-li .show-txt {
+    .show-txt-outer,
+    .show-txt-inner {
         color: #cccccc;
     }
 </style>
@@ -553,7 +540,9 @@
         data: {
             active: '',
             childActive: '',
-			slideMenu:'slide-menu-none'
+			slideAnimation:'',
+			showCover:false,
+			menuList:[1,2,3,4,5]
         },
         showChild: function (target) {
             if (this.active == target) {
@@ -582,10 +571,28 @@
             })
         },
 		hideMenu:function () {
-			this.slideMenu = 'slide-menu-none'
+			this.setSlide();
 		},
 		onMenuPress:function () {
-			this.slideMenu = 'slide-menu-flex'
+			this.setSlide();
+		},
+		swipeShowMenu:function(e){
+			if(e.direction == 'right'){
+				this.setSlide();
+			}
+		},
+		swipeCloseMenu:function(e){
+			if(e.direction == 'left'){
+				this.setSlide();
+			}
+		},
+		setSlide:function(){
+			this.showCover = !this.showCover;
+			if(this.showCover){
+				this.slideAnimation = 'slide-in';
+			}else{
+				this.slideAnimation = 'slide-out';
+			}
 		}
     }
 </script>

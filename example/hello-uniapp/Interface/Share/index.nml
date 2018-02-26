@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>share</text>
+            <text class="item-title-text">share</text>
         </div>
         <div class="item-content">
             <input type="button" name="sharetext" class="item-group-button" value="分享文本" onclick="share('text/html','今天天气不错')" />

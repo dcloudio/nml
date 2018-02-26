@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="item-title">
-            <text>router</text>
+            <text class="item-title-text">router</text>
         </div>
         <div class="item-content">
             <input type="button" class="item-group-button" name="home" value="跳转到首页" onclick="routerTest('/Home')" />
