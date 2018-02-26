@@ -6,12 +6,12 @@
         <div class="item-content">
             <list class="list">
                 <list-item type="switch" class="list-item line">
-                    <text>开启</text>
-                    <switch checked="true"></switch>
+                    <text>{{text1}}</text>
+                    <switch checked="true" onchange="changeText1()"></switch>
                 </list-item>
                 <list-item type="switch" class="list-item">
-                    <text>关闭</text>
-                    <switch></switch>
+                    <text>{{text2}}</text>
+                    <switch onchange="changeText2()"></switch>
                 </list-item>
             </list>
         </div>
@@ -44,10 +44,20 @@
 
 <script>
     module.exports = {
+		data: {
+            text1: '开启',
+            text2: '关闭'
+        },
         onInit: function (e) {
             this.$page.setTitleBar({
                 text: 'Switch'
             })
-        }
+        },
+		changeText1:function(e){
+			this.text1 = e.checked == true ? '开启' : '关闭';
+		},
+		changeText2:function(e){
+			this.text2 = e.checked == true ? '开启' : '关闭';
+		}
     }
 </script>

@@ -18,7 +18,7 @@
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showChildren('list')">
-                                <text class="item-list-li-text {{childActive==='list'?'show-txt-inner':''}}">list</text>
+                                <text class="item-list-li-text">list</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='list'?'show':''}}" style="padding-right: 0px;">
@@ -44,7 +44,7 @@
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li" onclick="showChildren('swiper')">
-                                <text class="{{childActive==='swiper'?'show-txt-inner':''}} item-list-li-text">swiper</text>
+                                <text class="item-list-li-text">swiper</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='swiper'?'show':''}}" style="padding-right: 0px;">
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showChildren('tabs')">
-                                <text class="{{childActive==='tabs'?'show-txt-inner':''}} item-list-li-text">tabs</text>
+                                <text class="item-list-li-text">tabs</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='tabs'?'show':''}}" style="padding-right: 0px;">
@@ -99,7 +99,7 @@
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showChildren('text')">
-                                <text class="{{childActive==='text'?'show-txt-inner':''}} item-list-li-text">text</text>
+                                <text class="item-list-li-text">text</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='text'?'show':''}}" style="padding-right: 0px;">
@@ -120,7 +120,7 @@
                         </div>
                         <div class="item-list {{active==='form'?'show':''}}">
                             <div class="item-list-li " onclick="showChildren('input')">
-                                <text class="{{childActive==='input'?'show-txt-inner':''}} item-list-li-text">input</text>
+                                <text class="item-list-li-text">input</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list {{childActive==='input'?'show':''}}" style="padding-right: 0px;">
@@ -528,8 +528,7 @@
         display: flex;
     }
 
-    .show-txt-outer,
-    .show-txt-inner {
+    .show-txt-outer {
         color: #cccccc;
     }
 </style>

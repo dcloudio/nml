@@ -6,7 +6,7 @@
                     <list class="list">
                         <list-item type="media" class="list-item list-item-top-line">
                             <div class="media-list middleline">
-                                <image src="/Common/img/shuijiao.jpg"></image>
+                                <image class="media-list-image" src="/Common/img/shuijiao.jpg"></image>
                                 <div class="media-body">
                                     <text class="media-title">幸福</text>
                                     <text class="media-content">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</text>
@@ -15,7 +15,7 @@
                         </list-item>
                         <list-item type="media" class="list-item list-item-bottom-line">
                             <div class="media-list">
-                                <image src="/Common/img/yuantiao.jpg"></image>
+                                <image class="media-list-image" src="/Common/img/yuantiao.jpg"></image>
                                 <div class="media-body">
                                     <text class="media-title">远眺</text>
                                     <text class="media-content">静静的看这个世界，最后终于疯了.</text>
@@ -32,7 +32,7 @@
                                     <text class="media-title">幸福</text>
                                     <text class="media-content" style="width: 570px;">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</text>
                                 </div>
-                                <image src="/Common/img/shuijiao.jpg"></image>
+                                <image class="media-list-image" src="/Common/img/shuijiao.jpg"></image>
                             </div>
                         </list-item>
                         <list-item type="media" class="list-item list-item-bottom-line list-card-bottom-radius">
@@ -41,7 +41,7 @@
                                     <text class="media-title">远眺</text>
                                     <text class="media-content" style="width: 570px;">静静的看这个世界，最后终于疯了.</text>
                                 </div>
-                                <image src="/Common/img/yuantiao.jpg"></image>
+                                <image class="media-list-image" src="/Common/img/yuantiao.jpg"></image>
                             </div>
                         </list-item>
                     </list>
@@ -49,24 +49,24 @@
                 <div class="tab-group-content">
                     <div class="mine-list">
                         <div onclick="showDetail('Templates/Setting')" class="mine-item-list line">
-                            <text>Item1</text>
-                            <image src="/Common/img/arrow_right.png"></image>
+                            <text class="mine-item-list-text">Item1</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
                         <div onclick="showDetail('Templates/About')" class="mine-item-list">
-                            <text>Item2</text>
-                            <image src="/Common/img/arrow_right.png"></image>
+                            <text class="mine-item-list-text">Item2</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
                     </div>
                 </div>
                 <div class="tab-group-content">
                     <div class="mine-list">
                         <div onclick="showDetail('Templates/Setting')" class="mine-item-list line">
-                            <text>设置</text>
-                            <image src="/Common/img/arrow_right.png"></image>
+                            <text class="mine-item-list-text">设置</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
                         <div onclick="showDetail('Templates/About')" class="mine-item-list">
-                            <text>关于</text>
-                            <image src="/Common/img/arrow_right.png"></image>
+                            <text class="mine-item-list-text">关于</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
                     </div>
                     <div class="mine-login" onclick="showDetail('Templates/Login')">
@@ -76,7 +76,7 @@
             </tab-content>
             <tab-bar class="tab-bar">
                 <div class="footer-item" for="lists" tid="id">
-                    <image src="{{$item}}"></image>
+                    <image class="footer-image" src="{{$item}}"></image>
                 </div>
             </tab-bar>
         </tabs>
@@ -153,7 +153,7 @@
         flex-direction: column;
     }
 
-    .media-list image {
+    .media-list-image {
         width: 80px;
         height: 80px;
         margin-right: 20px;
@@ -192,14 +192,14 @@
         flex-direction: row;
     }
 
-    .mine-item-list text {
+    .mine-item-list-text {
         width: 200px;
         height: 90px;
         text-align: left;
         padding-left: 15px;
     }
 
-    .mine-item-list image {
+    .mine-item-list-image {
         width: 20px;
         height: 20px;
         margin-left: 479px;
@@ -229,7 +229,7 @@
         align-items: center;
     }
 
-    .footer-item image {
+    .footer-image {
         width: 130px;
     }
 </style>
