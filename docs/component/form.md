@@ -48,7 +48,7 @@
 
 |名称|参数|描述|
 |:-|:-|:-|
-|focus|``{focus:true|false}``，focus 不传默认为 true。|使组件获得或者失去焦点，可触发focus伪类，type为text、email、date、time、number、password时，可弹出或收起输入法。|
+|focus|``{focus:true/false}``，focus 不传默认为 true。|使组件获得或者失去焦点，可触发focus伪类，type为text、email、date、time、number、password时，可弹出或收起输入法。|
 
 ### label 
 
