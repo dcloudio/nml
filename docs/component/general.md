@@ -28,7 +28,7 @@
 |:-|:-|:-|:-|
 |for|``<array>``||根据数据列表，循环展开当前标签|
 |if|``<boolean>``||根据数据boolean值，添加或移除当前标签|
-|show|``<boolean>``||根据数据boolean值，显示或隐藏当前标签，相当于控制{ display: flex | none }|
+|show|``<boolean>``||根据数据boolean值，显示或隐藏当前标签，相当于控制{ display: flex / none }|
 
 渲染属性工作方式详见“template模板”。
 
