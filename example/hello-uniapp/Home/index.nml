@@ -453,7 +453,7 @@
     }
 
     .item-list-li-image {
-        height: 39px;
+        height: 20px;
         width: 20px;
         margin-right: 28px;
         resize-mode: contain;
