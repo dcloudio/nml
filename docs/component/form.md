@@ -40,6 +40,7 @@
 支持change事件，input组件的值、checked状态发生变化时触发。
 
 |参数|text、email、date、time、number|checkbox|radio|备注|
+|:-|:-|:-|:-|:-|
 |name||✔|✔||
 |value|✔|✔|✔||
 |checked||✔||-|
