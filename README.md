@@ -22,7 +22,7 @@ UniApp是开源的，作为开发者可以自由使用，但不能利用UniApp�
 开发工具
 -------
 
-推荐使用HBuilderX开发；
+推荐使用[HBuilderX](http://www.dcloud.io)开发；
 
 HBuilderX，基于C++架构重新开发，性能体验秒杀基于java系或nodewebkit系的产品；且针对UniApp做了很多增强功能，例如真机调试、云端发行等。
 
