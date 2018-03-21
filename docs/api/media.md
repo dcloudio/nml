@@ -252,7 +252,7 @@ fail 返回码
 
 示例
 ```javascript
-uni.media.editImage({
+uni.media.cropImage({
   srcUri: "tmp://abc.jpg",
   success: function(data) {
     console.log(data.dstUri);

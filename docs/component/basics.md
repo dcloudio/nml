@@ -251,7 +251,7 @@ this.$element('web').canForward({
     } else {
       // TODO
     }
-  }.bind(this);
+  }.bind(this)
 });
 ```
 
