@@ -16,14 +16,17 @@ DCloud在打包的App中使用了原生渲染引擎，渲染效率远高于webvi
 UniApp是开源的，作为开发者可以自由使用，但不能利用UniApp改名后提供给其他开发者做相同服务。
 我们欢迎开发者一起来完善这个项目。
 
-文档
----
-[立即查看](https://dcloudio.github.io/UniApp/)。
+文档地址：[https://dcloudio.github.io/UniApp/](https://dcloudio.github.io/UniApp/)
+
 
 开发工具
 -------
 
+推荐使用HBuilderX开发；
+
+HBuilderX，基于C++架构重新开发，性能体验秒杀基于java系或nodewebkit系的产品；且针对UniApp做了很多增强功能，例如真机调试、云端发行等。
+
 <a href="http://www.dcloud.io/" target="_blank">
-<img src="http://img.cdn.qiniu.dcloud.net.cn/image/logo/hbuilderx.png" width="240" />
+<img src="http://img.cdn.qiniu.dcloud.net.cn/image/logo/hbuilderx.png" width="100" />
 </a>
 
