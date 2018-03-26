@@ -1,3 +1,3 @@
-*.nml linguist-language=html
-*.nss linguist-language=css
+*.nml linguist-language=HTML
+*.nss linguist-language=CSS
 *.njs linguist-language=JavaScript
