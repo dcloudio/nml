@@ -1,61 +1,61 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">video</text>
-        </div>
-        <div class="item-content">
-            <video id="video" src="https://vd3.bdstatic.com/mda-iatj2fgg8z6k3p8f/mda-iatj2fgg8z6k3p8f.mp4?playlist=%5B%22hd%22%5D&auth_key=1517196150-0-0-eea1109a3e6adb4cb9b0acc4022196e7&bcevod_channel=searchbox_feed&pd=alading_paeC&br=60&platform=2&fmt=auto&level=0&sdtfrom=v3010&guid=38af158f0c6b061cf96a249a117f91c5" autoplay="true"></video>
-        </div>
-        <div class="item-control">
-            <text class="item-text" onclick="start">开始</text>
-            <text class="item-text" onclick="pause">暂停</text>
-            <text class="item-text" onclick="setCurrentTime">跳转至10秒</text>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">video</text>
+		</div>
+		<div class="item-content">
+			<video id="video" src="https://vd3.bdstatic.com/mda-iatj2fgg8z6k3p8f/mda-iatj2fgg8z6k3p8f.mp4?playlist=%5B%22hd%22%5D&auth_key=1517196150-0-0-eea1109a3e6adb4cb9b0acc4022196e7&bcevod_channel=searchbox_feed&pd=alading_paeC&br=60&platform=2&fmt=auto&level=0&sdtfrom=v3010&guid=38af158f0c6b061cf96a249a117f91c5" autoplay="true"></video>
+		</div>
+		<div class="item-control">
+			<text class="item-text" onclick="start">开始</text>
+			<text class="item-text" onclick="pause">暂停</text>
+			<text class="item-text" onclick="setCurrentTime">跳转至10秒</text>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
-    video {
-        height: 350px;
-        flex: 1;
-    }
+	@import '../../Common/css/common.nss';
+	video {
+		height: 350px;
+		flex: 1;
+	}
 
-    .item-control {
-        margin: 30px 40px;
-        height: 80px;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+	.item-control {
+		margin: 30px 40px;
+		height: 80px;
+		flex-direction: row;
+		justify-content: space-between;
+	}
 
-    .item-text {
-        width: 180px;
-        height: 80px;
-        background-color: #fd7420;
-        border-radius: 5px;
-        color: #ffffff;
-        text-align: center;
-    }
+	.item-text {
+		width: 180px;
+		height: 80px;
+		background-color: #fd7420;
+		border-radius: 5px;
+		color: #ffffff;
+		text-align: center;
+	}
 </style>
 
 <script>
-    module.exports = {
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Video'
-            })
-        },
-        start: function () {
-            this.$element('video').start();
-        },
-        pause: function () {
-            this.$element('video').pause();
-        },
-        setCurrentTime: function () {
-            this.$element('video').setCurrentTime({
-                currenttime: 10
-            });
-        }
+	module.exports = {
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Video'
+			})
+		},
+		start: function () {
+			this.$element('video').start();
+		},
+		pause: function () {
+			this.$element('video').pause();
+		},
+		setCurrentTime: function () {
+			this.$element('video').setCurrentTime({
+				currenttime: 10
+			});
+		}
 
-    }
+	}
 </script>

@@ -1,100 +1,100 @@
 <template>
-    <div class="container">
-        <refresh class="refresh" onrefresh="refresh" refreshing="{{isRefreshing}}">
-            <div class="item-title">
-                <text class="item-title-text">refresh</text>
-            </div>
-            <list onscrollbottom="scrollbottom" id="list" class="list">
-                <list-item type="refresh" for="{{lists}}" class="list-item">
-                    <text class="list-item-text">{{$item}}</text>
-                    <image src="/Common/img/arrow_right.png" class="rightarrow" />
-                </list-item>
-                <list-item if="{{more}}" type="moremsg" class="moremsg">
-                    <text class="list-item-text" style="font-size: 25px;">{{moremsg}}</text>
-                </list-item>
-            </list>
-        </refresh>
-    </div>
+	<div class="container">
+		<refresh class="refresh" onrefresh="refresh" refreshing="{{isRefreshing}}">
+			<div class="item-title">
+				<text class="item-title-text">refresh</text>
+			</div>
+			<list onscrollbottom="scrollbottom" id="list" class="list">
+				<list-item type="refresh" for="{{lists}}" class="list-item">
+					<text class="list-item-text">{{$item}}</text>
+					<image src="/Common/img/arrow_right.png" class="rightarrow" />
+				</list-item>
+				<list-item if="{{more}}" type="moremsg" class="moremsg">
+					<text class="list-item-text" style="font-size: 25px;">{{moremsg}}</text>
+				</list-item>
+			</list>
+		</refresh>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
-    .list {
-        width: 750px;
-        border-top-color: #DDDDDD;
-        border-bottom-color: #DDDDDD;
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-    }
+	@import '../../Common/css/common.nss';
+	.list {
+		width: 750px;
+		border-top-color: #DDDDDD;
+		border-bottom-color: #DDDDDD;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+	}
 
-    .list-item {
-        width: 730px;
-        margin-left: 20px;
-        height: 100px;
-        border-bottom-color: #DDDDDD;
-        border-bottom-width: 1px;
-        align-items: center;
-        flex-direction: row;
-    }
+	.list-item {
+		width: 730px;
+		margin-left: 20px;
+		height: 100px;
+		border-bottom-color: #DDDDDD;
+		border-bottom-width: 1px;
+		align-items: center;
+		flex-direction: row;
+	}
 
-    .list-item-text {
-        padding-left: 30px;
-        width: 220px;
-        height: 100px;
-    }
+	.list-item-text {
+		padding-left: 30px;
+		width: 220px;
+		height: 100px;
+	}
 
-    .rightarrow {
-        width: 20px;
-        height: 20px;
-        margin-left: 450px;
-    }
+	.rightarrow {
+		width: 20px;
+		height: 20px;
+		margin-left: 450px;
+	}
 
-    .moremsg {
-        justify-content: center;
-        border-bottom-width: 0px;
-    }
+	.moremsg {
+		justify-content: center;
+		border-bottom-width: 0px;
+	}
 </style>
 
 <script>
-    
-    module.exports = {
-        data: {
-            isRefreshing: false,
-            more: true,
-            moremsg: "正在努力加载",
-            lists: [],
-            initLists: ['Item1', 'Item2', 'Item3', 'Item4', 'Item5', 'Item6', 'Item7', 'Item8', 'Item9', 'Item10',
-                'Item11'
-            ]
-        },
-        onInit: function (e) {
-            this.lists = [].concat(this.initLists);
-            this.$page.setTitleBar({
-                text: 'Refresh'
-            })
-        },
-        refresh: function (e) {
-            var that = this;
-            that.isRefreshing = e.refreshing;
-            that.moremsg = '正在努力加载';
-            setTimeout(function () {
-                that.isRefreshing = false;
-                that.lists = that.initLists;
-                uni.prompt.showToast({
-                    message: '刷新完成'
-                })
-            }, 1200)
-        },
-        scrollbottom: function () {
-            var that = this;
-            setTimeout(function () {
-                var arr = [];
-                for (var i = 0; i < 11; i++) {
-                    arr.push('item' + (i + 12));
-                }
-                that.lists = that.initLists.concat(arr)
-                that.moremsg = '我是有底线的';
-            }, 500);
-        }
-    }
+	
+	module.exports = {
+		data: {
+			isRefreshing: false,
+			more: true,
+			moremsg: "正在努力加载",
+			lists: [],
+			initLists: ['Item1', 'Item2', 'Item3', 'Item4', 'Item5', 'Item6', 'Item7', 'Item8', 'Item9', 'Item10',
+				'Item11'
+			]
+		},
+		onInit: function (e) {
+			this.lists = [].concat(this.initLists);
+			this.$page.setTitleBar({
+				text: 'Refresh'
+			})
+		},
+		refresh: function (e) {
+			var that = this;
+			that.isRefreshing = e.refreshing;
+			that.moremsg = '正在努力加载';
+			setTimeout(function () {
+				that.isRefreshing = false;
+				that.lists = that.initLists;
+				uni.prompt.showToast({
+					message: '刷新完成'
+				})
+			}, 1200)
+		},
+		scrollbottom: function () {
+			var that = this;
+			setTimeout(function () {
+				var arr = [];
+				for (var i = 0; i < 11; i++) {
+					arr.push('item' + (i + 12));
+				}
+				that.lists = that.initLists.concat(arr)
+				that.moremsg = '我是有底线的';
+			}, 500);
+		}
+	}
 </script>

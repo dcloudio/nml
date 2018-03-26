@@ -1,29 +1,29 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">webview</text>
-        </div>
-        <div class="item-content">
-            <input type="button" name="webview" class="item-group-button" value="打开DCloud官网" onclick="openWebview" />
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">webview</text>
+		</div>
+		<div class="item-content">
+			<input type="button" name="webview" class="item-group-button" value="打开DCloud官网" onclick="openWebview" />
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 </style>
 
 <script>
-    module.exports = {
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Webview'
-            })
-        },
-        openWebview: function () {
-            uni.webview.loadUrl({
-                url: 'http://www.dcloud.io/streamapp.html'
-            })
-        }
-    }
+	module.exports = {
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Webview'
+			})
+		},
+		openWebview: function () {
+			uni.webview.loadUrl({
+				url: 'http://www.dcloud.io/streamapp.html'
+			})
+		}
+	}
 </script>

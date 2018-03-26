@@ -1,143 +1,143 @@
 <template>
-    <div class="container">
-        <div class="item-group">
-            <text class="item-title">默认</text>
-            <div class="item-content">
-                <input class="item-minus" type="button" name="minus" onclick="minus(1)" value="-" />
-                <input class="item-value" type="number" name="value" value="{{countOne}}" />
-                <input class="item-plus" type="button" name="plus" onclick="plus(1)" value="+" />
-            </div>
-        </div>
-        <div class="item-group">
-            <text class="item-title">限定最小值和最大值(1~9)</text>
-            <div class="item-content">
-                <input class="item-minus" type="button" name="minus" onclick="minus('limit',1,9)" value="-" />
-                <input class="item-value" type="number" name="value" value="{{countTwo}}" />
-                <input class="item-plus" type="button" name="plus" onclick="plus('limit',1,9)" value="+" />
-            </div>
-        </div>
-        <div class="item-group">
-            <text class="item-title">设置步长值(步长10)</text>
-            <div class="item-content">
-                <input class="item-minus" type="button" name="minus" onclick="minus('step',10,90)" value="-" />
-                <input class="item-value" type="number" name="value" value="{{countThree}}" />
-                <input class="item-plus" type="button" name="plus" onclick="plus('step',10,90)" value="+" />
-            </div>
-        </div>
-        <div class="item-group" show="{{false}}">
-            <text class="item-title">取值操作</text>
-            <div class="item-content">
-                <input class="item-minus" type="button" name="minus" onclick="minus(4)" value="-" />
-                <input class="item-value" type="number" name="value" value="{{countFour}}" />
-                <input class="item-plus" type="button" name="plus" onclick="plus(4)" value="+" />
-                <input class="item-button" type="button" name="getCurValue" value="取当前值" onclick="getCurValue()" style="width:140px;margin-left:20px"
-                />
-            </div>
-        </div>
-        <div class="item-group">
-            <text class="item-title">在行内</text>
-            <div class="item-content">
-                <text style="color: #000000;font-size: 30px;padding: 10px;">购买数量:</text>
-                <input class="item-minus" type="button" name="minus" onclick="minus(5)" value="-" />
-                <input class="item-value" type="number" name="value" value="{{countFive}}" />
-                <input class="item-plus" type="button" name="plus" onclick="plus(5)" value="+" />
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-group">
+			<text class="item-title">默认</text>
+			<div class="item-content">
+				<input class="item-minus" type="button" name="minus" onclick="minus(1)" value="-" />
+				<input class="item-value" type="number" name="value" value="{{countOne}}" />
+				<input class="item-plus" type="button" name="plus" onclick="plus(1)" value="+" />
+			</div>
+		</div>
+		<div class="item-group">
+			<text class="item-title">限定最小值和最大值(1~9)</text>
+			<div class="item-content">
+				<input class="item-minus" type="button" name="minus" onclick="minus('limit',1,9)" value="-" />
+				<input class="item-value" type="number" name="value" value="{{countTwo}}" />
+				<input class="item-plus" type="button" name="plus" onclick="plus('limit',1,9)" value="+" />
+			</div>
+		</div>
+		<div class="item-group">
+			<text class="item-title">设置步长值(步长10)</text>
+			<div class="item-content">
+				<input class="item-minus" type="button" name="minus" onclick="minus('step',10,90)" value="-" />
+				<input class="item-value" type="number" name="value" value="{{countThree}}" />
+				<input class="item-plus" type="button" name="plus" onclick="plus('step',10,90)" value="+" />
+			</div>
+		</div>
+		<div class="item-group" show="{{false}}">
+			<text class="item-title">取值操作</text>
+			<div class="item-content">
+				<input class="item-minus" type="button" name="minus" onclick="minus(4)" value="-" />
+				<input class="item-value" type="number" name="value" value="{{countFour}}" />
+				<input class="item-plus" type="button" name="plus" onclick="plus(4)" value="+" />
+				<input class="item-button" type="button" name="getCurValue" value="取当前值" onclick="getCurValue()" style="width:140px;margin-left:20px"
+				/>
+			</div>
+		</div>
+		<div class="item-group">
+			<text class="item-title">在行内</text>
+			<div class="item-content">
+				<text style="color: #000000;font-size: 30px;padding: 10px;">购买数量:</text>
+				<input class="item-minus" type="button" name="minus" onclick="minus(5)" value="-" />
+				<input class="item-value" type="number" name="value" value="{{countFive}}" />
+				<input class="item-plus" type="button" name="plus" onclick="plus(5)" value="+" />
+			</div>
+		</div>
+	</div>
 </template>
 <style>
-    .container {
-        flex-direction: column;
-        flex: 1;
-    }
+	.container {
+		flex-direction: column;
+		flex: 1;
+	}
 
-    .item-group {
-        width: 710px;
-        margin: 10px 20px;
-        flex-direction: column;
-    }
+	.item-group {
+		width: 710px;
+		margin: 10px 20px;
+		flex-direction: column;
+	}
 
-    .item-title {
-        padding: 20px 0px;
-        color: #97969C;
-    }
+	.item-title {
+		padding: 20px 0px;
+		color: #97969C;
+	}
 
-    .item-content {
-        flex-direction: row;
-    }
+	.item-content {
+		flex-direction: row;
+	}
 
-    .item-minus,
-    .item-plus,
-    .item-button {
-        background-color: #f9f9f9;
-        border-color: #c8c8cb;
-        border-width: 1px;
-        width: 80px;
-        height: 60px;
-    }
+	.item-minus,
+	.item-plus,
+	.item-button {
+		background-color: #f9f9f9;
+		border-color: #c8c8cb;
+		border-width: 1px;
+		width: 80px;
+		height: 60px;
+	}
 
-    .item-value {
-        border-color: #c8c8cb;
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-        width: 60px;
-        height: 60px;
-        text-align: center;
-    }
+	.item-value {
+		border-color: #c8c8cb;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+		width: 60px;
+		height: 60px;
+		text-align: center;
+	}
 </style>
 <script>
-    module.exports = {
-        data: {
-            countOne: 0,
-            countTwo: 5,
-            countThree: 10,
-            countFour: 0,
-            countFive: 0
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: '数字输入框'
-            })
-        },
-        minus: function (param, param1, param2) {
-            if (param == 1) {
-                this.countOne = this.countOne - 1;
-            } else if (param == 4) {
-                this.countFour = this.countFour - 1;
-            } else if (param == 5) {
-                this.countFive = this.countFive - 1;
-            } else if (param == 'limit') {
-                if (this.countTwo > param1 && this.countTwo <= param2) {
-                    this.countTwo = this.countTwo - 1;
-                }
-            } else if (param == 'step') {
-                if (this.countThree > param1 && this.countThree <= param2) {
-                    this.countThree = this.countThree - 10;
-                }
-            }
-        },
-        plus: function (param, param1, param2) {
-            if (param == 1) {
-                this.countOne = this.countOne + 1;
-            } else if (param == 4) {
-                this.countFour = this.countFour + 1;
-            } else if (param == 5) {
-                this.countFive = this.countFive + 1;
-            } else if (param == 'limit') {
-                if (this.countTwo >= param1 && this.countTwo < param2) {
-                    this.countTwo = this.countTwo + 1;
-                }
-            } else if (param == 'step') {
-                if (this.countThree >= param1 && this.countThree < param2) {
-                    this.countThree = this.countThree + 10;
-                }
-            }
-        },
-        getCurValue: function () {
-            uni.prompt.showToast({
-                message: this.countFour,
-                duration: 1
-            })
-        }
-    }
+	module.exports = {
+		data: {
+			countOne: 0,
+			countTwo: 5,
+			countThree: 10,
+			countFour: 0,
+			countFive: 0
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: '数字输入框'
+			})
+		},
+		minus: function (param, param1, param2) {
+			if (param == 1) {
+				this.countOne = this.countOne - 1;
+			} else if (param == 4) {
+				this.countFour = this.countFour - 1;
+			} else if (param == 5) {
+				this.countFive = this.countFive - 1;
+			} else if (param == 'limit') {
+				if (this.countTwo > param1 && this.countTwo <= param2) {
+					this.countTwo = this.countTwo - 1;
+				}
+			} else if (param == 'step') {
+				if (this.countThree > param1 && this.countThree <= param2) {
+					this.countThree = this.countThree - 10;
+				}
+			}
+		},
+		plus: function (param, param1, param2) {
+			if (param == 1) {
+				this.countOne = this.countOne + 1;
+			} else if (param == 4) {
+				this.countFour = this.countFour + 1;
+			} else if (param == 5) {
+				this.countFive = this.countFive + 1;
+			} else if (param == 'limit') {
+				if (this.countTwo >= param1 && this.countTwo < param2) {
+					this.countTwo = this.countTwo + 1;
+				}
+			} else if (param == 'step') {
+				if (this.countThree >= param1 && this.countThree < param2) {
+					this.countThree = this.countThree + 10;
+				}
+			}
+		},
+		getCurValue: function () {
+			uni.prompt.showToast({
+				message: this.countFour,
+				duration: 1
+			})
+		}
+	}
 </script>

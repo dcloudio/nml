@@ -1,34 +1,34 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">barcode</text>
-        </div>
-        <div class="item-content">
-            <input type="button" class="item-group-button" name="barcode" value="扫描二维码" onclick="startBarcode" />
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">barcode</text>
+		</div>
+		<div class="item-content">
+			<input type="button" class="item-group-button" name="barcode" value="扫描二维码" onclick="startBarcode" />
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 </style>
 
 <script>
-    module.exports = {
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Barcode'
-            })
-        },
-        startBarcode: function () {
-            uni.barcode.scan({
-                success: function (data) {
-                    console.log("handling success: " + data.result);
-                },
-                fail: function (data, code) {
-                    console.log("handling fail, code=" + code);
-                }
-            })
-        }
-    }
+	module.exports = {
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Barcode'
+			})
+		},
+		startBarcode: function () {
+			uni.barcode.scan({
+				success: function (data) {
+					console.log("handling success: " + data.result);
+				},
+				fail: function (data, code) {
+					console.log("handling fail, code=" + code);
+				}
+			})
+		}
+	}
 </script>

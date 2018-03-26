@@ -1,68 +1,68 @@
 <template>
-    <div class="container">
-        <div class="list-content">
-            <list class="mine-list">
-                <list-item type="mine" for="list" class="mine-item-list line">
-                    <text class="mine-item-list-text">{{$item}}</text>
-                    <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
-                </list-item>
-            </list>
-        </div>
-    </div>
+	<div class="container">
+		<div class="list-content">
+			<list class="mine-list">
+				<list-item type="mine" for="list" class="mine-item-list line">
+					<text class="mine-item-list-text">{{$item}}</text>
+					<image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
+				</list-item>
+			</list>
+		</div>
+	</div>
 </template>
 <style>
-    @import '../../Common/css/common.nss';
-    .container {
-        background-color: #EFEFF4;
-    }
+	@import '../../Common/css/common.nss';
+	.container {
+		background-color: #EFEFF4;
+	}
 
-    .list-content {
-        flex-direction: column;
-    }
+	.list-content {
+		flex-direction: column;
+	}
 
-    .line {
-        border-bottom-width: 1px;
-        border-bottom-color: #C8C8CB;
-    }
+	.line {
+		border-bottom-width: 1px;
+		border-bottom-color: #C8C8CB;
+	}
 
-    .mine-list {
-        width: 750px;
-        background-color: #ffffff;
-        margin-top: 25px;
-        border-color: #C8C8CB;
-        border-bottom-width: 1px;
-        border-top-width: 1px;
-    }
+	.mine-list {
+		width: 750px;
+		background-color: #ffffff;
+		margin-top: 25px;
+		border-color: #C8C8CB;
+		border-bottom-width: 1px;
+		border-top-width: 1px;
+	}
 
-    .mine-item-list {
-        width: 720px;
-        height: 90px;
-        margin-left: 30px;
-        flex-direction: row;
-    }
+	.mine-item-list {
+		width: 720px;
+		height: 90px;
+		margin-left: 30px;
+		flex-direction: row;
+	}
 
-    .mine-item-list-text {
-        width: 200px;
-        height: 90px;
-        text-align: left;
-    }
+	.mine-item-list-text {
+		width: 200px;
+		height: 90px;
+		text-align: left;
+	}
 
-    .mine-item-list-image {
-        width: 20px;
-        height: 20px;
-        margin-left: 479px;
-        margin-top: 35px;
-    }
+	.mine-item-list-image {
+		width: 20px;
+		height: 20px;
+		margin-left: 479px;
+		margin-top: 35px;
+	}
 </style>
 <script>
-    module.exports = {
+	module.exports = {
 		data:{
 			list:['评分鼓励','分享推荐','客服电话','问题反馈','检查更新']
 		},
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: '关于'
-            })
-        }
-    }
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: '关于'
+			})
+		}
+	}
 </script>

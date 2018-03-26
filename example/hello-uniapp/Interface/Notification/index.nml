@@ -1,61 +1,61 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">notification</text>
-        </div>
-        <div class="item-content">
-            <div class="item-group">
-                <div class="input-group">
-                    <label class="item-input-label">标题：</label>
-                    <input type="text" name="title" value="{{title}}" onchange="getNewTitle" placeholder="请输入标题" />
-                </div>
-                <div class="input-group">
-                    <label class="item-input-label">内容：</label>
-                    <input type="text" name="text" value="{{text}}" onchange="getNewText" placeholder="请输入内容" />
-                </div>
-                <input type="button" name="share" class="item-group-button" value="发送通知" onclick="notification" />
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">notification</text>
+		</div>
+		<div class="item-content">
+			<div class="item-group">
+				<div class="input-group">
+					<label class="item-input-label">标题：</label>
+					<input type="text" name="title" value="{{title}}" onchange="getNewTitle" placeholder="请输入标题" />
+				</div>
+				<div class="input-group">
+					<label class="item-input-label">内容：</label>
+					<input type="text" name="text" value="{{text}}" onchange="getNewText" placeholder="请输入内容" />
+				</div>
+				<input type="button" name="share" class="item-group-button" value="发送通知" onclick="notification" />
+			</div>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
-    .input-group {
-        padding: 20px;
-    }
+	@import '../../Common/css/common.nss';
+	.input-group {
+		padding: 20px;
+	}
 
-    .item-input-label {
-        width: 150px;
-    }
+	.item-input-label {
+		width: 150px;
+	}
 </style>
 
 <script>
-    module.exports = {
-        data: {
-            title: '',
-            text: ''
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Notification'
-            })
-        },
-        getNewTitle: function (e) {
-            this.title = e.text;
-        },
-        getNewText: function (e) {
-            this.text = e.text;
-        },
-        notification: function () {
-            var that = this;
-            uni.notification.show({
-                contentTitle: that.title || '标题',
-                contentText: that.text || '内容',
-                clickAction: {
-                    uri: '/Home'
-                }
-            })
-        }
-    }
+	module.exports = {
+		data: {
+			title: '',
+			text: ''
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Notification'
+			})
+		},
+		getNewTitle: function (e) {
+			this.title = e.text;
+		},
+		getNewText: function (e) {
+			this.text = e.text;
+		},
+		notification: function () {
+			var that = this;
+			uni.notification.show({
+				contentTitle: that.title || '标题',
+				contentText: that.text || '内容',
+				clickAction: {
+					uri: '/Home'
+				}
+			})
+		}
+	}
 </script>

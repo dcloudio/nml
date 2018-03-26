@@ -1,114 +1,114 @@
 <template>
-    <div class="container">
-        <div class="item-login">
-            <div class="item-input-group line">
-                <text class="item-input-text">账号</text>
-                <input class="item-input" type="text" name="username" placeholder="请输入账号" />
-            </div>
-            <div class="item-input-group">
-                <text class="item-input-text">密码</text>
-                <input class="item-input" type="password" name="password" placeholder="请输入密码" />
-            </div>
-        </div>
-        <div class="login-auto">
-            <text class="login-auto-text">自动登录</text>
-            <switch></switch>
-        </div>
-        <input type="button" name="login" class="login-text" value="登录" onclick="s" />
-        <div class="login-register-help">
-            <text class="login-register">注册账号</text>
-            <div class="r-h-line"></div>
-            <text class="login-help">忘记密码</text>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-login">
+			<div class="item-input-group line">
+				<text class="item-input-text">账号</text>
+				<input class="item-input" type="text" name="username" placeholder="请输入账号" />
+			</div>
+			<div class="item-input-group">
+				<text class="item-input-text">密码</text>
+				<input class="item-input" type="password" name="password" placeholder="请输入密码" />
+			</div>
+		</div>
+		<div class="login-auto">
+			<text class="login-auto-text">自动登录</text>
+			<switch></switch>
+		</div>
+		<input type="button" name="login" class="login-text" value="登录" onclick="s" />
+		<div class="login-register-help">
+			<text class="login-register">注册账号</text>
+			<div class="r-h-line"></div>
+			<text class="login-help">忘记密码</text>
+		</div>
+	</div>
 </template>
 <style>
-    @import '../../Common/css/common.nss';
-    .doc-page {
-        background-color: #EFEFF4;
-    }
+	@import '../../Common/css/common.nss';
+	.doc-page {
+		background-color: #EFEFF4;
+	}
 
-    .item-login {
-        margin-top: 20px;
-        background-color: #ffffff;
-        border-color: #D3D3D3;
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-        flex-direction: column;
-    }
+	.item-login {
+		margin-top: 20px;
+		background-color: #ffffff;
+		border-color: #D3D3D3;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+		flex-direction: column;
+	}
 
-    .item-input-group {
-        margin-left: 30px;
-        height: 90px;
-    }
+	.item-input-group {
+		margin-left: 30px;
+		height: 90px;
+	}
 
-    .item-input-text {
-        height: 90px;
-        padding-right: 100px;
-    }
+	.item-input-text {
+		height: 90px;
+		padding-right: 100px;
+	}
 
-    .item-input{
-        width: 550px;
-        height: 90px;
-    }
+	.item-input{
+		width: 550px;
+		height: 90px;
+	}
 
-    .login-auto {
-        height: 90px;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-        padding-right: 20px;
-        background-color: #ffffff;
-        border-color: #D3D3D3;
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-    }
+	.login-auto {
+		height: 90px;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 20px;
+		padding-right: 20px;
+		background-color: #ffffff;
+		border-color: #D3D3D3;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+	}
 
-    .login-auto-text {
-        padding-left: 30px;
-    }
+	.login-auto-text {
+		padding-left: 30px;
+	}
 
-    .line {
-        border-bottom-color: #D3D3D3;
-        border-bottom-width: 1px;
-    }
+	.line {
+		border-bottom-color: #D3D3D3;
+		border-bottom-width: 1px;
+	}
 
-    .r-h-line {
-        width: 2px;
-        height: 30px;
-        background-color: #AAAAAA;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-top: 5px;
-    }
+	.r-h-line {
+		width: 2px;
+		height: 30px;
+		background-color: #AAAAAA;
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top: 5px;
+	}
 
-    .login-text {
-        height: 80px;
-        background-color: #007AFF;
-        margin: 0px 50px;
-        color: #ffffff;
-        border-radius: 8px;
-        margin-top: 50px;
-    }
+	.login-text {
+		height: 80px;
+		background-color: #007AFF;
+		margin: 0px 50px;
+		color: #ffffff;
+		border-radius: 8px;
+		margin-top: 50px;
+	}
 
-    .login-register-help {
-        margin-top: 50px;
-        justify-content: center;
-    }
+	.login-register-help {
+		margin-top: 50px;
+		justify-content: center;
+	}
 
-    .login-register,
-    .login-help {
-        color: #007AFF;
-    }
+	.login-register,
+	.login-help {
+		color: #007AFF;
+	}
 </style>
 <script>
-    module.exports = {
-        data: {},
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: '登录'
-            });
-            // this.height = 750/weex.config.env.deviceWidth*weex.config.env.deviceHeight-300;
-        }
-    }
+	module.exports = {
+		data: {},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: '登录'
+			});
+			// this.height = 750/weex.config.env.deviceWidth*weex.config.env.deviceHeight-300;
+		}
+	}
 </script>

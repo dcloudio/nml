@@ -1,119 +1,119 @@
 <template>
-    <div class="container">
-        <div class="setting-content">
-            <div class="mine-header mine-common">
-                <image class="mine-header-logo" src="/Common/img/mi_logo.png"></image>
-                <text class="mine-header-text">请登录</text>
-                <image class="mine-header-arrow" src="/Common/img/arrow_right.png"></image>
-            </div>
-            <div class="mine-safe mine-common">
-                <text class="mine-safe-text">账号与安全</text>
-                <image class="mine-safe-image" src="/Common/img/arrow_right.png"></image>
-            </div>
-            <list class="mine-list">
-                <list-item type="mine" for="list" class="mine-item-list line">
-                    <text class="mine-item-list-text">{{$item}}</text>
-                    <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
-                </list-item>
-            </list>
-        </div>
-    </div>
+	<div class="container">
+		<div class="setting-content">
+			<div class="mine-header mine-common">
+				<image class="mine-header-logo" src="/Common/img/mi_logo.png"></image>
+				<text class="mine-header-text">请登录</text>
+				<image class="mine-header-arrow" src="/Common/img/arrow_right.png"></image>
+			</div>
+			<div class="mine-safe mine-common">
+				<text class="mine-safe-text">账号与安全</text>
+				<image class="mine-safe-image" src="/Common/img/arrow_right.png"></image>
+			</div>
+			<list class="mine-list">
+				<list-item type="mine" for="list" class="mine-item-list line">
+					<text class="mine-item-list-text">{{$item}}</text>
+					<image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
+				</list-item>
+			</list>
+		</div>
+	</div>
 </template>
 <style>
-    @import '../../Common/css/common.nss';
-    .setting-content {
-        flex-direction: column;
-    }
+	@import '../../Common/css/common.nss';
+	.setting-content {
+		flex-direction: column;
+	}
 
-    .line {
-        border-bottom-width: 1px;
-        border-bottom-color: #C8C8CB;
-    }
+	.line {
+		border-bottom-width: 1px;
+		border-bottom-color: #C8C8CB;
+	}
 
-    .mine-header-logo {
-        margin-left: 30px;
-        width: 90px;
-    }
+	.mine-header-logo {
+		margin-left: 30px;
+		width: 90px;
+	}
 
-    .mine-header-text {
-        padding-left: 20px;
-    }
+	.mine-header-text {
+		padding-left: 20px;
+	}
 
-    .mine-header-arrow {
-        margin-left: 479px;
-        width: 20px;
-        height: 20px;
-    }
+	.mine-header-arrow {
+		margin-left: 479px;
+		width: 20px;
+		height: 20px;
+	}
 
-    .mine-list {
-        width: 750px;
-        background-color: #ffffff;
-        margin-top: 25px;
-        border-color: #C8C8CB;
-        border-bottom-width: 1px;
-        border-top-width: 1px;
-    }
+	.mine-list {
+		width: 750px;
+		background-color: #ffffff;
+		margin-top: 25px;
+		border-color: #C8C8CB;
+		border-bottom-width: 1px;
+		border-top-width: 1px;
+	}
 
-    .mine-header {
-        margin-top: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        justify-content: flex-start;
-        align-items: center;
-    }
+	.mine-header {
+		margin-top: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		justify-content: flex-start;
+		align-items: center;
+	}
 
-    .mine-common {
-        width: 750px;
-        background-color: #ffffff;
-        border-color: #C8C8CB;
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-        flex-direction: row;
-    }
+	.mine-common {
+		width: 750px;
+		background-color: #ffffff;
+		border-color: #C8C8CB;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+		flex-direction: row;
+	}
 
-    .mine-safe {
-        margin-top: 50px;
-    }
+	.mine-safe {
+		margin-top: 50px;
+	}
 
-    .mine-item-list {
-        width: 720px;
-        height: 90px;
-        margin-left: 30px;
-        flex-direction: row;
-    }
+	.mine-item-list {
+		width: 720px;
+		height: 90px;
+		margin-left: 30px;
+		flex-direction: row;
+	}
 
-    .mine-safe-text,
-    .mine-item-list-text {
-        width: 200px;
-        height: 90px;
-        text-align: left;
-    }
+	.mine-safe-text,
+	.mine-item-list-text {
+		width: 200px;
+		height: 90px;
+		text-align: left;
+	}
 
-    .mine-safe-image,
-    .mine-item-list-image {
-        width: 20px;
-        height: 20px;
-        margin-left: 479px;
-        margin-top: 35px;
-    }
+	.mine-safe-image,
+	.mine-item-list-image {
+		width: 20px;
+		height: 20px;
+		margin-left: 479px;
+		margin-top: 35px;
+	}
 
-    .mine-safe-image {
-        margin-left: 509px;
-    }
+	.mine-safe-image {
+		margin-left: 509px;
+	}
 
-    .mine-safe-text {
-        padding-left: 30px;
-    }
+	.mine-safe-text {
+		padding-left: 30px;
+	}
 </style>
 <script>
-    module.exports = {
-        data: {
-            list: ['新消息通知', '隐私', '通用']
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: '设置'
-            })
-        }
-    }
+	module.exports = {
+		data: {
+			list: ['新消息通知', '隐私', '通用']
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: '设置'
+			})
+		}
+	}
 </script>

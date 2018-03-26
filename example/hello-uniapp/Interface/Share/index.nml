@@ -1,38 +1,38 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">share</text>
-        </div>
-        <div class="item-content">
-            <input type="button" name="sharetext" class="item-group-button" value="分享文本" onclick="share('text/html','今天天气不错')" />
-            <input type="button" name="shareimage" class="item-group-button" value="分享图片" onclick="share('image/*','/Common/img/mi_logo.png')"
-            />
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">share</text>
+		</div>
+		<div class="item-content">
+			<input type="button" name="sharetext" class="item-group-button" value="分享文本" onclick="share('text/html','今天天气不错')" />
+			<input type="button" name="shareimage" class="item-group-button" value="分享图片" onclick="share('image/*','/Common/img/mi_logo.png')"
+			/>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 </style>
 
 <script>
-    module.exports = {
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Share'
-            })
-        },
-        share: function (type, data) {
-            uni.share.share({
-                type: type,
-                data: data,
-                success: function (data) {
-                    console.log('...success...')
-                },
-                fail: function (data, code) {
-                    console.log('...fail...')
-                }
-            })
-        }
-    }
+	module.exports = {
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Share'
+			})
+		},
+		share: function (type, data) {
+			uni.share.share({
+				type: type,
+				data: data,
+				success: function (data) {
+					console.log('...success...')
+				},
+				fail: function (data, code) {
+					console.log('...fail...')
+				}
+			})
+		}
+	}
 </script>

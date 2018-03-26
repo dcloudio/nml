@@ -1,63 +1,63 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">switch</text>
-        </div>
-        <div class="item-content">
-            <list class="list">
-                <list-item type="switch" class="list-item line">
-                    <text>{{text1}}</text>
-                    <switch checked="true" onchange="changeText1()"></switch>
-                </list-item>
-                <list-item type="switch" class="list-item">
-                    <text>{{text2}}</text>
-                    <switch onchange="changeText2()"></switch>
-                </list-item>
-            </list>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">switch</text>
+		</div>
+		<div class="item-content">
+			<list class="list">
+				<list-item type="switch" class="list-item line">
+					<text>{{text1}}</text>
+					<switch checked="true" onchange="changeText1()"></switch>
+				</list-item>
+				<list-item type="switch" class="list-item">
+					<text>{{text2}}</text>
+					<switch onchange="changeText2()"></switch>
+				</list-item>
+			</list>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 
-    .list {
-        border-color: #D8D8D8;
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-        background-color: #ffffff;
-    }
+	.list {
+		border-color: #D8D8D8;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+		background-color: #ffffff;
+	}
 
-    .list-item {
-        flex-direction: row;
-        height: 90px;
-        padding-right: 40px;
-        justify-content: space-between;
-        margin-left: 40px;
-    }
+	.list-item {
+		flex-direction: row;
+		height: 90px;
+		padding-right: 40px;
+		justify-content: space-between;
+		margin-left: 40px;
+	}
 
-    .line {
-        border-color: #D8D8D8;
-        border-bottom-width: 1px;
-    }
+	.line {
+		border-color: #D8D8D8;
+		border-bottom-width: 1px;
+	}
 </style>
 
 <script>
-    module.exports = {
+	module.exports = {
 		data: {
-            text1: '开启',
-            text2: '关闭'
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Switch'
-            })
-        },
+			text1: '开启',
+			text2: '关闭'
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Switch'
+			})
+		},
 		changeText1:function(e){
 			this.text1 = e.checked == true ? '开启' : '关闭';
 		},
 		changeText2:function(e){
 			this.text2 = e.checked == true ? '开启' : '关闭';
 		}
-    }
+	}
 </script>

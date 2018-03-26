@@ -1,55 +1,55 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">fetch</text>
-        </div>
-        <div class="item-content">
-            <div class="item-group">
-                <text class="item-group-text" for="infos">{{$item}}</text>
-                <input type="button" name="fetch" class="item-group-button" value="刷新" onclick="fetch('refresh')" />
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">fetch</text>
+		</div>
+		<div class="item-content">
+			<div class="item-group">
+				<text class="item-group-text" for="infos">{{$item}}</text>
+				<input type="button" name="fetch" class="item-group-button" value="刷新" onclick="fetch('refresh')" />
+			</div>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 </style>
 
 <script>
-    module.exports = {
-        data: {
-            infos: []
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Fetch'
-            });
-            this.fetch();
-        },
-        fetch: function (p) {
-            var that = this;
-            uni.fetch.fetch({
-                url: 'http://www.dcloud.io/docs/HBuilder.json?timestamp=',
-                success: function (data) {
-                    if (data.code == 200) {
-                        var infos = [];
-                        var rs = JSON.parse(data.data);
-                        infos.push('HBuilder版本号：' + rs.win.version);
-                        infos.push('HBuilder名称：' + rs.win.name);
-                        infos.push('HBuilder大小：' + rs.win.size);
-                        that.infos = infos;
-                        if (p) {
-                            uni.prompt.showToast({
-                                message: '刷新成功'
-                            })
-                        }
-                    }
-                },
-                fail: function (data, code) {
-                    console.log('...fail...');
-                }
-            })
-        }
-    }
+	module.exports = {
+		data: {
+			infos: []
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Fetch'
+			});
+			this.fetch();
+		},
+		fetch: function (p) {
+			var that = this;
+			uni.fetch.fetch({
+				url: 'http://www.dcloud.io/docs/HBuilder.json?timestamp=',
+				success: function (data) {
+					if (data.code == 200) {
+						var infos = [];
+						var rs = JSON.parse(data.data);
+						infos.push('HBuilder版本号：' + rs.win.version);
+						infos.push('HBuilder名称：' + rs.win.name);
+						infos.push('HBuilder大小：' + rs.win.size);
+						that.infos = infos;
+						if (p) {
+							uni.prompt.showToast({
+								message: '刷新成功'
+							})
+						}
+					}
+				},
+				fail: function (data, code) {
+					console.log('...fail...');
+				}
+			})
+		}
+	}
 </script>

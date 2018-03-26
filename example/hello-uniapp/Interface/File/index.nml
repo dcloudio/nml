@@ -1,157 +1,157 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">file</text>
-        </div>
-        <div class="item-content">
-            <div class="item-group">
-                <text class="item-group-text">下载文件：{{downloadfile}}</text>
-                <input type="button" name="download" class="item-group-button" value="下载文件" onclick="downloadFile" />
-            </div>
-            <div class="item-group">
-                <text class="item-group-text">复制文件：{{copyfile}}</text>
-                <input type="button" name="copy" class="item-group-button" value="复制文件" onclick="copyFile" />
-            </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">file</text>
+		</div>
+		<div class="item-content">
 			<div class="item-group">
-                <text class="item-group-text">获取文件信息：{{getfile}}</text>
-                <input type="button" name="get" class="item-group-button" value="获取文件信息" onclick="getFile" />
-            </div>
-            <div class="item-group">
-                <text class="item-group-text">文件列表：</text>
-                <text class="item-group-text" for="listfile">{{$item.uri}}---{{$item.length}}---{{$item.lastModifiedTime}}</text>
-                <input type="button" name="list" class="item-group-button" value="文件列表" onclick="listFile" />
-            </div>
-            <div class="item-group">
-                <text class="item-group-text">移动文件：{{movefile}}</text>
-                <input type="button" name="move" class="item-group-button" value="移动文件" onclick="moveFile" />
-            </div>
-            <div class="item-group">
-                <text class="item-group-text">删除文件：{{deletefile}}</text>
-                <input type="button" name="delete" class="item-group-button" value="删除文件" onclick="deleteFile" />
-            </div>
-        </div>
-    </div>
+				<text class="item-group-text">下载文件：{{downloadfile}}</text>
+				<input type="button" name="download" class="item-group-button" value="下载文件" onclick="downloadFile" />
+			</div>
+			<div class="item-group">
+				<text class="item-group-text">复制文件：{{copyfile}}</text>
+				<input type="button" name="copy" class="item-group-button" value="复制文件" onclick="copyFile" />
+			</div>
+			<div class="item-group">
+				<text class="item-group-text">获取文件信息：{{getfile}}</text>
+				<input type="button" name="get" class="item-group-button" value="获取文件信息" onclick="getFile" />
+			</div>
+			<div class="item-group">
+				<text class="item-group-text">文件列表：</text>
+				<text class="item-group-text" for="listfile">{{$item.uri}}---{{$item.length}}---{{$item.lastModifiedTime}}</text>
+				<input type="button" name="list" class="item-group-button" value="文件列表" onclick="listFile" />
+			</div>
+			<div class="item-group">
+				<text class="item-group-text">移动文件：{{movefile}}</text>
+				<input type="button" name="move" class="item-group-button" value="移动文件" onclick="moveFile" />
+			</div>
+			<div class="item-group">
+				<text class="item-group-text">删除文件：{{deletefile}}</text>
+				<input type="button" name="delete" class="item-group-button" value="删除文件" onclick="deleteFile" />
+			</div>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 </style>
 
 <script>
-    module.exports = {
-        data: {
-            downloadfile: '',
-            movefile: '',
-            copyfile: '',
-            listfile: [],
-            getfile: '',
-            deletefile: ''
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'File'
-            })
-        },
-        downloadFile: function () {
-            var that = this;
-            uni.request.download({
-                url: 'http://img-cdn-qiniu.dcloud.net.cn/icon3.png',
-                success: function (data) {
-                    request.onDownloadComplete({
-                        token: data.token,
-                        success: function (data) {
-                            that.downloadfile = data.uri
-                        },
-                        fail: function (data, code) {
-                            console.log('...fail...');
-                        }
-                    })
-                },
-                fail: function (code, data) {
-                    console.log('...fail...');
-                }
-            });
-        },
-        moveFile: function () {
-            var that = this;
-            var dstUri = 'internal://mass/imgs/temp/';
-            uni.file.move({
-                srcUri: that.downloadfile,
-                dstUri: dstUri,
-                success: function (data) {
-                    that.movefile = dstUri;
-                },
-                fail: function (data, code) {
-                    that.movefile = code + '...' + dstUri;
-                }
-            })
-        },
-        copyFile: function () {
-            var that = this;
-            var dstUri = 'internal://mass/imgs/';
-            uni.file.copy({
-                srcUri: that.downloadfile,
-                dstUri: dstUri,
-                success: function (data) {
-                    that.copyfile = dstUri;
-                },
-                fail: function (data, code) {
-                    that.copyfile = code + '...' + dstUri;
-                }
-            })
-        },
-        listFile: function () {
-            var that = this;
-            var uri = 'internal://mass/imgs';
-            uni.file.list({
-                uri: uri,
-                success: function (data) {
-                    var result = JSON.parse(data);
-                    var list = result.fileList;
-                    var copylist = [];
-                    for (var i = 0; i < list.length; i++) {
-                        copylist.push({
-                            uri: '路径:' + list[i].uri,
-                            length: '大小:' + list[i].length,
-                            lastModifiedTime: '创建时间:' + that.getDate(list[i].lastModifiedTime)
-                        })
-                    }
-                    that.listfile = [].concat(copylist);
-                },
-                fail: function (data, code) {
-                    that.listfile = code + '...' + that.downloadfile;
-                }
-            })
-        },
-        getFile: function () {
-            var that = this;
-            uni.file.get({
-                uri: that.downloadfile,
-                success: function (data) {
-                    var data = JSON.parse(data);
-                    that.getfile = '路径:' + data.uri + '---' + '大小:' + data.length + '---' + '创建时间:' +
-                        that.getDate(data.lastModifiedTime);
-                },
-                fail: function (data, code) {
-                    that.getfile = code + '...' + that.downloadfile;
-                }
-            })
-        },
-        deleteFile: function () {
-            var that = this;
-            uni.file.delete({
-                uri: that.downloadfile,
-                success: function () {
-                    that.deletefile = '删除成功';
-                },
-                fail: function (data, code) {
-                    that.deletefile = code + '...' + that.downloadfile;
-                }
-            })
-        },
-        getDate: function (ms) {
-            var date = new Date(ms);
-            return date.toLocaleString();
-        }
-    }
+	module.exports = {
+		data: {
+			downloadfile: '',
+			movefile: '',
+			copyfile: '',
+			listfile: [],
+			getfile: '',
+			deletefile: ''
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'File'
+			})
+		},
+		downloadFile: function () {
+			var that = this;
+			uni.request.download({
+				url: 'http://img-cdn-qiniu.dcloud.net.cn/icon3.png',
+				success: function (data) {
+					request.onDownloadComplete({
+						token: data.token,
+						success: function (data) {
+							that.downloadfile = data.uri
+						},
+						fail: function (data, code) {
+							console.log('...fail...');
+						}
+					})
+				},
+				fail: function (code, data) {
+					console.log('...fail...');
+				}
+			});
+		},
+		moveFile: function () {
+			var that = this;
+			var dstUri = 'internal://mass/imgs/temp/';
+			uni.file.move({
+				srcUri: that.downloadfile,
+				dstUri: dstUri,
+				success: function (data) {
+					that.movefile = dstUri;
+				},
+				fail: function (data, code) {
+					that.movefile = code + '...' + dstUri;
+				}
+			})
+		},
+		copyFile: function () {
+			var that = this;
+			var dstUri = 'internal://mass/imgs/';
+			uni.file.copy({
+				srcUri: that.downloadfile,
+				dstUri: dstUri,
+				success: function (data) {
+					that.copyfile = dstUri;
+				},
+				fail: function (data, code) {
+					that.copyfile = code + '...' + dstUri;
+				}
+			})
+		},
+		listFile: function () {
+			var that = this;
+			var uri = 'internal://mass/imgs';
+			uni.file.list({
+				uri: uri,
+				success: function (data) {
+					var result = JSON.parse(data);
+					var list = result.fileList;
+					var copylist = [];
+					for (var i = 0; i < list.length; i++) {
+						copylist.push({
+							uri: '路径:' + list[i].uri,
+							length: '大小:' + list[i].length,
+							lastModifiedTime: '创建时间:' + that.getDate(list[i].lastModifiedTime)
+						})
+					}
+					that.listfile = [].concat(copylist);
+				},
+				fail: function (data, code) {
+					that.listfile = code + '...' + that.downloadfile;
+				}
+			})
+		},
+		getFile: function () {
+			var that = this;
+			uni.file.get({
+				uri: that.downloadfile,
+				success: function (data) {
+					var data = JSON.parse(data);
+					that.getfile = '路径:' + data.uri + '---' + '大小:' + data.length + '---' + '创建时间:' +
+						that.getDate(data.lastModifiedTime);
+				},
+				fail: function (data, code) {
+					that.getfile = code + '...' + that.downloadfile;
+				}
+			})
+		},
+		deleteFile: function () {
+			var that = this;
+			uni.file.delete({
+				uri: that.downloadfile,
+				success: function () {
+					that.deletefile = '删除成功';
+				},
+				fail: function (data, code) {
+					that.deletefile = code + '...' + that.downloadfile;
+				}
+			})
+		},
+		getDate: function (ms) {
+			var date = new Date(ms);
+			return date.toLocaleString();
+		}
+	}
 </script>

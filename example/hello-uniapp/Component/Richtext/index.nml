@@ -1,27 +1,27 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">richtext</text>
-        </div>
-        <div class="item-content">
-            <richtext type="html">{{type_html}}</richtext>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">richtext</text>
+		</div>
+		<div class="item-content">
+			<richtext type="html">{{type_html}}</richtext>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 </style>
 
 <script>
-    module.exports = {
-        data: {
-            type_html: '<div style="width: 100%;height: 100px;background-color: #99cc99; text-align: center; line-height: 100px;color: #ffffff;">richtext</div>',
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Richtext'
-            })
-        }
-    }
+	module.exports = {
+		data: {
+			type_html: '<div style="width: 100%;height: 100px;background-color: #99cc99; text-align: center; line-height: 100px;color: #ffffff;">richtext</div>',
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Richtext'
+			})
+		}
+	}
 </script>

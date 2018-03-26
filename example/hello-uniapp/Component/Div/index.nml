@@ -1,70 +1,70 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">div</text>
-        </div>
-        <div class="item-content">
-            <text>flex-direction: row</text>
-            <text>横向布局</text>
-            <div class="item-row">
-                <text class="item-row-text color1"></text>
-                <text class="item-row-text color2"></text>
-                <text class="item-row-text color3"></text>
-            </div>
-            <text>flex-direction: column</text>
-            <text>纵向布局</text>
-            <div class="item-column">
-                <text class="item-column-text color3"></text>
-                <text class="item-column-text color2"></text>
-                <text class="item-column-text color1"></text>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">div</text>
+		</div>
+		<div class="item-content">
+			<text>flex-direction: row</text>
+			<text>横向布局</text>
+			<div class="item-row">
+				<text class="item-row-text color1"></text>
+				<text class="item-row-text color2"></text>
+				<text class="item-row-text color3"></text>
+			</div>
+			<text>flex-direction: column</text>
+			<text>纵向布局</text>
+			<div class="item-column">
+				<text class="item-column-text color3"></text>
+				<text class="item-column-text color2"></text>
+				<text class="item-column-text color1"></text>
+			</div>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
-    .item-row {
-        margin: 60px 0px;
-        flex-direction: row;
-        justify-content: center;
-    }
+	@import '../../Common/css/common.nss';
+	.item-row {
+		margin: 60px 0px;
+		flex-direction: row;
+		justify-content: center;
+	}
 
-    .item-row-text {
-        width: 150px;
-        height: 250px;
-    }
+	.item-row-text {
+		width: 150px;
+		height: 250px;
+	}
 
-    .item-column {
-        margin-top: 40px;
-        flex-direction: column;
-        align-items: center;
-    }
+	.item-column {
+		margin-top: 40px;
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .item-column-text {
-        width: 250px;
-        height: 130px;
-    }
+	.item-column-text {
+		width: 250px;
+		height: 130px;
+	}
 
-    .color1 {
-        background-color: #339900;
-    }
+	.color1 {
+		background-color: #339900;
+	}
 
-    .color2 {
-        background-color: #33ccff;
-    }
+	.color2 {
+		background-color: #33ccff;
+	}
 
-    .color3 {
-        background-color: #929292;
-    }
+	.color3 {
+		background-color: #929292;
+	}
 </style>
 
 <script>
-    module.exports = {
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Div'
-            })
-        }
-    }
+	module.exports = {
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Div'
+			})
+		}
+	}
 </script>

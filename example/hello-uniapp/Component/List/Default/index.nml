@@ -1,104 +1,104 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">list</text>
-        </div>
-        <div class="item-control">
-            <div class="item-control-div">
-                <text class="item-control-text">输入列数：</text>
-                <input type="text" name="num" value="{{newcolumns}}" onchange="newColumns" />
-            </div>
-            <div class="item-control-button">
-                <input type="button" class="item-button" name="colunm" value="改变列数" onclick="changeColumn">
-                <input type="button" class="item-button" name="scrollmode" value="切换滚动模式" onclick="changeScrollMode">
-            </div>
-        </div>
-        <div class="item-content">
-            <list onscrollbottom="scrollBottom" onscrolltop="scrollTop" style="columns:{{columns}}" scrollpage="{{scrollpage}}" id="list">
-                <list-item class="item-list-item" type="item" for="{{lists}}">
-                    <text>{{$item}}</text>
-                </list-item>
-            </list>
-        </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">list</text>
+		</div>
+		<div class="item-control">
+			<div class="item-control-div">
+				<text class="item-control-text">输入列数：</text>
+				<input type="text" name="num" value="{{newcolumns}}" onchange="newColumns" />
+			</div>
+			<div class="item-control-button">
+				<input type="button" class="item-button" name="colunm" value="改变列数" onclick="changeColumn">
+				<input type="button" class="item-button" name="scrollmode" value="切换滚动模式" onclick="changeScrollMode">
+			</div>
+		</div>
+		<div class="item-content">
+			<list onscrollbottom="scrollBottom" onscrolltop="scrollTop" style="columns:{{columns}}" scrollpage="{{scrollpage}}" id="list">
+				<list-item class="item-list-item" type="item" for="{{lists}}">
+					<text>{{$item}}</text>
+				</list-item>
+			</list>
+		</div>
 
-    </div>
+	</div>
 </template>
 
 <style>
-    @import '../../../Common/css/common.nss';
-    .item-control {
-        flex-direction: column;
-    }
+	@import '../../../Common/css/common.nss';
+	.item-control {
+		flex-direction: column;
+	}
 
-    .item-control-div {
-        font-size: 25px;
-        color: #000000;
-        height: 70px;
-        padding-left: 50px;
-    }
+	.item-control-div {
+		font-size: 25px;
+		color: #000000;
+		height: 70px;
+		padding-left: 50px;
+	}
 
-    .item-control-text {
-        width: 190px;
-        text-align: center;
-    }
+	.item-control-text {
+		width: 190px;
+		text-align: center;
+	}
 
-    .item-control-button {
-        flex-direction: row;
-    }
+	.item-control-button {
+		flex-direction: row;
+	}
 
-    .item-button{
-        text-align: center;
-        border-radius: 3px;
-        background-color: #0faeff;
-        margin: 40px;
-        height: 70px;
-        font-size: 25px;
-        color: #ffffff;
-    }
+	.item-button{
+		text-align: center;
+		border-radius: 3px;
+		background-color: #0faeff;
+		margin: 40px;
+		height: 70px;
+		font-size: 25px;
+		color: #ffffff;
+	}
 
-    .item-list-item {
-        height: 100px;
-        border-bottom-color: #DDDDDD;
-        border-bottom-width: 1px;
-        align-items: center;
-        justify-content: center;
-    }
+	.item-list-item {
+		height: 100px;
+		border-bottom-color: #DDDDDD;
+		border-bottom-width: 1px;
+		align-items: center;
+		justify-content: center;
+	}
 </style>
 
 <script>
-    module.exports = {
-        data: {
-            columns: 1,
-            newcolumns: 1,
-            scrollpage: false,
-            lists: ['Item1', 'Item2', 'Item3', 'Item4', 'Item5', 'Item6', 'Item7', 'Item8', 'Item9', 'Item10']
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'List'
-            })
-        },
-        newColumns: function (e) {
-            this.newcolumns = e.text || 1;
-        },
-        changeColumn: function () {
-            if (this.newcolumns != this.columns) {
-                this.columns = this.newcolumns;
-            }
+	module.exports = {
+		data: {
+			columns: 1,
+			newcolumns: 1,
+			scrollpage: false,
+			lists: ['Item1', 'Item2', 'Item3', 'Item4', 'Item5', 'Item6', 'Item7', 'Item8', 'Item9', 'Item10']
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'List'
+			})
+		},
+		newColumns: function (e) {
+			this.newcolumns = e.text || 1;
+		},
+		changeColumn: function () {
+			if (this.newcolumns != this.columns) {
+				this.columns = this.newcolumns;
+			}
 
-        },
-        changeScrollMode: function () {
-            this.scrollpage = !this.scrollpage;
-        },
-        scrollBottom: function () {
-            uni.prompt.showToast({
-                message: "滚动到底部了"
-            })
-        },
-        scrollTop: function () {
-            uni.prompt.showToast({
-                message: "滚动到顶部了"
-            })
-        }
-    }
+		},
+		changeScrollMode: function () {
+			this.scrollpage = !this.scrollpage;
+		},
+		scrollBottom: function () {
+			uni.prompt.showToast({
+				message: "滚动到底部了"
+			})
+		},
+		scrollTop: function () {
+			uni.prompt.showToast({
+				message: "滚动到顶部了"
+			})
+		}
+	}
 </script>

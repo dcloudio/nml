@@ -1,9 +1,9 @@
 <template>
-    <div class="container">
-        <div class="item-content">
-            <text class="item-content-text">我是上个页面传过来的参数，id={{id}}</text>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-content">
+			<text class="item-content-text">我是上个页面传过来的参数，id={{id}}</text>
+		</div>
+	</div>
 </template>
 
 <style>
@@ -14,12 +14,12 @@
 </style>
 
 <script>
-    module.exports = {
-        props: ['id'],
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Detail'
-            })
-        }
-    }
+	module.exports = {
+		props: ['id'],
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Detail'
+			})
+		}
+	}
 </script>

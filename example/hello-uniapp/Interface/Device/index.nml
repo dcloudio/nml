@@ -1,62 +1,62 @@
 <template>
-    <div class="container">
-        <div class="item-title">
-            <text class="item-title-text">device</text>
-        </div>
-        <div class="item-content">
-            <div class="item-group">
-                <text class="item-group-text" for="infos">{{$item}}</text>
-                <input type="button" name="device" class="item-group-button" value="获取设备信息" onclick="getDeviceInfos" />
-            </div>
-            <div class="item-group">
-                <text class="item-group-text" show="{{show}}">{{devideId}}</text>
-                <input type="button" name="deviceId" class="item-group-button" value="获取设备ID" onclick="getDeviceId" />
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="item-title">
+			<text class="item-title-text">device</text>
+		</div>
+		<div class="item-content">
+			<div class="item-group">
+				<text class="item-group-text" for="infos">{{$item}}</text>
+				<input type="button" name="device" class="item-group-button" value="获取设备信息" onclick="getDeviceInfos" />
+			</div>
+			<div class="item-group">
+				<text class="item-group-text" show="{{show}}">{{devideId}}</text>
+				<input type="button" name="deviceId" class="item-group-button" value="获取设备ID" onclick="getDeviceId" />
+			</div>
+		</div>
+	</div>
 </template>
 
 <style>
-    @import '../../Common/css/common.nss';
+	@import '../../Common/css/common.nss';
 </style>
 
 <script>
-    module.exports = {
-        data: {
-            infos: [],
-            devideId: '',
-            show: false
-        },
-        onInit: function (e) {
-            this.$page.setTitleBar({
-                text: 'Device'
-            })
-        },
-        getDeviceInfos: function () {
-            var that = this;
-            uni.device.getInfo({
-                success: function (data) {
-                    var infos = [];
-                    infos.push('设备品牌：' + data.brand);
-                    infos.push('设备型号：' + data.model);
-                    infos.push('设备代号：' + data.product);
-                    infos.push('操作系统版本名称：' + data.osVersionName);
-                    infos.push('操作系统版本号：' + data.osVersionCode);
-                    infos.push('屏幕宽：' + data.screenWidth);
-                    infos.push('屏幕高：' + data.screenHeight);
-                    that.infos = infos;
-                }
-            })
-        },
-        getDeviceId: function () {
-            var that = this;
-            uni.device.getId({
-                type: ["device", "mac"],
-                success: function (data) {
-                    that.show = true;
-                    that.devideId = '设备Id：' + data.device;
-                }
-            })
-        }
-    }
+	module.exports = {
+		data: {
+			infos: [],
+			devideId: '',
+			show: false
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: 'Device'
+			})
+		},
+		getDeviceInfos: function () {
+			var that = this;
+			uni.device.getInfo({
+				success: function (data) {
+					var infos = [];
+					infos.push('设备品牌：' + data.brand);
+					infos.push('设备型号：' + data.model);
+					infos.push('设备代号：' + data.product);
+					infos.push('操作系统版本名称：' + data.osVersionName);
+					infos.push('操作系统版本号：' + data.osVersionCode);
+					infos.push('屏幕宽：' + data.screenWidth);
+					infos.push('屏幕高：' + data.screenHeight);
+					that.infos = infos;
+				}
+			})
+		},
+		getDeviceId: function () {
+			var that = this;
+			uni.device.getId({
+				type: ["device", "mac"],
+				success: function (data) {
+					that.show = true;
+					that.devideId = '设备Id：' + data.device;
+				}
+			})
+		}
+	}
 </script>
