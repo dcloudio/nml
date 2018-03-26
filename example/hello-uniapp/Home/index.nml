@@ -1,597 +1,596 @@
 <template>
-	<div class="container">
-		<tabs onchange="changeActive">
-			<tab-content class="item-tabcnt">
-				<div class="item-group" onswipe= "swipeShowMenu()">
-					<div class="item-desc">
-						<text class="item-desc-detail">
-							以下将展示uniapp组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见uniapp开发文档
-						</text>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('view')">
-							<text class="{{active==='view'?'show-txt-outer':''}}">容器组件</text>
-						</div>
-						<div class="item-list {{active==='view'?'show':''}}">
-							<div class="item-list-li" onclick="showDetail('Component/Div')">
-								<text class="item-list-li-text">div</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showChildren('list')">
-								<text class="item-list-li-text">list</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list {{childActive==='list'?'show':''}}" style="padding-right: 0px;">
-								<div class="item-list-li" onclick="showDetail('Component/List/Default')">
-									<text class="item-list-li-text">基本功能</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-								<div class="item-list-li item-list-li-last" onclick="showDetail('Component/List')">
-									<text class="item-list-li-text">图文列表</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Refresh')">
-								<text class="item-list-li-text">refresh</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Richtext')">
-								<text class="item-list-li-text">richtext</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Stack')">
-								<text class="item-list-li-text">stack</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showChildren('swiper')">
-								<text class="item-list-li-text">swiper</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list {{childActive==='swiper'?'show':''}}" style="padding-right: 0px;">
-								<div class="item-list-li" onclick="showDetail('Component/Swiper/Default')">
-									<text class="item-list-li-text">图片轮播</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-								<div class="item-list-li" onclick="showDetail('Component/Swiper')">
-									<text class="item-list-li-text">下方悬浮标题</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-								<div class="item-list-li item-list-li-last" onclick="showDetail('Component/Swiper/Grid')">
-									<text class="item-list-li-text">可左右拖动的9宫导航</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-							</div>
-							<div class="item-list-li item-list-li-last" onclick="showChildren('tabs')">
-								<text class="item-list-li-text">tabs</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list {{childActive==='tabs'?'show':''}}" style="padding-right: 0px;">
-								<div class="item-list-li" onclick="showDetail('Component/Tabs/Default')">
-									<text class="item-list-li-text">顶部选项卡</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-								<div class="item-list-li item-list-li-last" onclick="showDetail('Component/Tabs')">
-									<text class="item-list-li-text">底部选项卡</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('basic')">
-							<text class="{{active==='basic'?'show-txt-outer':''}} ">基础组件</text>
-						</div>
-						<div class="item-list {{active==='basic'?'show':''}}">
-							<div class="item-list-li" onclick="showDetail('Component/A')">
-								<text class="item-list-li-text">a</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Image')">
-								<text class="item-list-li-text">image</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Progress')">
-								<text class="item-list-li-text">progress</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Span')">
-								<text class="item-list-li-text">span</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li item-list-li-last" onclick="showChildren('text')">
-								<text class="item-list-li-text">text</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list {{childActive==='text'?'show':''}}" style="padding-right: 0px;">
-								<div class="item-list-li" onclick="showDetail('Component/Text/Default')">
-									<text class="item-list-li-text">基本功能</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-								<div class="item-list-li item-list-li-last" onclick="showDetail('Component/Text')">
-									<text class="item-list-li-text">数字角标</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('form')">
-							<text class="{{active==='form'?'show-txt-outer':''}}">表单组件</text>
-						</div>
-						<div class="item-list {{active==='form'?'show':''}}">
-							<div class="item-list-li " onclick="showChildren('input')">
-								<text class="item-list-li-text">input</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list {{childActive==='input'?'show':''}}" style="padding-right: 0px;">
-								<div class="item-list-li" onclick="showDetail('Component/Input/Default')">
-									<text class="item-list-li-text">基本功能</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-								<div class="item-list-li item-list-li-last" onclick="showDetail('Component/Input')">
-									<text class="item-list-li-text">数字输入框</text>
-									<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-								</div>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Button')">
-								<text class="item-list-li-text">button</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Radio')">
-								<text class="item-list-li-text">radio</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Checkbox')">
-								<text class="item-list-li-text">checkbox</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Label')">
-								<text class="item-list-li-text">label</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Component/Switch')">
-								<text class="item-list-li-text">switch</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li item-list-li-last" onclick="showDetail('Component/Textarea')">
-								<text class="item-list-li-text">textarea</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-						</div>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('multimedia')">
-							<text class="{{active==='multimedia'?'show-txt-outer':''}}">多媒体</text>
-						</div>
-						<div class="item-list {{active==='multimedia'?'show':''}}">
-							<div class="item-list-li item-list-li-last" onclick="showDetail('Component/Video')">
-								<text class="item-list-li-text">video</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item-group">
-					<div class="item-desc">
-						<text class="item-desc-detail">
-							以下将展示uniapp接口能力，具体属性参数详见uniapp开发文档
-						</text>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('interBasic')">
-							<text class="{{active==='interBasic'?'show-txt-outer':''}}">基本功能</text>
-						</div>
-						<div class="item-list {{active==='interBasic'?'show':''}}">
-							<div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Router')">
-								<text class="item-list-li-text">页面路由</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-						</div>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('interAction')">
-							<text class="{{active==='interAction'?'show-txt-outer':''}}">界面交互</text>
-						</div>
-						<div class="item-list {{active==='interAction'?'show':''}}">
-							<div class="item-list-li" onclick="showDetail('Interface/Share')">
-								<text class="item-list-li-text">分享</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Interface/Prompt')">
-								<text class="item-list-li-text">弹窗</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Interface/Webview')">
-								<text class="item-list-li-text">打开网页</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Notification')">
-								<text class="item-list-li-text">通知消息</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-						</div>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('network')">
-							<text class="{{active==='network'?'show-txt-outer':''}}">网络访问</text>
-						</div>
-						<div class="item-list {{active==='network'?'show':''}}">
-							<div class="item-list-li" onclick="showDetail('Interface/Request')">
-								<text class="item-list-li-text">下载文件</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Fetch')">
-								<text class="item-list-li-text">数据请求</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-						</div>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('file')">
-							<text class="{{active==='file'?'show-txt-outer':''}}">文件数据</text>
-						</div>
-						<div class="item-list {{active==='file'?'show':''}}">
-							<div class="item-list-li" onclick="showDetail('Interface/Storage')">
-								<text class="item-list-li-text">数据储存</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li item-list-li-last" onclick="showDetail('Interface/File')">
-								<text class="item-list-li-text">文件储存</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-						</div>
-					</div>
-					<div class="item-content">
-						<div class="item-title" onclick="showChild('system')">
-							<text class="{{active==='system'?'show-txt-outer':''}}">系统能力</text>
-						</div>
-						<div class="item-list {{active==='system'?'show':''}}">
-							<div class="item-list-li" onclick="showDetail('Interface/Sensor')">
-								<text class="item-list-li-text">传感器</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Interface/Geolocation')">
-								<text class="item-list-li-text">地理位置</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Interface/Barcode')">
-								<text class="item-list-li-text">二维码</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Interface/Clipboard')">
-								<text class="item-list-li-text">剪切板</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Interface/Device')">
-								<text class="item-list-li-text">设备信息</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li" onclick="showDetail('Interface/Network')">
-								<text class="item-list-li-text">网络状态</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-							<div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Shortcut')">
-								<text class="item-list-li-text">桌面图标</text>
-								<image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item-group">
-					<div class="mine-list">
-						<div onclick="showDetail('Templates/Setting')" class="mine-item-list line">
-							<text class="mine-item-list-text">设置</text>
-							<image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
-						</div>
-						<div onclick="showDetail('Templates/About')" class="mine-item-list">
-							<text class="mine-item-list-text">关于</text>
-							<image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
-						</div>
-					</div>
-					<div class="mine-login" onclick="showDetail('Templates/Login')">
-						<text>登录</text>
-					</div>
-				</div>
-			</tab-content>
-			<tab-bar class="item-tabbar">
-				<text class="item-tabbar-text">组件</text>
-				<text class="item-tabbar-text">接口</text>
-				<text class="item-tabbar-text">模板</text>
-			</tab-bar>
-		</tabs>
-		<stack class="slide-menu-container">
-			<div class="overlay" onclick="hideMenu" if="showCover">
-			</div>
-			<div class="slide-menu {{slideAnimation}}" onswipe= "swipeCloseMenu()">
-				<text class="slide-menu-text">侧滑导航</text>
-				<text class="slide-menu-desc">这是可拖动式侧滑菜单示例，你可以在这里放置任何内容</text>
-				<input type="button" name="hideMenu" class="slide-menu-close" value="关闭侧滑菜单" onclick="hideMenu" />
-				<text class="slide-menu-text slide-menu-title">侧滑列表示例</text>
-				<list class="slide-menu-li">
-					<list-item class="slide-menu-listitem" type="menu" for="{{menuList}}">
-						<text class="slide-menu-listitem-text">item{{$item}}</text>
-						<image class="slide-menu-listitem-image" src="Common/img/youjiantou.png"></image>
-					</list-item>
-				</list>
-			</div>
-		</stack>
-	</div>
+    <div class="container">
+        <tabs onchange="changeActive">
+            <tab-content class="item-tabcnt">
+                <div class="item-group" onswipe="swipeShowMenu()">
+                    <div class="item-desc">
+                        <text class="item-desc-detail">
+                            以下将展示uniapp组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见uniapp开发文档
+                        </text>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('view')">
+                            <text class="{{active==='view'?'show-txt-outer':''}}">容器组件</text>
+                        </div>
+                        <div class="item-list {{active==='view'?'show':''}}">
+                            <div class="item-list-li" onclick="showDetail('Component/Div')">
+                                <text class="item-list-li-text">div</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showChildren('list')">
+                                <text class="item-list-li-text">list</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list {{childActive==='list'?'show':''}}" style="padding-right: 0px;">
+                                <div class="item-list-li" onclick="showDetail('Component/List/Default')">
+                                    <text class="item-list-li-text">基本功能</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                                <div class="item-list-li item-list-li-last" onclick="showDetail('Component/List')">
+                                    <text class="item-list-li-text">图文列表</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Refresh')">
+                                <text class="item-list-li-text">refresh</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Richtext')">
+                                <text class="item-list-li-text">richtext</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Stack')">
+                                <text class="item-list-li-text">stack</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showChildren('swiper')">
+                                <text class="item-list-li-text">swiper</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list {{childActive==='swiper'?'show':''}}" style="padding-right: 0px;">
+                                <div class="item-list-li" onclick="showDetail('Component/Swiper/Default')">
+                                    <text class="item-list-li-text">图片轮播</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                                <div class="item-list-li" onclick="showDetail('Component/Swiper')">
+                                    <text class="item-list-li-text">下方悬浮标题</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                                <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Swiper/Grid')">
+                                    <text class="item-list-li-text">可左右拖动的9宫导航</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                            </div>
+                            <div class="item-list-li item-list-li-last" onclick="showChildren('tabs')">
+                                <text class="item-list-li-text">tabs</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list {{childActive==='tabs'?'show':''}}" style="padding-right: 0px;">
+                                <div class="item-list-li" onclick="showDetail('Component/Tabs/Default')">
+                                    <text class="item-list-li-text">顶部选项卡</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                                <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Tabs')">
+                                    <text class="item-list-li-text">底部选项卡</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('basic')">
+                            <text class="{{active==='basic'?'show-txt-outer':''}} ">基础组件</text>
+                        </div>
+                        <div class="item-list {{active==='basic'?'show':''}}">
+                            <div class="item-list-li" onclick="showDetail('Component/A')">
+                                <text class="item-list-li-text">a</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Image')">
+                                <text class="item-list-li-text">image</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Progress')">
+                                <text class="item-list-li-text">progress</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Span')">
+                                <text class="item-list-li-text">span</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li item-list-li-last" onclick="showChildren('text')">
+                                <text class="item-list-li-text">text</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list {{childActive==='text'?'show':''}}" style="padding-right: 0px;">
+                                <div class="item-list-li" onclick="showDetail('Component/Text/Default')">
+                                    <text class="item-list-li-text">基本功能</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                                <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Text')">
+                                    <text class="item-list-li-text">数字角标</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('form')">
+                            <text class="{{active==='form'?'show-txt-outer':''}}">表单组件</text>
+                        </div>
+                        <div class="item-list {{active==='form'?'show':''}}">
+                            <div class="item-list-li " onclick="showChildren('input')">
+                                <text class="item-list-li-text">input</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list {{childActive==='input'?'show':''}}" style="padding-right: 0px;">
+                                <div class="item-list-li" onclick="showDetail('Component/Input/Default')">
+                                    <text class="item-list-li-text">基本功能</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                                <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Input')">
+                                    <text class="item-list-li-text">数字输入框</text>
+                                    <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                                </div>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Button')">
+                                <text class="item-list-li-text">button</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Radio')">
+                                <text class="item-list-li-text">radio</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Checkbox')">
+                                <text class="item-list-li-text">checkbox</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Label')">
+                                <text class="item-list-li-text">label</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Component/Switch')">
+                                <text class="item-list-li-text">switch</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Textarea')">
+                                <text class="item-list-li-text">textarea</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('multimedia')">
+                            <text class="{{active==='multimedia'?'show-txt-outer':''}}">多媒体</text>
+                        </div>
+                        <div class="item-list {{active==='multimedia'?'show':''}}">
+                            <div class="item-list-li item-list-li-last" onclick="showDetail('Component/Video')">
+                                <text class="item-list-li-text">video</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-group">
+                    <div class="item-desc">
+                        <text class="item-desc-detail">
+                            以下将展示uniapp接口能力，具体属性参数详见uniapp开发文档
+                        </text>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('interBasic')">
+                            <text class="{{active==='interBasic'?'show-txt-outer':''}}">基本功能</text>
+                        </div>
+                        <div class="item-list {{active==='interBasic'?'show':''}}">
+                            <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Router')">
+                                <text class="item-list-li-text">页面路由</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('interAction')">
+                            <text class="{{active==='interAction'?'show-txt-outer':''}}">界面交互</text>
+                        </div>
+                        <div class="item-list {{active==='interAction'?'show':''}}">
+                            <div class="item-list-li" onclick="showDetail('Interface/Share')">
+                                <text class="item-list-li-text">分享</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Interface/Prompt')">
+                                <text class="item-list-li-text">弹窗</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Interface/Webview')">
+                                <text class="item-list-li-text">打开网页</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Notification')">
+                                <text class="item-list-li-text">通知消息</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('network')">
+                            <text class="{{active==='network'?'show-txt-outer':''}}">网络访问</text>
+                        </div>
+                        <div class="item-list {{active==='network'?'show':''}}">
+                            <div class="item-list-li" onclick="showDetail('Interface/Request')">
+                                <text class="item-list-li-text">下载文件</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Fetch')">
+                                <text class="item-list-li-text">数据请求</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('file')">
+                            <text class="{{active==='file'?'show-txt-outer':''}}">文件数据</text>
+                        </div>
+                        <div class="item-list {{active==='file'?'show':''}}">
+                            <div class="item-list-li" onclick="showDetail('Interface/Storage')">
+                                <text class="item-list-li-text">数据储存</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/File')">
+                                <text class="item-list-li-text">文件储存</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title" onclick="showChild('system')">
+                            <text class="{{active==='system'?'show-txt-outer':''}}">系统能力</text>
+                        </div>
+                        <div class="item-list {{active==='system'?'show':''}}">
+                            <div class="item-list-li" onclick="showDetail('Interface/Sensor')">
+                                <text class="item-list-li-text">传感器</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Interface/Geolocation')">
+                                <text class="item-list-li-text">地理位置</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Interface/Barcode')">
+                                <text class="item-list-li-text">二维码</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Interface/Clipboard')">
+                                <text class="item-list-li-text">剪切板</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Interface/Device')">
+                                <text class="item-list-li-text">设备信息</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li" onclick="showDetail('Interface/Network')">
+                                <text class="item-list-li-text">网络状态</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                            <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Shortcut')">
+                                <text class="item-list-li-text">桌面图标</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-group">
+                    <div class="mine-list">
+                        <div onclick="showDetail('Templates/Setting')" class="mine-item-list line">
+                            <text class="mine-item-list-text">设置</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
+                        </div>
+                        <div onclick="showDetail('Templates/About')" class="mine-item-list">
+                            <text class="mine-item-list-text">关于</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
+                        </div>
+                    </div>
+                    <div class="mine-login" onclick="showDetail('Templates/Login')">
+                        <text>登录</text>
+                    </div>
+                </div>
+            </tab-content>
+            <tab-bar class="item-tabbar">
+                <text class="item-tabbar-text">组件</text>
+                <text class="item-tabbar-text">接口</text>
+                <text class="item-tabbar-text">模板</text>
+            </tab-bar>
+        </tabs>
+        <stack class="slide-menu-container">
+            <div class="overlay" onclick="hideMenu" if="showCover">
+            </div>
+            <div class="slide-menu {{slideAnimation}}" onswipe="swipeCloseMenu()">
+                <text class="slide-menu-text">侧滑导航</text>
+                <text class="slide-menu-desc">这是可拖动式侧滑菜单示例，你可以在这里放置任何内容</text>
+                <input type="button" name="hideMenu" class="slide-menu-close" value="关闭侧滑菜单" onclick="hideMenu" />
+                <text class="slide-menu-text slide-menu-title">侧滑列表示例</text>
+                <list class="slide-menu-li">
+                    <list-item class="slide-menu-listitem" type="menu" for="{{menuList}}">
+                        <text class="slide-menu-listitem-text">item{{$item}}</text>
+                        <image class="slide-menu-listitem-image" src="Common/img/youjiantou.png"></image>
+                    </list-item>
+                </list>
+            </div>
+        </stack>
+    </div>
 </template>
 
 <style>
-	.slide-menu-container{
-		width: 100%;
-		height: 100%;
-		position: fixed;
-	}
-	
-	.overlay {
-		width: 100%;
-		height: 100%;
-		opacity: 0.5;
-		background-color: #000000;
-	}
-	
-	.slide-menu {
-		width: 525px;
-		transform: translateX(-525px);
-		opacity:0;
-		height: 100%;
-		padding: 50px 20px;
-		flex-direction: column;
-		background-color: #000000;
-	}
-	
-	.slide-in{
-		opacity:1;
-		transform: translateX(0px);
-		animation-duration:200ms;
-	}
-	
-	.slide-out{
-		opacity:0;
-		transform: translateX(-525px);
-		animation-duration:200ms;
-	}
-	
-	.slide-menu-text {
-		width: 100%;
-		height: 80px;
-		font-size: 35px;
-		color: #ffffff;
-	}
+    .slide-menu-container {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+    }
 
-	.slide-menu-desc {
-		color: #AAAAAA;
-		margin-top: 30px;
-		font-size: 28px;
-	}
+    .overlay {
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        background-color: #000000;
+    }
 
-	.slide-menu-close {
-		margin: 30px 70px;
-		height: 80px;
-		border-radius: 8px;
-		background-color: #dd524d;
-		color: #ffffff;
-	}
+    .slide-menu {
+        width: 525px;
+        transform: translateX(-525px);
+        opacity: 0;
+        height: 100%;
+        padding: 50px 20px;
+        flex-direction: column;
+        background-color: #000000;
+    }
 
-	.slide-menu-title {
-		margin-top: 50px;
-	}
+    .slide-in {
+        opacity: 1;
+        transform: translateX(0px);
+        animation-duration: 200ms;
+    }
 
-	.slide-menu-listitem {
-		height: 70px;
-		flex-direction: row;
-		align-items: center;
-	}
+    .slide-out {
+        opacity: 0;
+        transform: translateX(-525px);
+        animation-duration: 200ms;
+    }
 
-	.slide-menu-listitem-text {
-		color: #ffffff;
-	}
+    .slide-menu-text {
+        width: 100%;
+        height: 80px;
+        font-size: 35px;
+        color: #ffffff;
+    }
 
-	.slide-menu-listitem-image {
-		margin-left: 360px;
-		margin-top: 5px;
-	}
+    .slide-menu-desc {
+        color: #AAAAAA;
+        margin-top: 30px;
+        font-size: 28px;
+    }
+
+    .slide-menu-close {
+        margin: 30px 70px;
+        height: 80px;
+        border-radius: 8px;
+        background-color: #dd524d;
+        color: #ffffff;
+    }
+
+    .slide-menu-title {
+        margin-top: 50px;
+    }
+
+    .slide-menu-listitem {
+        height: 70px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .slide-menu-listitem-text {
+        color: #ffffff;
+    }
+
+    .slide-menu-listitem-image {
+        margin-left: 360px;
+        margin-top: 5px;
+    }
 
 
-	.container,
-	.item-tabcnt {
-		flex-direction: column;
-		flex: 1;
-	}
+    .container,
+    .item-tabcnt {
+        flex-direction: column;
+        flex: 1;
+    }
 
-	.item-group {
-		flex-direction: column;
-	}
+    .item-group {
+        flex-direction: column;
+    }
 
-	.item-desc {
-		padding: 2px 70px;
-		margin: 70px 0;
-		flex-direction: column;
-		align-items: center;
-	}
+    .item-desc {
+        padding: 2px 70px;
+        margin: 70px 0;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.item-desc-detail {
-		text-align: center;
-		flex: 1;
-		lines: 3;
-		line-height: 50px;
-		color: #888888;
-	}
+    .item-desc-detail {
+        text-align: center;
+        flex: 1;
+        lines: 3;
+        line-height: 50px;
+        color: #888888;
+    }
 
-	.item-content {
-		margin: 0px 30px 30px;
-		background-color: #ffffff;
-		flex-direction: column;
-	}
+    .item-content {
+        margin: 0px 30px 30px;
+        background-color: #ffffff;
+        flex-direction: column;
+    }
 
-	.item-title {
-		padding: 30px;
-	}
+    .item-title {
+        padding: 30px;
+    }
 
-	.item-list {
-		flex-direction: column;
-		padding: 0px 35px;
-		display: none;
-	}
+    .item-list {
+        flex-direction: column;
+        padding: 0px 35px;
+        display: none;
+    }
 
-	.item-list-li {
-		border-color: #bbbbbb;
-		border-bottom-width: 1px;
-		align-items: center;
-	}
+    .item-list-li {
+        border-color: #bbbbbb;
+        border-bottom-width: 1px;
+        align-items: center;
+    }
 
-	.item-list-li-last {
-		border-bottom-width: 0px;
-	}
+    .item-list-li-last {
+        border-bottom-width: 0px;
+    }
 
-	.item-list-li-text {
-		padding: 25px 0px;
-		color: #000000;
-		width: 700px;
-	}
+    .item-list-li-text {
+        padding: 25px 0px;
+        color: #000000;
+        width: 700px;
+    }
 
-	.item-list-li-image {
-		height: 20px;
-		width: 20px;
-		margin-right: 28px;
-		resize-mode: contain;
-	}
+    .item-list-li-image {
+        height: 20px;
+        width: 20px;
+        margin-right: 28px;
+        resize-mode: contain;
+    }
 
-	.item-tabbar {
-		height: 120px;
-		border-top-width: 1px;
-		border-top-color: #bbbbbb;
-		background-color: #ffffff;
-	}
+    .item-tabbar {
+        height: 120px;
+        border-top-width: 1px;
+        border-top-color: #bbbbbb;
+        background-color: #ffffff;
+    }
 
-	.item-tabbar-text {
-		text-align: center;
-		color: #a8abad;
-	}
+    .item-tabbar-text {
+        text-align: center;
+        color: #a8abad;
+    }
 
-	.item-tabbar-text:active {
-		color: #1aad19;
-	}
+    .item-tabbar-text:active {
+        color: #1aad19;
+    }
 
-	.mine-list {
-		width: 750px;
-		height: 180px;
-		background-color: #ffffff;
-		margin-top: 25px;
-		border-color: #C8C8CB;
-		border-bottom-width: 1px;
-		border-top-width: 1px;
-		flex-direction: column;
-	}
+    .mine-list {
+        width: 750px;
+        height: 180px;
+        background-color: #ffffff;
+        margin-top: 25px;
+        border-color: #C8C8CB;
+        border-bottom-width: 1px;
+        border-top-width: 1px;
+        flex-direction: column;
+    }
 
-	.mine-item-list {
-		width: 730px;
-		height: 90px;
-		margin-left: 20px;
-		flex-direction: row;
-	}
+    .mine-item-list {
+        width: 730px;
+        height: 90px;
+        margin-left: 20px;
+        flex-direction: row;
+    }
 
-	.mine-item-list-text {
-		width: 200px;
-		height: 90px;
-		text-align: left;
-		padding-left: 15px;
-	}
+    .mine-item-list-text {
+        width: 200px;
+        height: 90px;
+        text-align: left;
+        padding-left: 15px;
+    }
 
-	.mine-item-list-image {
-		width: 20px;
-		height: 20px;
-		margin-left: 479px;
-		margin-top: 35px;
-	}
+    .mine-item-list-image {
+        width: 20px;
+        height: 20px;
+        margin-left: 479px;
+        margin-top: 35px;
+    }
 
-	.mine-login {
-		width: 750px;
-		height: 90px;
-		background-color: #ffffff;
-		border-color: #C8C8CB;
-		border-top-width: 1px;
-		border-bottom-width: 1px;
-		align-items: center;
-		justify-content: center;
-		margin-top: 50px;
-	}
+    .mine-login {
+        width: 750px;
+        height: 90px;
+        background-color: #ffffff;
+        border-color: #C8C8CB;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
 
-	.line {
-		border-bottom-width: 1px;
-		border-bottom-color: #C8C8CB;
-	}
+    .line {
+        border-bottom-width: 1px;
+        border-bottom-color: #C8C8CB;
+    }
 
-	.show {
-		display: flex;
-	}
+    .show {
+        display: flex;
+    }
 
-	.show-txt-outer {
-		color: #cccccc;
-	}
+    .show-txt-outer {
+        color: #cccccc;
+    }
 </style>
 
 <script>
-	
-	module.exports = {
-		data: {
-			active: '',
-			childActive: '',
-			slideAnimation:'',
-			showCover:false,
-			menuList:[1,2,3,4,5]
-		},
-		showChild: function (target) {
-			if (this.active == target) {
-				this.active = '';
-				this.childActive = '';
-			} else {
-				this.active = target;
-			}
-		},
-		showChildren: function (target) {
-			if (this.childActive == target) {
-				this.childActive = '';
-			} else {
-				this.childActive = target;
-			}
-		},
-		changeActive: function (e) {
-			var title = e.index == 0 ? 'uniapp组件展示' : (e.index == 1 ? 'uniapp接口能力展示' : 'uniapp模板展示');
-			this.$page.setTitleBar({
-				text: title
-			});
-		},
-		showDetail: function (uri) {
-			uni.router.push({
-				uri: uri
-			})
-		},
-		hideMenu:function () {
-			this.setSlide();
-		},
-		onMenuPress:function () {
-			this.setSlide();
-		},
-		swipeShowMenu:function(e){
-			if(e.direction == 'right'){
-				this.setSlide();
-			}
-		},
-		swipeCloseMenu:function(e){
-			if(e.direction == 'left'){
-				this.setSlide();
-			}
-		},
-		setSlide:function(){
-			this.showCover = !this.showCover;
-			if(this.showCover){
-				this.slideAnimation = 'slide-in';
-			}else{
-				this.slideAnimation = 'slide-out';
-			}
-		}
-	}
+    module.exports = {
+        data: {
+            active: '',
+            childActive: '',
+            slideAnimation: '',
+            showCover: false,
+            menuList: [1, 2, 3, 4, 5]
+        },
+        showChild: function (target) {
+            if (this.active == target) {
+                this.active = '';
+                this.childActive = '';
+            } else {
+                this.active = target;
+            }
+        },
+        showChildren: function (target) {
+            if (this.childActive == target) {
+                this.childActive = '';
+            } else {
+                this.childActive = target;
+            }
+        },
+        changeActive: function (e) {
+            var title = e.index == 0 ? 'uniapp组件展示' : (e.index == 1 ? 'uniapp接口能力展示' : 'uniapp模板展示');
+            this.$page.setTitleBar({
+                text: title
+            });
+        },
+        showDetail: function (uri) {
+            uni.router.push({
+                uri: uri
+            })
+        },
+        hideMenu: function () {
+            this.setSlide();
+        },
+        onMenuPress: function () {
+            this.setSlide();
+        },
+        swipeShowMenu: function (e) {
+            if (e.direction == 'right') {
+                this.setSlide();
+            }
+        },
+        swipeCloseMenu: function (e) {
+            if (e.direction == 'left') {
+                this.setSlide();
+            }
+        },
+        setSlide: function () {
+            this.showCover = !this.showCover;
+            if (this.showCover) {
+                this.slideAnimation = 'slide-in';
+            } else {
+                this.slideAnimation = 'slide-out';
+            }
+        }
+    }
 </script>
