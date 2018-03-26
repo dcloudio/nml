@@ -1,1 +1,2 @@
 *.nml linguist-language=HTML
+*.njs linguist-language=JavaScript
