@@ -1,0 +1,76 @@
+<template>
+    <div class="container">
+		<list id="list" class="indexed-list-left">
+			<list-item type="listItem" for="data in list" class="indexed-list-item" show="{{data.data.length > 0}}">
+				<div>
+					<text class="list-airport-letter">{{data.letter}}</text>
+				</div>
+				<div class="list-airport">
+					<text for="(index,value) in data.data" class="list-airport-item {{index < (data.data.length - 1) ? 'bottom-line' : ''}}">{{value}}</text>
+				</div>
+			</list-item>
+		</list>
+		<div class="indexed-list-right">
+			<text for="(index,value) in list" class="indexed-list-letter" onclick="goItem(index)">{{value.letter}}</text>
+		</div>
+    </div>
+</template>
+<style>
+    @import '../../Common/css/common.nss';
+	.container{
+		flex-direction: row;
+	}
+	.indexed-list-left{
+		flex: 1;
+		background-color: #f7f7f7;
+	}
+	.indexed-list-item{
+		flex-direction: column;
+	}
+	.list-airport{
+		background-color: #FFFFFF;
+		border-color: #c8c7cc;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+		flex-direction: column;
+		padding-left: 30px;
+	}
+	.list-airport-item{
+		line-height: 80px;
+	}
+	.list-airport-letter{
+		line-height: 50px;
+		padding-left: 30px;
+	}
+	.bottom-line{
+		border-bottom-width: 1px;
+		border-color: #c8c7cc;
+	}
+	.indexed-list-right{
+		width: 50px;
+		flex-direction: column;
+		background-color: lightgrey;
+	}
+	.indexed-list-letter{
+		flex-grow:1;
+		text-align: center;
+		color: #AAAAAA;
+	}
+</style>
+<script>
+	var date = require("../../Common/data/airport");
+    module.exports = {
+        data: {
+            list: date.list
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: '索引列表'
+            });
+        },
+		goItem:function(e){
+			var list = this.$element('list');
+			list.scrollTo({index:e});
+		}
+    }
+</script>

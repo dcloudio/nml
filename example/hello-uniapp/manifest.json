@@ -199,6 +199,9 @@
 			"Templates/About": {
 				"component": "index"
 			},
+			"Templates/IndexList": {
+				"component": "index"
+			},
 			"Templates/List2Detail": {
 				"component": "index"
 			},

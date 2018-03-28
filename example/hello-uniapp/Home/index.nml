@@ -287,6 +287,10 @@
                             <text class="mine-item-list-text">关于</text>
                             <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
+						<div onclick="showDetail('Templates/IndexList')" class="mine-item-list line">
+                            <text class="mine-item-list-text">索引列表</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
+                        </div>
 						<div onclick="showDetail('Templates/List2Detail')" class="mine-item-list">
                             <text class="mine-item-list-text">列表到详情</text>
                             <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
@@ -481,7 +485,6 @@
 
     .mine-list {
         width: 750px;
-        height: 270px;
         background-color: #ffffff;
         margin-top: 25px;
         border-color: #C8C8CB;
