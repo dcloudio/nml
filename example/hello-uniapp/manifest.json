@@ -198,6 +198,12 @@
 			},
 			"Templates/About": {
 				"component": "index"
+			},
+			"Templates/List2Detail": {
+				"component": "index"
+			},
+			"Templates/List2Detail/Detail": {
+				"component": "index"
 			}
 		}
 	},

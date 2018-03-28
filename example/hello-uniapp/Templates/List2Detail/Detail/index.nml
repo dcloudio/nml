@@ -1,0 +1,80 @@
+<template>
+	<div class="container">
+		<stack class="stack">
+			<image src="{{banner.cover}}" class="item-stack-img"></image>
+			<text class="item-stack-text">{{banner.title}}</text>
+		</stack>
+		<div class="title">
+			<text class="author title-text">{{banner.author_name}}</text>
+			<text class="title-text">发表于</text>
+			<text class="time title-text">{{banner.published_at}}</text>
+		</div>
+		<div class="item-content">
+			<text for="{{list}}" class="newDetail">{{$item}}</text>
+		</div>
+	</div>
+</template>
+<style>
+	@import '../../../Common/css/common.nss';
+	.item-stack-img{
+		width: 750px;
+		height: 350px;
+	}
+	.title{
+		padding:30px 40px;
+		height: 120px;
+	}
+	.title-text{
+		margin-right: 30px;
+	}
+	.item-stack-text{
+		margin-top: 200px;
+		padding-left: 40px;
+		padding-right: 40px;
+		lines:2;
+		text-overflow:ellipsis;
+		color: #FFFFFF;
+	}
+	.newDetail{
+		color: #111111;
+		margin-bottom: 20px;
+		line-height:40px;
+	}
+</style>
+<script>
+	module.exports = {
+		data: {
+			banner:{},
+			list:[]
+		},
+		props: ['detail'],
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: '新闻详情'
+			});
+			this.banner = JSON.parse(this.detail);
+			this.getDetail();
+		},
+		getDetail:function(){
+			var that = this;
+			uni.fetch.fetch({
+				url: 'http://spider.dcloud.net.cn/api/news/36kr/' + that.banner.post_id,
+				success: function (data) {
+					console.log(data);
+					if (data.code == 200) {
+						var list = JSON.parse(data.data).content.split(/<\/p><p>/);
+						for(var i=0,len = list.length;i<len;i++){
+							// list[i] = list[i].replace(/(<p>)|(<\/p>)|(<img.*>)/,"").replace(/<\/a>/,"").replace(/<a.*>/,"");
+							list[i] = list[i].replace(/<\/.*>/,"").replace(/<.*>/,"");
+						}
+						that.list = list;
+						console.log(that.list);
+					}
+				},
+				fail: function (data, code) {
+					console.log('...fail...');
+				}
+			})
+		}
+	}
+</script>

@@ -283,8 +283,12 @@
                             <text class="mine-item-list-text">设置</text>
                             <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
-                        <div onclick="showDetail('Templates/About')" class="mine-item-list">
+                        <div onclick="showDetail('Templates/About')" class="mine-item-list line">
                             <text class="mine-item-list-text">关于</text>
+                            <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
+                        </div>
+						<div onclick="showDetail('Templates/List2Detail')" class="mine-item-list">
+                            <text class="mine-item-list-text">列表到详情</text>
                             <image class="mine-item-list-image" src="/Common/img/arrow_right.png"></image>
                         </div>
                     </div>
@@ -477,7 +481,7 @@
 
     .mine-list {
         width: 750px;
-        height: 180px;
+        height: 270px;
         background-color: #ffffff;
         margin-top: 25px;
         border-color: #C8C8CB;
@@ -499,14 +503,6 @@
         text-align: left;
         padding-left: 15px;
     }
-
-    .mine-item-list-image {
-        width: 20px;
-        height: 20px;
-        margin-left: 479px;
-        margin-top: 35px;
-    }
-
     .mine-login {
         width: 750px;
         height: 90px;
@@ -518,12 +514,17 @@
         justify-content: center;
         margin-top: 50px;
     }
-
+	.mine-item-list-image{
+		width: 16px;
+		height: 30px;
+		margin-left: 479px;
+		margin-top: 35px;
+	}
     .line {
         border-bottom-width: 1px;
         border-bottom-color: #C8C8CB;
     }
-
+	
     .show {
         display: flex;
     }

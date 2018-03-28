@@ -1,0 +1,206 @@
+<template>
+	<list onscrollbottom="scrollbottom" id="list" class="newsList">
+		<list-item type="banner">
+			<stack class="stack" onclick="goDetail(banner)">
+				<image src="{{banner.cover}}" class="item-stack-img"></image>
+				<text class="item-stack-text">{{banner.title}}</text>
+			</stack>
+		</list-item>
+		<list-item type="listItem" for="{{listData}}" class="newsList-item" onclick="goDetail($item)">
+			<image src="{{$item.cover}}" class="newsList-img" ></image>
+			<div class="newsList-div">
+				<text class="news-list-title">{{$item.title}}</text>
+				<div class="newList-time">
+					<text class="new-list-cont">{{$item.author_name}}</text>
+					<text class="new-list-cont">{{$item.published_at}}</text>
+				</div>
+			</div>
+		</list-item>
+		<!-- 加载更多 -->
+		<list-item type="loadMore" class="load-more">
+			<progress type="circular"></progress>
+			<text>加载更多</text>
+		</list-item>
+	</list>
+</template>
+<style>
+	@import '../../Common/css/common.nss';
+	.newsList{
+		/*flex: 1;*/
+	}
+	.item-stack-img{
+		width: 750px;
+		height: 350px;
+	}
+	.item-stack-text{
+		margin-top: 200px;
+		padding-left: 40px;
+		padding-right: 40px;
+		lines:2;
+		text-overflow:ellipsis;
+		color: #FFFFFF;
+	}
+	.newsList-item{
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		height: 180px;
+	}
+	.newsList-img{
+		width: 190px;
+		height: 110px;
+		margin-right: 25px;
+		resize-mode:cover;
+	}
+	.newsList-div{
+		flex: 1;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.news-list-title{
+		lines:2;
+		text-overflow:ellipsis;
+		color: #111111;
+	}
+	.newList-time{
+		justify-content: space-between;
+	}
+	.new-list-cont{
+		color: #8f8f94;
+	}
+	.load-more{
+		justify-content: center;
+	}
+</style>
+<script>
+	var dateUtils = {
+		UNITS: {
+			'年': 31557600000,
+			'月': 2629800000,
+			'天': 86400000,
+			'小时': 3600000,
+			'分钟': 60000,
+			'秒': 1000
+		},
+		humanize: function(milliseconds) {
+			var humanize = '';
+			for (var key in this.UNITS) {
+				if(milliseconds >= this.UNITS[key]){
+					humanize = Math.floor(milliseconds / this.UNITS[key]) + key + '前';
+					break;
+				}
+			}
+			return humanize || '刚刚';
+		},
+		format: function(dateStr) {
+			var date = this.parse(dateStr)
+			var diff = Date.now() - date.getTime();
+			if(diff < this.UNITS['天']) {
+				return this.humanize(diff);
+			}
+
+			var _format = function(number) {
+				return(number < 10 ? ('0' + number) : number);
+			};
+			return date.getFullYear() + '/' + _format(date.getMonth() + 1) + '/' + _format(date.getDay()) + '-' + _format(date.getHours()) + ':' + _format(date.getMinutes());
+		},
+		parse: function(str) { //将"yyyy-mm-dd HH:MM:ss"格式的字符串，转化为一个Date对象
+			var a = str.split(/[^0-9]/);
+			return new Date(a[0], a[1] - 1, a[2], a[3], a[4], a[5]);
+		}
+	};
+	module.exports = {
+		data: {
+			banner:{},
+			listData:[],
+			last_id:""
+		},
+		onInit: function (e) {
+			this.$page.setTitleBar({
+				text: '新闻列表'
+			});
+			this.getBanner();
+			this.getList();
+		},
+		getBanner:function(){
+			var that = this;
+			uni.fetch.fetch({
+				url: 'http://spider.dcloud.net.cn/api/banner/36kr?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at',
+				success: function (data) {
+					if (data.code == 200) {
+						that.banner = JSON.parse(data.data);
+					}
+				},
+				fail: function (data, code) {
+					console.log('...fail...');
+				}
+			})
+		},
+		getList:function(){
+			var that = this;
+			var data = {
+				column: "id,post_id,title,author_name,cover,published_at" //需要的字段名
+			};
+			console.log(that.last_id)
+			if(this.last_id) { //说明已有数据，目前处于上拉加载，传递当前minId 返回历史数据
+				data.minId = this.last_id;
+				data.time = new Date().getTime() + "";
+				data.pageSize = 10;
+			}
+			uni.fetch.fetch({
+				url: 'http://spider.dcloud.net.cn/api/news',
+				data:data,
+				success: function (data) {
+					if (data.code == 200) {
+						var list = that.setTime(JSON.parse(data.data));
+						that.listData = that.listData.concat(list);
+						that.last_id = list[list.length - 1].id;
+					}
+				},
+				fail: function (data, code) {
+					console.log('...fail...');
+				}
+			})
+		},
+		scrollbottom:function(){
+			uni.prompt.showToast({
+				message:"滑倒底部"
+			});
+			this.getList();
+		},
+		goDetail:function(e){
+			console.log(e);
+			if(!/前|刚刚/.test(e.published_at)){
+				e.published_at = dateUtils.format(e.published_at);
+			}
+			uni.router.push({
+				uri:"Templates/List2Detail/Detail",
+				params: {
+					detail: {
+						author_name: e.author_name,
+						cover:e.cover,
+						id:e.id,
+						post_id:e.post_id,
+						published_at:e.published_at,
+						title:e.title
+					}
+				}
+			})
+		},
+		setTime:function(items){
+			var newItems = [];
+			items.forEach(function(e) {
+				newItems.push({
+					author_name: e.author_name,
+					cover:e.cover,
+					id:e.id,
+					post_id:e.post_id,
+					published_at:dateUtils.format(e.published_at),
+					title:e.title
+				});
+			});
+			return newItems;
+		}
+	}
+</script>

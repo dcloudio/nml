@@ -46,13 +46,7 @@
 		height: 90px;
 		text-align: left;
 	}
-
-	.mine-item-list-image {
-		width: 20px;
-		height: 20px;
-		margin-left: 479px;
-		margin-top: 35px;
-	}
+	
 </style>
 <script>
 	module.exports = {

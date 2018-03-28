@@ -46,3 +46,9 @@ text {
 	padding: 20px;
 	color: #888888;
 }
+.mine-item-list-image,.mine-safe-image {
+	width: 16px;
+	height: 30px;
+	margin-left: 479px;
+	margin-top: 35px;
+}
