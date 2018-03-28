@@ -5,7 +5,7 @@
 		</div>
 		<div class="item-content">
 			<stack>
-				<image src="Common/img/stack1.png" class="item-stack-img"></image>
+				<image src="/Common/img/stack1.png" class="item-stack-img"></image>
 				<text class="item-stack-text">我是stack。子组件排列方式为层叠排列，每个直接子组件按照先后顺序依次堆叠，覆盖前一个子组件。</text>
 			</stack>
 		</div>

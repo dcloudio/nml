@@ -6,31 +6,31 @@
 		<div class="item-content">
 			<div class="item-image-group">
 				<text class="item-image-text">本地图片</text>
-				<image src="Common/img/mi_logo.png"></image>
+				<image src="/Common/img/mi_logo.png"></image>
 			</div>
 			<div class="item-image-group">
 				<text class="item-image-text">网络图片</text>
-				<image src="//img-cdn-qiniu.dcloud.net.cn/icon3.png" style="width: 150px;"></image>
+				<image src="https://img-cdn-qiniu.dcloud.net.cn/icon3.png" style="width: 150px;"></image>
 			</div>
 			<div class="item-image-group">
 				<text class="item-image-text">resize-mode:cover</text>
-				<image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: cover;"></image>
+				<image src="/Common/img/mi_logo.png" class="item-content-image" style="resize-mode: cover;"></image>
 			</div>
 			<div class="item-image-group">
 				<text class="item-image-text">resize-mode:contain </text>
-				<image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: contain;"></image>
+				<image src="/Common/img/mi_logo.png" class="item-content-image" style="resize-mode: contain;"></image>
 			</div>
 			<div class="item-image-group">
 				<text class="item-image-text">resize-mode:stretch</text>
-				<image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: stretch;"></image>
+				<image src="/Common/img/mi_logo.png" class="item-content-image" style="resize-mode: stretch;"></image>
 			</div>
 			<div class="item-image-group">
 				<text class="item-image-text">resize-mode:center</text>
-				<image src="Common/img/mi_logo.png" class="item-content-image" style="resize-mode: center;"></image>
+				<image src="/Common/img/mi_logo.png" class="item-content-image" style="resize-mode: center;"></image>
 			</div>
 			<div class="item-image-group">
 				<text class="item-image-text">圆形图</text>
-				<image src="Common/img/mi_logo.png" class="item-content-image-circle"></image>
+				<image src="/Common/img/mi_logo.png" class="item-content-image-circle"></image>
 			</div>
 		</div>
 	</div>

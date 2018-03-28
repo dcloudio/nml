@@ -318,7 +318,7 @@
                 <list class="slide-menu-li">
                     <list-item class="slide-menu-listitem" type="menu" for="{{menuList}}">
                         <text class="slide-menu-listitem-text">item{{$item}}</text>
-                        <image class="slide-menu-listitem-image" src="Common/img/youjiantou.png"></image>
+                        <image class="slide-menu-listitem-image" src="/Common/img/youjiantou.png"></image>
                     </list-item>
                 </list>
             </div>
