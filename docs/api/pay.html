@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第三方服务 · GitBook</title>
+        <title>支付 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="stat.html" />
     
-    <link rel="prev" href="service.html" />
+    
+    <link rel="prev" href="share.html" />
     
 
     </head>
@@ -418,12 +420,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.8" data-path="service.html">
+        <li class="chapter " data-level="1.5.8" data-path="share.html">
             
-                <a href="service.html">
+                <a href="share.html">
             
                     
-                    厂商服务
+                    分享
             
                 </a>
             
@@ -431,12 +433,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.9" data-path="third.html">
+        <li class="chapter active" data-level="1.5.9" data-path="pay.html">
             
-                <a href="third.html">
+                <a href="pay.html">
             
                     
-                    第三方服务
+                    支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="stat.html">
+            
+                <a href="stat.html">
+            
+                    
+                    统计
             
                 </a>
             
@@ -479,7 +494,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第三方服务</a>
+        <a href=".." >支付</a>
     </h1>
 </div>
 
@@ -494,7 +509,109 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;">&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;</h3>
+                                <h3 id="&#x652F;&#x4ED8;">&#x652F;&#x4ED8;</h3>
+<h4 id="&#x63A5;&#x53E3;&#x58F0;&#x660E;">&#x63A5;&#x53E3;&#x58F0;&#x660E;</h4>
+<p>{&quot;name&quot;: &quot;service.pay&quot;}</p>
+<h4 id="unipaygetproviderobject">uni.pay.getProvider(OBJECT)</h4>
+<p>&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#xFF0C;&#x5982;&#x5382;&#x5546;&#x7684;&#x82F1;&#x6587;&#x54C1;&#x724C;&#x540D;&#x79F0;&#xFF0C;&#x5047;&#x5982;&#x65E0;&#x6B64;&#x670D;&#x52A1;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p>&#x53C2;&#x6570;</p>
+<p>&#x65E0;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x503C;</p>
+<p>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#x7684;&#x4EE3;&#x53F7;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-javascript">uni.pay.getProvider();
+</code></pre>
+<h4 id="unipaypayobject">uni.pay.pay(OBJECT)</h4>
+<p>&#x4F7F;&#x7528;&#x652F;&#x4ED8;&#x5B8C;&#x6210;&#x4ED8;&#x6B3E;&#x3002;</p>
+<p>&#x53C2;&#x6570;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x5FC5;&#x586B;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">orderInfo</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x662F;</td>
+<td style="text-align:left">&#x8BA2;&#x5355;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:left">success</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x5426;</td>
+<td style="text-align:left">&#x6210;&#x529F;&#x56DE;&#x8C03;</td>
+</tr>
+<tr>
+<td style="text-align:left">fail</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x5426;</td>
+<td style="text-align:left">&#x5931;&#x8D25;&#x56DE;&#x8C03;</td>
+</tr>
+<tr>
+<td style="text-align:left">complete</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x5426;</td>
+<td style="text-align:left">&#x6267;&#x884C;&#x7ED3;&#x675F;&#x540E;&#x7684;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<p>success &#x8FD4;&#x56DE;&#x503C;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">result</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x652F;&#x4ED8;&#x7ED3;&#x679C;</td>
+</tr>
+</tbody>
+</table>
+<p>fail &#x8FD4;&#x56DE;&#x503C;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x6D88;&#x606F;&#x5185;&#x5BB9;</td>
+</tr>
+</tbody>
+</table>
+<p>fail&#x5F02;&#x5E38;&#x7801;&#x8FD4;&#x56DE;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x5382;&#x5546;&#x63D0;&#x4F9B;&#x7684;&#x5F02;&#x5E38;&#x7801;&#x4F1A;&#x6709;&#x5DEE;&#x5F02;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x5F02;&#x5E38;&#x7801;&#x9700;&#x8981;&#x548C;&#x5382;&#x5546;&#x652F;&#x4ED8;&#x63A5;&#x53E3;&#x5BF9;&#x63A5;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-javascript">uni.pay.pay({
+  orderInfo: <span class="hljs-string">&quot;order1&quot;</span>,
+  success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;handling success: &quot;</span> + data.code);
+  },
+  fail: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, code</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;handling fail, code=&quot;</span> + code);
+  }
+});
+</code></pre>
+<h3 id="&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;">&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;</h3>
 <h4 id="&#x63A5;&#x53E3;&#x58F0;&#x660E;">&#x63A5;&#x53E3;&#x58F0;&#x660E;</h4>
 <p>{&quot;name&quot;: &quot;service.wxpay&quot;}</p>
 <h4 id="uniwxpaygettype">uni.wxpay.getType()</h4>
@@ -789,112 +906,6 @@
   }
 });
 </code></pre>
-<h3 id="&#x7B2C;&#x4E09;&#x65B9;&#x5206;&#x4EAB;">&#x7B2C;&#x4E09;&#x65B9;&#x5206;&#x4EAB;</h3>
-<h4 id="&#x63A5;&#x53E3;&#x58F0;&#x660E;-29">&#x63A5;&#x53E3;&#x58F0;&#x660E; </h4>
-<p>{&quot;name&quot;: &quot;service.share&quot;}</p>
-<h4 id="unisharegetproviderobject">uni.share.getProvider(OBJECT)</h4>
-<p>&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#xFF0C;&#x5982;&#x5382;&#x5546;&#x7684;&#x82F1;&#x6587;&#x54C1;&#x724C;&#x540D;&#x79F0;&#xFF0C;&#x5047;&#x5982;&#x65E0;&#x6B64;&#x670D;&#x52A1;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<p>&#x53C2;&#x6570;</p>
-<p>&#x65E0;&#x3002;</p>
-<p>&#x8FD4;&#x56DE;&#x503C;</p>
-<p>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#x7684;&#x4EE3;&#x53F7;&#x3002;</p>
-<p>&#x793A;&#x4F8B;</p>
-<pre><code class="lang-javascript">uni.share.getProvider();
-</code></pre>
-<h4 id=""> </h4>
-<h4 id="unishareshareobject">uni.share.share(OBJECT)</h4>
-<p>&#x5206;&#x4EAB;&#x5185;&#x5BB9;&#x3002;</p>
-<p>&#x53C2;&#x6570;</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
-<th style="text-align:left">&#x7C7B;&#x578B;</th>
-<th style="text-align:left">&#x5FC5;&#x586B;</th>
-<th style="text-align:left">&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">shareType</td>
-<td style="text-align:left">Int</td>
-<td style="text-align:left">&#x662F;</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7C7B;&#x578B;&#x3002;&#x9ED8;&#x8BA4;&#x56FE;&#x6587;0&#xFF0C;&#x7EAF;&#x6587;&#x5B57;1&#xFF0C;&#x7EAF;&#x56FE;&#x7247;2&#xFF0C;&#x82F1;&#x6587;3&#xFF0C;&#x89C6;&#x9891;4&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">title</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7C7B;&#x578B;0,1,3,4&#x5FC5;&#x987B;</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7684;&#x6807;&#x9898;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">summary</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x5426;</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7684;&#x6458;&#x8981;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">targetUrl</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7C7B;&#x578B;0,3,4&#x5FC5;&#x987B;</td>
-<td style="text-align:left">&#x70B9;&#x51FB;&#x540E;&#x7684;&#x8DF3;&#x8F6C;URL&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">imagePath</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7C7B;&#x578B;2,3,4&#x5FC5;&#x987B;</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x56FE;&#x7247;/&#x7F29;&#x7565;&#x56FE;&#x7684;&#x672C;&#x5730;&#x5730;&#x5740;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">mediaUrl</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7C7B;&#x578B;3,4&#x5FC5;&#x987B;</td>
-<td style="text-align:left">&#x5206;&#x4EAB;&#x7684;&#x97F3;&#x4E50;/&#x89C6;&#x9891;&#x6570;&#x636E;URL&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">success</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">&#x5426;</td>
-<td style="text-align:left">&#x6210;&#x529F;&#x56DE;&#x8C03;&#xFF08;&#x6682;&#x4E0D;&#x652F;&#x6301;&#xFF09;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">fail</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">&#x5426;</td>
-<td style="text-align:left">&#x5931;&#x8D25;&#x56DE;&#x8C03;</td>
-</tr>
-<tr>
-<td style="text-align:left">cancel</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">&#x5426;</td>
-<td style="text-align:left">&#x53D6;&#x6D88;&#x56DE;&#x8C03;</td>
-</tr>
-</tbody>
-</table>
-<p>&#x793A;&#x4F8B;</p>
-<pre><code class="lang-javascript">uni.share.share({
-  shareType: <span class="hljs-number">0</span>,
-  title: <span class="hljs-string">&quot;&#x6211;&#x662F;&#x6807;&#x9898;&quot;</span>,
-  summary: <span class="hljs-string">&quot;&#x6211;&#x662F;&#x6458;&#x8981;&quot;</span>,
-  imagePath: <span class="hljs-string">&quot;xxx/xxx/xxx/share.jpg&quot;</span>,
-  targetUrl: <span class="hljs-string">&quot;http://www.example.com&quot;</span>,
-  success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;handling success&quot;</span>);
-  },
-  fail: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, code</span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;handling fail, code=&quot;</span> + code);
-  }
-});
-</code></pre>
-<h4 id="&#x63A5;&#x5165;&#x8BF4;&#x660E;">&#x63A5;&#x5165;&#x8BF4;&#x660E;</h4>
-<ol>
-<li>&#x53C2;&#x8003;&#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x63A5;&#x5165;&#xFF08;&#x5FAE;&#x4FE1;&#x5F00;&#x653E;&#x5E73;&#x53F0;/QQ&#x5F00;&#x653E;&#x5E73;&#x53F0;/&#x5FAE;&#x535A;&#x5F00;&#x653E;&#x5E73;&#x53F0;&#xFF09;&#x3002;</li>
-<li>&#x5728;&#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#x540E;&#x53F0;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;app&#xFF0C;&#x8BE5;app&#x5305;&#x540D;&#x9700;&#x8981;&#x4E0E;manifest.json&#x4E2D;&#x7684;package&#x4E00;&#x81F4;&#x3002;</li>
-<li>&#x5C06;app&#x7B7E;&#x540D;&#xFF08;&#x7B7E;&#x540D;&#x7684;&#x503C;&#x83B7;&#x53D6;&#xFF1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;apk&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x540E;&#x53F0;&#x6CE8;&#x518C;&#x7684;&#x7B7E;&#x540D;&#x7B7E;&#x540D;apk&#xFF0C;&#x5728;&#x5B89;&#x88C5;apk&#x540E;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x83B7;&#x53D6;&#xFF09;&#x7684;&#x503C;&#x548C;&#x5404;&#x4E2A;&#x5E73;&#x53F0;&#x83B7;&#x53D6;&#x7684;&#x5E94;&#x7528;ID&#xFF0C;&#x586B;&#x5728;manifest.json&#x5206;&#x4EAB;&#x63A5;&#x53E3;&#x58F0;&#x660E;&#x7684;appSign&#x548C;&#x5BF9;&#x5E94;&#x7684;xxKey&#x5B57;&#x6BB5;&#x4E2D;&#xFF0C;&#x5982;&#x4E0A;&#x6587;</li>
-<li>&#x652F;&#x6301;&#x624B;Q&#x3001;&#x5FAE;&#x4FE1;&#x3001;&#x5FAE;&#x535A;&#x5206;&#x4EAB;&#xFF0C;&#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x5206;&#x4EAB;&#x7ED3;&#x679C;&#x3002;</li>
-<li>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x56FE;&#x6587;&#x5206;&#x4EAB;&#x7C7B;&#x578B;&#xFF0C;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x4E2A;&#x522B;&#x5E73;&#x53F0;&#x65E0;&#x6CD5;&#x652F;&#x6301;,&#x5C06;&#x4F7F;&#x7528;&#x56FE;&#x6587;&#x7C7B;&#x578B;&#x5206;&#x4EAB;&#x3002;</li>
-<li>&#x5206;&#x4EAB;&#x56FE;&#x7247;&#x4EC5;&#x652F;&#x6301;&#x672C;&#x5730;&#x56FE;&#x7247;&#x3002;</li>
-</ol>
 
                                 
                                 </section>
@@ -922,10 +933,14 @@
 
             
                 
-                <a href="service.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 厂商服务">
+                <a href="share.html" class="navigation navigation-prev " aria-label="Previous page: 分享">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="stat.html" class="navigation navigation-next " aria-label="Next page: 统计">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -934,7 +949,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三方服务","level":"1.5.9","depth":2,"previous":{"title":"厂商服务","level":"1.5.8","depth":2,"path":"api/service.md","ref":"api/service.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/third.md","mtime":"2018-02-25T02:49:43.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-21T12:50:57.603Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"支付","level":"1.5.9","depth":2,"next":{"title":"统计","level":"1.5.10","depth":2,"path":"api/stat.md","ref":"api/stat.md","articles":[]},"previous":{"title":"分享","level":"1.5.8","depth":2,"path":"api/share.md","ref":"api/share.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/pay.md","mtime":"2018-04-04T08:13:29.042Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-04T08:24:24.953Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
