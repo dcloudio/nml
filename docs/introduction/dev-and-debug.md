@@ -20,4 +20,12 @@ console.error('error');
 
 - 菜单->运行->Debug调试->设备
 - 调试服务启动成功后，会自动打开 Chrome 浏览器。
-- 点击调试界面的 inspect 开始调试。
+
+#### Debugger
+用来调试 UniApp 中的 JS 前端代码。
+
+- “Console”控制台显示前端的 log 信息，并且能根据级别（info/warn/error 等）及关键字过滤。
+- “Sources”中能够显示所有 JS 源码，包括 js-framework 等代码。可以设置断点、查看调用栈，和使用 Chrome 浏览器调试操作一样。
+
+### Inspector
+将 ElementMode 切换到 vdom，并且点击 Inspector，可以查看 native DOM 树，及其 style 属性和 layout 图。鼠标在 DOM 树移动时，在 device（或模拟器）上对应节点会高亮显示，有助于开发者定位和发现节点。
