@@ -1,12 +1,12 @@
 <template>
     <div class="container">
 		<list id="list" class="indexed-list-left">
-			<list-item type="listItem" for="data in list" class="indexed-list-item" show="{{data.data.length > 0}}">
+			<list-item type="listItem" for="item in list" class="indexed-list-item" show="{{item.data.length > 0}}">
 				<div>
-					<text class="list-airport-letter">{{data.letter}}</text>
+					<text class="list-airport-letter">{{item.letter}}</text>
 				</div>
 				<div class="list-airport">
-					<text for="(index,value) in data.data" class="list-airport-item {{index < (data.data.length - 1) ? 'bottom-line' : ''}}">{{value}}</text>
+					<text for="(index,value) in item.data" class="list-airport-item {{index < (item.data.length - 1) ? 'bottom-line' : ''}}">{{value}}</text>
 				</div>
 			</list-item>
 		</list>
@@ -59,6 +59,7 @@
 </style>
 <script>
 	var date = require("../../Common/data/airport");
+	console.log(12,date);
     module.exports = {
         data: {
             list: date.list
@@ -67,6 +68,8 @@
             this.$page.setTitleBar({
                 text: '索引列表'
             });
+            console.log(date);
+            console.log(this.list);
         },
 		goItem:function(e){
 			var list = this.$element('list');
