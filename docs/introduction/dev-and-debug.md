@@ -1,12 +1,15 @@
 ## 开发与调试
+在阅读此部分内容之前，请先完成“入门->HelloWorld”部分关于真机调试的内容。
 ### 使用日志输出
+#### 修改日志等级
 项目根目录下的 manifest.json 文件中，config->logLevel 默认是 debug，即：允许所有级别的日志输出。
 ```
 "config": {
   "logLevel": "debug"/*打印日志等级*/
 },
 ```
-与传统前端开发一样，使用 console 输出日志。
+#### 在 JS 中输出日志
+输出日志能帮助开发者快速定位问题，与传统前端开发一样，使用 console 输出日志。
 ```
 console.debug('debug');
 console.log('log');
@@ -14,18 +17,41 @@ console.info('info');
 console.warn('warn');
 console.error('error');
 ```
-注：目前只能通过**远程调试**查看输出的日志。
+#### 查看日志
+通过**远程调试**查看输出的日志。
+
 ### 远程调试
-远程调试是在真机运行的同时，借助远程调试工具，来调试手机设备上的应用。
+远程调试指的是通过 HBuilderX 的工具调试手机 App 端的页面。
 
 - 菜单->运行->Debug调试->设备
 - 调试服务启动成功后，会自动打开 Chrome 浏览器。
+- 当手机设备上的应用启动成功后，可以在调试工具界面看到应用信息。
+- 按照调试工具界面的说明，就可以进行 JS 断点，查看日志，页面布局等调试工作。
 
-#### Debugger
-用来调试 UniApp 中的 JS 前端代码。
+### Debugger
+> Debugger 功能可以对 UniApp 页面中的 js 进行调试。
 
-- “Console”控制台显示前端的 log 信息，并且能根据级别（info/warn/error 等）及关键字过滤。
-- “Sources”中能够显示所有 JS 源码，包括 js-framework 等代码。可以设置断点、查看调用栈，和使用 Chrome 浏览器调试操作一样。
+#### 断点
+找到目标页面的 JS，然后就可以像开发网页一样进行断点调试。
+
+以 hello-uniapp 的 Home 页为例：Sources panel -> Network -> Runtime.js -> 192.xxx:port -> source -> file:/ -> Home 就是最终编译后的页面 JS。
+
+找到 showDetail 方法添加一个断点，在手机设备上进行触发此方法的操作，然后就可以看到断点生效，并进行后续的调试。
+
+![这里放个图](https://img-cdn-qiniu.dcloud.net.cn/uploads/images/debugger.png)
+
+#### 日志
+在 Console panel 可以看到 JS 中输出的日志信息。
 
 ### Inspector
-将 ElementMode 切换到 vdom，并且点击 Inspector，可以查看 native DOM 树，及其 style 属性和 layout 图。鼠标在 DOM 树移动时，在 device（或模拟器）上对应节点会高亮显示，有助于开发者定位和发现节点。
+> Inspector功能可查看页面的 VDOM/Native Tree 结构
+
+ElmentMode 切换为 vdom，点击 Inspector 打开页面结构的窗口。
+
+左侧为效果预览区域，右侧为开发者工具。通过开发者工具左上角的选择器，可以快速定位页面中的组件对应的页面结构及 nss 属性。
+![这里放个图](https://img-cdn-qiniu.dcloud.net.cn/uploads/images/vdom.png)
+
+- virtual 表示实际计算后的结果
+- local 表示原始设置的值
+
+ElmentMode 默认为 native，可以查看原生的页面结构。这个功能只是用作预览，没有其它更多的作用。
