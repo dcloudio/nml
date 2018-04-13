@@ -35,9 +35,9 @@
 					if (data.code == 200) {
 						var infos = [];
 						var rs = JSON.parse(data.data);
-						infos.push('HBuilder版本号：' + rs.win.version);
-						infos.push('HBuilder名称：' + rs.win.name);
-						infos.push('HBuilder大小：' + rs.win.size);
+						infos.push('HBuilder版本号：' + rs.win[1].version);
+						infos.push('HBuilder名称：' + rs.win[1].name);
+						infos.push('HBuilder大小：' + rs.win[1].size);
 						that.infos = infos;
 						if (p) {
 							uni.prompt.showToast({
