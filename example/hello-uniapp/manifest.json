@@ -1,225 +1,230 @@
 {
-	"package": "com.uniapp.demo.sample",
-	"name": "uniapp示例",
-	"versionName": "1.0.0",
-	"versionCode": 100,
-	"icon": "/Common/logo.png",
-	"features": [
-		{
-			"name": "system.webview"
-		}, {
-			"name": "system.prompt"
-		}, {
-			"name": "system.fetch"
-		}, {
-			"name": "system.file"
-		}, {
-			"name": "system.clipboard"
-		}, {
-			"name": "system.geolocation"
-		}, {
-			"name": "system.request"
-		}, {
-			"name": "system.calendar"
-		}, {
-			"name": "system.device"
-		}, {
-			"name": "system.storage"
-		}, {
-			"name": "system.media"
-		}, {
-			"name": "system.share"
-		}, {
-			"name": "system.notification"
-		}, {
-			"name": "system.barcode"
-		}, {
-			"name": "system.sensor"
-		}, {
-			"name": "system.shortcut"
-		}, {
-			"name": "system.network"
-		}
-	],
-	"permissions": [
-		{
-			"origin": "*"
-		}
-	],
-	"config": {
-		"logLevel": "debug"
-	},
-	"router": {
-		"entry": "Home",
-		"pages": {
-			"Home": {
-				"component": "index"
-			},
-			"Component/Div": {
-				"component": "index"
-			},
-			"Component/List/Default": {
-				"component": "index"
-			},
-			"Component/List": {
-				"component": "index"
-			},
-			"Component/Refresh": {
-				"component": "index"
-			},
-			"Component/Richtext": {
-				"component": "index"
-			},
-			"Component/Stack": {
-				"component": "index"
-			},
-			"Component/Swiper/Default": {
-				"component": "index"
-			},
-			"Component/Swiper/Grid": {
-				"component": "index"
-			},
-			"Component/Swiper": {
-				"component": "index"
-			},
-			"Component/Tabs/Default": {
-				"component": "index"
-			},
-			"Component/Tabs": {
-				"component": "index"
-			},
-			"Component/A": {
-				"component": "index"
-			},
-			"Component/A/Detail": {
-				"component": "index"
-			},
-			"Component/Image": {
-				"component": "index"
-			},
-			"Component/Progress": {
-				"component": "index"
-			},
-			"Component/Span": {
-				"component": "index"
-			},
-			"Component/Text/Default": {
-				"component": "index"
-			},
-			"Component/Text": {
-				"component": "index"
-			},
-			"Component/Switch": {
-				"component": "index"
-			},
-			"Component/Input/Default": {
-				"component": "index"
-			},
-			"Component/Input": {
-				"component": "index"
-			},
-			"Component/Button": {
-				"component": "index"
-			},
-			"Component/Radio": {
-				"component": "index"
-			},
-			"Component/Checkbox": {
-				"component": "index"
-			},
-			"Component/Label": {
-				"component": "index"
-			},
-			"Component/Switch": {
-				"component": "index"
-			},
-			"Component/Textarea": {
-				"component": "index"
-			},
-			"Component/Video": {
-				"component": "index"
-			},
-			"Interface/Router": {
-				"component": "index"
-			},
-			"Interface/Router/Detail": {
-				"component": "index"
-			},
-			"Interface/Share": {
-				"component": "index"
-			},
-			"Interface/Prompt": {
-				"component": "index"
-			},
-			"Interface/Webview": {
-				"component": "index"
-			},
-			"Interface/Notification": {
-				"component": "index"
-			},
-			"Interface/Request": {
-				"component": "index"
-			},
-			"Interface/Fetch": {
-				"component": "index"
-			},
-			"Interface/Storage": {
-				"component": "index"
-			},
-			"Interface/File": {
-				"component": "index"
-			},
-			"Interface/Sensor": {
-				"component": "index"
-			},
-			"Interface/Geolocation": {
-				"component": "index"
-			},
-			"Interface/Barcode": {
-				"component": "index"
-			},
-			"Interface/Clipboard": {
-				"component": "index"
-			},
-			"Interface/Device": {
-				"component": "index"
-			},
-			"Interface/Network": {
-				"component": "index"
-			},
-			"Interface/Shortcut": {
-				"component": "index"
-			},
-			"Templates/Login": {
-				"component": "index"
-			},
-			"Templates/Setting": {
-				"component": "index"
-			},
-			"Templates/About": {
-				"component": "index"
-			},
-			"Templates/IndexList": {
-				"component": "index"
-			},
-			"Templates/List2Detail": {
-				"component": "index"
-			},
-			"Templates/List2Detail/Detail": {
-				"component": "index"
-			}
-		}
-	},
-	"display": {
-		"titleBarBackgroundColor": "#dd524d",
-		"backgroundColor": "#f8f8f8",
-		"titleBar": true,
-		"titleBarTextColor": "#ffffff",
-		"pages": {
-			"Home": {
-				"titleBarText": "uniapp组件展示",
-				"menu": true
-			}
-		}
-	}
+    "package": "com.uniapp.demo.sample",
+    "name": "uniapp示例",
+    "versionName": "1.0.0",
+    "versionCode": 100,
+    "icon": "/Common/logo.png",
+    "features": [{
+        "name": "system.webview"
+    }, {
+        "name": "system.prompt"
+    }, {
+        "name": "system.fetch"
+    }, {
+        "name": "system.file"
+    }, {
+        "name": "system.clipboard"
+    }, {
+        "name": "system.geolocation"
+    }, {
+        "name": "system.request"
+    }, {
+        "name": "system.calendar"
+    }, {
+        "name": "system.device"
+    }, {
+        "name": "system.storage"
+    }, {
+        "name": "system.media"
+    }, {
+        "name": "system.share"
+    }, {
+        "name": "system.notification"
+    }, {
+        "name": "system.barcode"
+    }, {
+        "name": "system.sensor"
+    }, {
+        "name": "system.shortcut"
+    }, {
+        "name": "system.network"
+    }],
+    "permissions": [{
+        "origin": "*"
+    }],
+    "config": {
+        "logLevel": "debug"
+    },
+    "router": {
+        "entry": "Home",
+        "pages": {
+            "Home": {
+                "component": "index"
+            },
+            "Component/Div": {
+                "component": "index"
+            },
+            "Component/List/Default": {
+                "component": "index"
+            },
+            "Component/List": {
+                "component": "index"
+            },
+            "Component/Refresh": {
+                "component": "index"
+            },
+            "Component/Richtext": {
+                "component": "index"
+            },
+            "Component/Stack": {
+                "component": "index"
+            },
+            "Component/Swiper/Default": {
+                "component": "index"
+            },
+            "Component/Swiper/Grid": {
+                "component": "index"
+            },
+            "Component/Swiper": {
+                "component": "index"
+            },
+            "Component/Tabs/Default": {
+                "component": "index"
+            },
+            "Component/Tabs": {
+                "component": "index"
+            },
+            "Component/A": {
+                "component": "index"
+            },
+            "Component/A/Detail": {
+                "component": "index"
+            },
+            "Component/Image": {
+                "component": "index"
+            },
+            "Component/Progress": {
+                "component": "index"
+            },
+            "Component/Span": {
+                "component": "index"
+            },
+            "Component/web": {
+                "component": "index"
+            },
+            "Component/web/network": {
+                "component": "index"
+            },
+            "Component/web/local": {
+                "component": "index"
+            },
+            "Component/Text/Default": {
+                "component": "index"
+            },
+            "Component/Text": {
+                "component": "index"
+            },
+            "Component/Switch": {
+                "component": "index"
+            },
+            "Component/Input/Default": {
+                "component": "index"
+            },
+            "Component/Input": {
+                "component": "index"
+            },
+            "Component/Button": {
+                "component": "index"
+            },
+            "Component/Radio": {
+                "component": "index"
+            },
+            "Component/Checkbox": {
+                "component": "index"
+            },
+            "Component/Label": {
+                "component": "index"
+            },
+            "Component/Switch": {
+                "component": "index"
+            },
+            "Component/Textarea": {
+                "component": "index"
+            },
+            "Component/Video": {
+                "component": "index"
+            },
+            "Interface/Router": {
+                "component": "index"
+            },
+            "Interface/Router/Detail": {
+                "component": "index"
+            },
+            "Interface/Share": {
+                "component": "index"
+            },
+            "Interface/Prompt": {
+                "component": "index"
+            },
+            "Interface/Webview": {
+                "component": "index"
+            },
+            "Interface/Notification": {
+                "component": "index"
+            },
+            "Interface/Request": {
+                "component": "index"
+            },
+            "Interface/Fetch": {
+                "component": "index"
+            },
+            "Interface/Storage": {
+                "component": "index"
+            },
+            "Interface/File": {
+                "component": "index"
+            },
+            "Interface/Sensor": {
+                "component": "index"
+            },
+            "Interface/Geolocation": {
+                "component": "index"
+            },
+            "Interface/Barcode": {
+                "component": "index"
+            },
+            "Interface/Clipboard": {
+                "component": "index"
+            },
+            "Interface/Device": {
+                "component": "index"
+            },
+            "Interface/Network": {
+                "component": "index"
+            },
+            "Interface/Shortcut": {
+                "component": "index"
+            },
+            "Templates/Login": {
+                "component": "index"
+            },
+            "Templates/Setting": {
+                "component": "index"
+            },
+            "Templates/About": {
+                "component": "index"
+            },
+            "Templates/IndexList": {
+                "component": "index"
+            },
+            "Templates/List2Detail": {
+                "component": "index"
+            },
+            "Templates/List2Detail/Detail": {
+                "component": "index"
+            }
+        }
+    },
+    "display": {
+        "titleBarBackgroundColor": "#dd524d",
+        "backgroundColor": "#f8f8f8",
+        "titleBar": true,
+        "titleBarTextColor": "#ffffff",
+        "pages": {
+            "Home": {
+                "titleBarText": "uniapp组件展示",
+                "menu": true
+            }
+        }
+    }
 }

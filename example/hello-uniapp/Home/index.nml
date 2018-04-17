@@ -98,7 +98,7 @@
                                 <text class="item-list-li-text">span</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
-                            <div class="item-list-li item-list-li-last" onclick="showChildren('text')">
+                            <div class="item-list-li" onclick="showChildren('text')">
                                 <text class="item-list-li-text">text</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
@@ -111,6 +111,10 @@
                                     <text class="item-list-li-text">数字角标</text>
                                     <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                                 </div>
+                            </div>
+                            <div class="item-list-li  item-list-li-last" onclick="showDetail('Component/web')">
+                                <text class="item-list-li-text">web</text>
+                                <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                         </div>
                     </div>

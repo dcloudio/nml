@@ -1,0 +1,36 @@
+<template>
+    <div class="container">
+        <div class="item-title">
+            <text class="item-title-text">web</text>
+        </div>
+        <div class="item-content">
+            <a class="item-content-a" href="/Component/web/network">加载远程HTML</a>
+            <a class="item-content-a" href="/Component/web/local">加载本地HTML</a>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../../Common/css/common.nss';
+    .item-content-a {
+        margin: 50px;
+        height: 100px;
+        flex: 1;
+        border-radius: 6px;
+        border-color: #888888;
+        border-width: 1px;
+        text-decoration: underline;
+        color: #A4ACA5;
+        text-align: center;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'web'
+            })
+        }
+    }
+</script>

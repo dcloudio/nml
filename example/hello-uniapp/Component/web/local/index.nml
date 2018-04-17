@@ -1,0 +1,22 @@
+<template>
+    <div class="container">
+        <web src="./local.html" id="web"></web>
+    </div>
+</template>
+
+<style>
+    @import '../../../Common/css/common.nss';
+    #web {
+        height: 100%;
+    }
+</style>
+
+<script>
+    module.exports = {
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'web'
+            });
+        }
+    }
+</script>

@@ -1,0 +1,19 @@
+p {
+    color: red;
+}
+
+.button-row {
+    text-align: center;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #FD7420;
+    font-size: 16px;
+}
