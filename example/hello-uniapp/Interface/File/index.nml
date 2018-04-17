@@ -57,7 +57,7 @@
 			uni.request.download({
 				url: 'http://img-cdn-qiniu.dcloud.net.cn/icon3.png',
 				success: function (data) {
-					request.onDownloadComplete({
+					uni.request.onDownloadComplete({
 						token: data.token,
 						success: function (data) {
 							that.downloadfile = data.uri
@@ -106,8 +106,7 @@
 			uni.file.list({
 				uri: uri,
 				success: function (data) {
-					var result = JSON.parse(data);
-					var list = result.fileList;
+					var list = data.fileList;
 					var copylist = [];
 					for (var i = 0; i < list.length; i++) {
 						copylist.push({
@@ -128,7 +127,6 @@
 			uni.file.get({
 				uri: that.downloadfile,
 				success: function (data) {
-					var data = JSON.parse(data);
 					that.getfile = '路径:' + data.uri + '---' + '大小:' + data.length + '---' + '创建时间:' +
 						that.getDate(data.lastModifiedTime);
 				},
