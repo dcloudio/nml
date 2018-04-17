@@ -4,6 +4,7 @@
     "versionName": "1.0.0",
     "versionCode": 100,
     "icon": "/Common/logo.png",
+    "minPlatformVersion":1000,
     "features": [{
         "name": "system.webview"
     }, {
