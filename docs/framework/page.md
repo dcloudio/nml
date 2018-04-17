@@ -463,7 +463,6 @@ import utils from '../Common/utils.njs'
 
 |属性|类型|参数|返回值|描述|触发时机|
 |:-|:-|:-|:-|:-|:-|
-|onInit|Function|无|无|||
 |onInit|Function|无|无|监听页面初始化|当页面完成初始化时调用，只触发一次。|
 |onReady|Function|无|无|监听页面创建完成|当页面完成创建可以显示时触发，只触发一次。|
 |onShow|Function|无|无|监听页面显示|当进入页面时触发|
