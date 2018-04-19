@@ -1,51 +1,82 @@
 <template>
-	<div class="container">
-		<div class="item-title">
-			<text class="item-title-text">request</text>
-		</div>
-		<div class="item-content">
-			<div class="item-group">
-				<text class="item-group-text">下载文件：{{uri}}</text>
-				<input type="button" name="fetch" class="item-group-button" value="下载" onclick="downloadFile" />
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="item-title">
+            <text class="item-title-text">request</text>
+        </div>
+        <div class="item-content">
+            <div class="item-group">
+                <text class="item-group-text">下载文件：{{uri}}</text>
+                <input type="button" class="item-group-button" value="下载" onclick="downloadFile" />
+            </div>
+        </div>
+        <div class="item-content">
+            <div class="item-group">
+                <text class="item-group-text">上传文件：{{uri}}</text>
+                <input type="button" class="item-group-button" value="上传" onclick="uploadFile" />
+            </div>
+        </div>
+    </div>
 </template>
 
 <style>
-	@import '../../Common/css/common.nss';
+    @import '../../Common/css/common.nss';
 </style>
 
 <script>
-	module.exports = {
-		data: {
-			uri: ''
-		},
-		onInit: function (e) {
-			this.$page.setTitleBar({
-				text: 'Request'
-			})
-		},
-		downloadFile: function () {
-			var that = this;
-			uni.request.download({
-				url: 'http://img-cdn-qiniu.dcloud.net.cn/icon3.png',
-				success: function (data) {
-					uni.request.onDownloadComplete({
-						token: data.token,
-						success: function (data) {
-							that.uri = data.uri
-						},
-						fail: function (data, code) {
-							console.log('...fail...');
-						}
-					})
-				},
-				fail: function (code, data) {
-					console.log('...fail...');
-				}
-			});
-
-		}
-	}
+    module.exports = {
+        data: {
+            uri: ''
+        },
+        onInit: function (e) {
+            this.$page.setTitleBar({
+                text: 'Request'
+            })
+        },
+        downloadFile: function () {
+            var that = this;
+            uni.request.download({
+                url: 'http://img-cdn-qiniu.dcloud.net.cn/icon3.png',
+                success: function (data) {
+                    uni.request.onDownloadComplete({
+                        token: data.token,
+                        success: function (data) {
+                            that.uri = data.uri
+                        },
+                        fail: function (data, code) {
+                            console.log('...fail...');
+                        }
+                    })
+                },
+                fail: function (code, data) {
+                    console.log('...fail...');
+                }
+            });
+        },
+        uploadFile: function () {
+            var that = this;
+            if(!that.uri){
+                uni.prompt.showToast({
+                    message: "无上传文件，请先点击下载"
+                });
+                return;
+            }
+            uni.request.upload({
+                url: "http://demo.dcloud.net.cn/helloh5/uploader/upload.php",
+                files: [{
+                    uri: that.uri,
+                    name: "file1",
+                    filename: "test.png"
+                }],
+                success: function (data) {
+                    console.log(data);
+                    uni.prompt.showToast({
+                        message: "上传图片成功"
+                    });
+                },
+                fail: function (data, code) {
+                    console.log("handling fail,", data, code);
+                }
+            });
+        }
+    }
 </script>

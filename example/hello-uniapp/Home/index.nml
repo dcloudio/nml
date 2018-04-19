@@ -221,7 +221,7 @@
                         </div>
                         <div class="item-list {{active==='network'?'show':''}}">
                             <div class="item-list-li" onclick="showDetail('Interface/Request')">
-                                <text class="item-list-li-text">下载文件</text>
+                                <text class="item-list-li-text">下载上传文件</text>
                                 <image class="item-list-li-image" src="/Common/img/arrow_right.png"></image>
                             </div>
                             <div class="item-list-li item-list-li-last" onclick="showDetail('Interface/Fetch')">
