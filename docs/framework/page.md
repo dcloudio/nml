@@ -435,6 +435,7 @@ import utils from '../Common/utils.njs'
 |$rootElement|Function|无|获取根组件dom对象用法 ``this.$rootElement()``，获取根组件实例对象，等同于 ``this.$element()``|
 |$vm|Function|id: String 组件id|获取指定 id 的自定义组件的 ViewModel 用法 ``this.$vm('xxx')``，获取 id 为xxx的 div 组件 ViewModel。|
 |$forceUpdate|Function|无|强制页面刷新|
+|$child|Function|id: String 组件id|获取指定id的自定义组件的ViewModel用法：this.$child('xxx') 获取id为xxx的div组件ViewModel|
 
 **事件方法**
 
