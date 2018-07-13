@@ -1,7 +1,8 @@
 ## HelloWorld
 完成环境的搭建后，就可以愉快地开始 nml 的开发了。
 ### 创建项目
-启动 HBuilderX，菜单->文件->新建->项目->uni-app->从模板创建->nml，输入项目名“HelloWorld”完成。 
+启动 HBuilderX，菜单->文件->新建->项目->uni-app->从模板选择->nml，输入项目名“HelloWorld”完成。 
+
 这个项目已经包含了项目配置和简单页面的基本代码，项目根目录结构如下：
 ```
 │  app.njs
