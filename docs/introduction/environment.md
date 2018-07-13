@@ -4,4 +4,4 @@
 注意: 不要使用8.0.*版本，这个版本内部会删除编译依赖包，并引起报错。
 
 ### 下载IDE
-UniApp 无需开发者从头开始搭建环境，下载开发神器 [HBuilderX](http://quickapp.dcloud.io/) 即可。
+nml 无需开发者从头开始搭建环境，下载开发神器 [HBuilderX](http://quickapp.dcloud.io/) 即可。
