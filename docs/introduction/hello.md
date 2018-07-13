@@ -1,8 +1,7 @@
 ## HelloWorld
-完成环境的搭建后，就可以愉快地开始 UniApp 的开发了。
+完成环境的搭建后，就可以愉快地开始 nml 的开发了。
 ### 创建项目
-启动 HBuilderX，菜单->文件->新建->项目->UniApp，输入项目名“HelloWorld”完成。 
-![](https://img-cdn-qiniu.dcloud.net.cn/uploads/images/1521633940823.png)
+启动 HBuilderX，菜单->文件->新建->项目->uni-app->从模板创建->nml，输入项目名“HelloWorld”完成。 
 这个项目已经包含了项目配置和简单页面的基本代码，项目根目录结构如下：
 ```
 │  app.njs
@@ -45,5 +44,3 @@
 
 - 首次真机运行，会安装 HBuilderX 基座。
 - 真机运行的状态下，每次修改项目文件，都会**自动同步**项目至手机设备。
-
-![](https://img-cdn-qiniu.dcloud.net.cn/uploads/images/1521634741598.jpg)
